@@ -1,7 +1,7 @@
 // app.js — lógica completa para The Boss (con imágenes locales)
 
 // ---------- Config ----------
-const BUSINESS_PHONE = '573001234567'; // <- reemplaza por el número real (sin '+')
+const BUSINESS_PHONE = '573115990064'; // <- reemplaza por el número real (sin '+')
 const DELIVERY_FEE = 5000; // tarifa por defecto de domicilio
 
 // ---------- Datos de ejemplo ----------
@@ -1777,5 +1777,6 @@ checkoutOverlay.addEventListener("click", (e) => {
     checkoutOverlay.classList.remove("show");
   }
 });
+
 
 
