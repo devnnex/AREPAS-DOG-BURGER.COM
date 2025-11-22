@@ -166,7 +166,7 @@ const products = [
   title: 'Perra Dog',
   price: 18000,
   desc: 'Salchicha suiza con ensalada, ripio de papas, salsas, tocineta y queso gratinado.',
-  image: 'images/PerraDog.png',
+  image: 'images/perraDog.png',
   ingredients: ['Salchicha suiza', 'Ensalada', 'Ripio de papas', 'Salsas', 'Tocineta', 'Queso gratinado'],
   extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
 },
@@ -1873,4 +1873,5 @@ document.addEventListener("click", (e) => {
 
 
 // ============Fin de codigo de Descarga QR=================
+
 
