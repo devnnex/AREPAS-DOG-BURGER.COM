@@ -79,7 +79,7 @@ const products = [
     title: 'Combinada',
     price: 20000,
     desc: 'Pan brioche, carne artesanal, filete de pollo, tocineta, queso, ensalada, tomate y salsa de la casa.',
-    image: 'images/Combinada.png',
+    image: 'images/combinada.png',
     ingredients: ['Pan Brioche','Carne Artesanal','Filete de Pollo','Tocineta','Queso','Ensalada','Tomate','Salsa de la casa'],
     extras: [{ name:'Maicitos',price:2000 },{ name:'Porción de papas a la francesa',price:3500 },{ name:'Huevos de codorniz',price:1500 },{ name:'Queso',price:1500 },{ name:'Tocineta',price:2500 }]
   },
@@ -101,7 +101,7 @@ const products = [
     title: 'Paisa',
     price: 18500,
     desc: 'Pan brioche, carne artesanal, pollo desmechado, queso, tocineta, salsa tártara y cebolla grille.',
-    image: 'images/Paisa.png',
+    image: 'images/paisa.png',
     ingredients: ['Pan Brioche','Carne Artesanal','Pollo desmechado','Queso','Tocineta','Salsa tártara','Cebolla grille'],
     extras: [{ name:'Maicitos',price:2000 },{ name:'Porción de papas a la francesa',price:3500 },{ name:'Huevos de codorniz',price:1500 },{ name:'Queso',price:1500 },{ name:'Tocineta',price:2500 }]
   },
@@ -503,7 +503,7 @@ const products = [
   title: 'Salchiranchera',
   price: 27000,
   desc: 'Papas con carne, salchicha ranchera, pollo desmechado, suiza, madurito, tocineta, guacamole y maicitos.',
-  image: 'images/salchipapa3.png',
+  image: 'images/salchiranchera.png',
   ingredients: ['Papas a la francesa', 'Carne', 'Salchicha ranchera', 'Pollo desmechado', 'Suiza', 'Madurito', 'Tocineta', 'Guacamole', 'Maicitos'],
   extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
 },
