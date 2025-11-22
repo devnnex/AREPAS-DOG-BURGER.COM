@@ -1865,13 +1865,16 @@ document.addEventListener("click", (e) => {
     showCancelButton: true,
     confirmButtonText: "Descargar",
     cancelButtonText: "Cancelar",
-    confirmButtonColor: "#ff4b4b"
+    background: "#0a0a0a",             // fondo negro
+    color: "#ffffff",                   // texto blanco
+    confirmButtonColor: "rgb(230, 213, 12)", // botón amarillo neón
+    cancelButtonColor: "#555555",       // cancel gris oscuro
+    iconColor: "rgb(230, 213, 12)"      // icono amarillo neón
   }).then(result => {
     if (result.isConfirmed) downloadImage(imgPath);
   });
 });
 
 
+
 // ============Fin de codigo de Descarga QR=================
-
-
