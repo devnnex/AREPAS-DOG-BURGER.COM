@@ -1,29 +1,14 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title> 🍧 Vikingos Indira | Inventory 🌸</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AREPAS | DOG | BURGER 🍔 | MANIZALES | PERALONZO</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- FONTAWESOME CDN -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-<!-- Chart.js -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<!-- html2canvas + jsPDF -->
-<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.19.3/xlsx.full.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-
-<link rel="stylesheet" href="style.css"> 
-
-<!-- FONTAWESOME CDN -->
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer" />
-
-  <!-- 🧩 Favicon clásico -->
+ <!-- 🧩 Favicon clásico -->
   <link rel="icon" type="image/png" href="./images/favicon.png">
 
   <!-- 📱 Ícono de app (iOS / Android) -->
@@ -34,444 +19,268 @@
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="Santana Group App">
+  <meta name="apple-mobile-web-app-title" content="Arepas Dog Burger">
 
   <!-- 📜 Manifest -->
   <link rel="manifest" href="./manifest.json">
-<style>
-:root {
-  --bg-dark: #000000;
-  --card-bg: #101012;
-  --primary: #fdfdfd;
-  --accent: #45d37a;
-  --text-light: #f5f5f5;
-  --text-muted: #aaa;
-  --shadow: rgba(0,0,0,0.2);
-}
 
- 
-
-* { box-sizing: border-box; margin:0; padding:0; font-family:'Segoe UI',sans-serif; }
-body { background: var(--bg-dark); color: var(--text-light); min-height:100vh; }
-
-.topbar {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:10px 20px;
-  background: #24c4a3;
-  box-shadow: 0 4px 6px var(--shadow);
-  flex-wrap: wrap;
-}
-.topbar .logo img { height:40px; box-shadow: #fff; align-items: center;}
-.topbar .tabs { display:flex; flex-wrap:wrap; gap:10px; }
-.tab-btn { padding:8px 15px; border:none; background:none; color:var(--text-light); cursor:pointer; border-radius:6px; transition:.2s; }
-.tab-btn.active {background: #25b99d;color:#000000;}
-
-.container { padding:20px; display:flex; flex-direction:column; gap:20px; }
-.card {background: #24c4a3;border-radius:12px;padding:15px;box-shadow: 0 4px 8px var(--shadow);overflow:auto;}
-.table-card table { width:100%; border-collapse: collapse; }
-.table-card th, .table-card td {padding:10px;text-align:left;border-bottom:1px solid #333;font-weight: 700;}
-
-#inventoryTable td:nth-child(3) {
-  color: #ff0000 !important; /* verde menta */
-  font-weight: bold; /* opcional */
-}
-
-#inventoryTable td:nth-child(4) {
-  color: #000000 !important; /* verde menta */
-  font-weight: bold; /* opcional */
-}
-
-
-
-
-.table-card th { background: #2f2f4b; }
-.page-header { display:flex; justify-content:space-between; flex-wrap:wrap; align-items:center; gap:10px; margin-bottom:15px; }
-.btn { padding:8px 12px; border:none; border-radius:6px; cursor:pointer; transition:.2s; }
-.btn.primary { background:var(--primary); color:#000000; }
-.btn.ghost {background:none;border: 1px solid #846868;color:var(--primary);}
-.btn.danger {background: #324c88;color:#fff;}
-
-.stats-row { display:grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap:15px; }
-.stat-card { padding:15px; border-radius:12px; background: #2a2a3c; text-align:center; }
-.chart-row { display:grid; grid-template-columns:1fr; gap:15px; }
-.chart-card { padding:15px; border-radius:12px; background:#2a2a3c; }
-
-@media(min-width:768px){
-  .chart-row { grid-template-columns:1fr 1fr; }
-}
-
-.modal-overlay { position:fixed; inset:0; background:rgba(0,0,0,0.7); display:flex; justify-content:center; align-items:center; z-index:1000; }
-.modal { background: var(--card-bg); padding:20px; border-radius:12px; max-width:400px; width:90%; position:relative; }
-.modal-close { position:absolute; top:10px; right:10px; border:none; background:none; font-size:20px; cursor:pointer; }
-.form-grid {  gap:10px; }
-.totalDisplay { font-weight:bold; font-size:1.1rem; color:var(--accent); text-align:right; }
-
-#brandDetailModal.hidden { display: none; }
-#brandDetailModal .modal {
-  background: var(--card-bg);
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(255,255,255,0.2);
-  max-width: 500px;
-  width: 90%;
-}
-#brandDetailModal table th, #brandDetailModal table td {
-  padding: 8px;
-  border-bottom: 1px solid #333;
-}
-
-/* ===== Modal con borde neón galáctico total ===== */
-#brandDetailModal .modal {
-  position: relative;
-  overflow: hidden;
-  background: rgba(15, 10, 30, 0.95);
-  border-radius: 20px;
-  padding: 24px;
-  box-shadow: 0 0 40px rgba(160, 90, 255, 0.5),
-              0 0 80px rgba(100, 180, 255, 0.3);
-  animation: neonGlow 3s ease-in-out infinite alternate;
-}
-
-/* Borde animado brillante */
-#brandDetailModal .modal::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 20px;
-  padding: 3px;
-  background: linear-gradient(270deg, 
-    rgba(200,100,255,1),
-    rgba(120,180,255,1),
-    rgba(255,100,255,1),
-    rgba(127,90,240,1),
-    rgba(120,180,255,1)
-  );
-  background-size: 600% 600%;
-  animation: borderNeonFlow 5s linear infinite;
-  filter: blur(1px);
-  mask: 
-    linear-gradient(#fff 0 0) content-box, 
-    linear-gradient(#fff 0 0);
-  mask-composite: exclude;
-  -webkit-mask: 
-    linear-gradient(#fff 0 0) content-box, 
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-}
-
-/* Animación del flujo del borde */
-@keyframes borderNeonFlow {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* Halo dinámico pulsante */
-@keyframes neonGlow {
-  0% {
-    box-shadow: 
-      0 0 20px rgba(160,90,255,0.8),
-      0 0 40px rgba(120,180,255,0.5),
-      0 0 60px rgba(255,100,255,0.3);
-  }
-  100% {
-    box-shadow: 
-      0 0 50px rgba(180,90,255,1),
-      0 0 100px rgba(120,180,255,0.8),
-      0 0 150px rgba(255,100,255,0.6);
-  }
-}
-
-#brandDetailModal .close-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background: radial-gradient(circle at center, #ff2e2e 0%, #b30000 80%);
-  color: #fff;
-  font-size: 1.2rem;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow:
-    0 0 15px rgba(255, 60, 60, 0.6),
-    0 0 30px rgba(255, 0, 0, 0.4);
-  transition: all 0.25s ease-in-out;
-}
-
-#brandDetailModal .close-btn:hover {
-  background: radial-gradient(circle at center, #ff4d4d 0%, #e60000 80%);
-  box-shadow:
-    0 0 25px rgba(255, 80, 80, 0.9),
-    0 0 50px rgba(255, 0, 0, 0.7);
-  transform: scale(1.1);
-}
-
-#brandDetailModal .close-btn:active {
-  transform: scale(0.95);
-  box-shadow:
-    0 0 10px rgba(255, 80, 80, 0.6),
-    0 0 20px rgba(255, 0, 0, 0.5);
-}
-
-
-
-
-</style>
 </head>
 <body>
+  <div id="app" class="app-container">
 
- <header class="topbar">
+    <!-- ===== HEADER ===== -->
+    <header class="topbar" role="banner">
+      <button id="menu-btn" class="icon-btn" aria-label="Abrir menú">☰</button>
+      <div class="brand">
+        <img src="images/logo.png"  class="logo">
+      </div>
+      <button id="open-cart" class="cart-btn" aria-label="Abrir carrito">
+        <span class="cart-ico">🛒</span>
+        <span id="cart-count" class="cart-count">0</span>
+      </button>
+    </header>
 
-  <style>
-    /* === Estilos solo para las secciones izquierdas === */
-    .left-sections {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-right: 20px;
-    }
+    <!-- ===== MAIN ===== -->
+    <main class="content" role="main">
 
-    .left-sections button {
-      background: transparent;
-      border: none;
-      color: white;
-      font-size: 15px;
-      padding: 6px 10px;
-      cursor: pointer;
-      border-radius: 6px;
-      transition: 0.2s;
-    }
+      <!-- Categorías -->
+      <nav class="categories" role="tablist" aria-label="Categorías">
+        <!-- Buttons injected by JS -->
+      </nav>
 
-    .left-sections button:hover {
-      background: rgba(255,255,255,0.15);
-    }
+      <!-- Búsqueda -->
+      <div class="search-row">
+        <input id="search" type="search" placeholder="Buscar producto..." aria-label="Buscar productos">
+      </div>
 
-    .topbar {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      padding: 10px 15px;
-      gap: 20px;
-    }
+      <!-- Catálogo -->
+      <section id="catalog" class="catalog fade-in" aria-live="polite">
+        <!-- productos renderizados por JS -->
+      </section>
 
-    .logo img {
-      height: 42px;
-    }
+    </main>
 
-    .tabs {
-      margin-left: auto; /* Empuja las tabs hacia la derecha */
-      display: flex;
-      gap: 8px;
-    }
-  </style>
-
-  <!-- SECCIONES A LA IZQUIERDA -->
-  <div class="left-sections">
-    <button class="tab-btn" data-section="bucaramanga">Bucaramanga</button>
-    <button class="tab-btn" data-section="barranca">Barranca</button>
-    <button class="tab-btn" data-section="stickers">Stickers</button>
-  </div>
-
-  <!-- LOGO -->
-  <div class="logo">
-    <img src="images/logo.png" alt="Logo">
-  </div>
-
-  <!-- TABS -->
-  <nav class="tabs">
-    <button class="tab-btn active" data-tab="inventory">Inventario</button>
-    <button class="tab-btn" data-tab="sales">Movimientos</button>
-    <button class="tab-btn" data-tab="analysis" id="tabAnalysisBtn">Análisis</button>
-    <button class="tab-btn" data-tab="sold">Agotados</button>
-  </nav>
-
-</header>
-
-
-<main class="container">
-  <!-- INVENTARIO -->
-  <section id="inventory" class="tab-content">
-    <div class="page-header">
-      <h1>Inventario</h1>
-      <div>
-        <button class="btn primary" id="addProductBtn">+ Agregar Vikingo</button>
-        <button class="btn ghost" id="deleteSelectedBtn">Eliminar Seleccionados (0)</button>
-        <button class="btn ghost" id="downloadInventoryPdfBtn">Exportar PDF</button>
-        <button class="btn ghost" id="exportInventoryExcel">Exportar Excel</button>
+    <!-- ===== PRODUCT MODAL ===== -->
+    <div id="product-modal" class="modal hidden" role="dialog" aria-modal="true">
+      <div class="modal-panel">
+        <div class="modal-details">
+          <button class="modal-close icon-btn" id="modal-close" aria-label="Cerrar modal">✕</button>
+          <div class="modal-scroll" id="modal-content"></div>
+        </div>
       </div>
     </div>
-    <input id="searchInventory" placeholder="Buscar productos..." style="padding:8px; border-radius:6px; width:100%; margin-bottom:10px;">
-    <div class="card table-card" id="inventoryTableWrapper">
-      <table id="inventoryTable">
-        <thead>
-        <tr>
-          <th><input type="checkbox" id="selectAllProducts"></th>
-          <th>Producto</th><th>Stock</th><th>Salida</th><th>Acciones</th>
-        </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-    </div>
-  </section>
 
-  <!-- SECCIÓN VENTAS -->
-  <section id="sales" class="tab-content hidden">
-    <div class="page-header">
-      <h1>Vikingos para venta</h1>
-      <div>
-        <button class="btn ghost" id="deleteSelectedSales">Eliminar Seleccionados</button>
-        <button class="btn danger" id="deleteAllSales">Eliminar Todos</button>
-        <button class="btn ghost" id="downloadSalesPdfBtn">Exportar PDF</button>
-        <button class="btn primary" id="exportSalesExcel">Exportar Excel</button>
+    <!-- ===== CART DRAWER ===== -->
+    <aside id="cart-drawer" class="cart-drawer hidden" aria-hidden="true" aria-label="Carrito">
+      <header class="cart-header">
+        <h3>Carrito</h3>
+        <button id="close-cart" class="icon-btn" aria-label="Cerrar carrito">✕</button>
+      </header>
+
+      <div id="cart-items" class="cart-items" role="region" aria-live="polite"></div>
+
+      <div class="cart-summary">
+        <div class="row">
+          <span>Subtotal</span>
+          <strong id="cart-subtotal">$0</strong>
+        </div>
+
+        <div class="row total">
+          <span>Total</span>
+          <strong id="cart-total">$0</strong>
+        </div>
+
+        <button id="checkout-btn" class="btn-primary">Confirmar orden</button>
+        <button id="clear-cart" class="btn-clear">Vaciar carrito</button>
       </div>
-    </div>
-    <input id="searchSales" placeholder="Buscar ventas..." style="padding:8px; border-radius:6px; width:100%; margin-bottom:10px;">
-    <div class="card table-card" id="salesTableWrapper">
-      <table id="salesTable">
-        <thead>
-          <tr><th></th><th>Producto</th><th>Cantidad</th><th>Fecha</th></tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-    </div>
-  </section>
+    </aside>
 
-  <!-- ANÁLISIS -->
-  <section id="analysis" class="tab-content hidden">
-    <div class="page-header">
-      <h1>Análisis</h1>
-      <button class="btn ghost" id="refreshAnalysisBtn">Refrescar</button>
-    </div>
-    
-    <div class="stats-row">
+    <!-- ===== CHECKOUT MODAL ===== -->
+    <div id="checkout-modal" class="checkout-overlay hidden" role="dialog" aria-modal="true">
+      <div class="checkout-panel fade-in">
 
-    </div>
-    <div class="card chart-row">
-      <div class="chart-card"><h4>Top Productos Vendidos</h4><canvas id="topProductsChart"></canvas></div>
-    </div>
-  </section>
+        <!-- Botón cerrar -->
+        <button type="button" id="checkout-close" class="icon-btn close-btn" aria-label="Cerrar checkout">✕</button>
 
-  <!-- VENDIDOS -->
-  <section id="sold" class="tab-content hidden">
-    <div class="page-header"><h1>Vikingos Agotados</h1>
-    <button id="deleteAllSoldBtn" class="btn danger">Eliminar Todos</button> <!-- 👈 nuevo botón -->
-    </div>
-    <div class="card table-card">
-      <table id="soldTable">
-        <thead><tr><th>Producto</th><th>Retirados</th></tr></thead>
-        <tbody></tbody>
-      </table>
-    </div>
-  </section>
+        <form id="checkout-form">
+          <!-- 🔸 Paso 1: Datos básicos -->
+          <div class="checkout-step active" id="step1">
+            <label>Nombre
+              <input name="name" type="text" required placeholder="Tu nombre">
+            </label>
 
-  <!-- CLIENTES -->
-<!-- 
-  <section id="clients" class="tab-content hidden">
-   <div id="clientStats" class="kpi-grid">
-   
-  </div>
- 
-     
-  <div class="page-header">
-    <h1>Clientes</h1>
-     <input id="clientSearch" type="text" placeholder="🔍 Buscar cliente..." style="flex:1;min-width:180px;">
-     <button id="deleteSelectedClients" class="btn ghost">🗑️ Eliminar seleccionados</button>
-     <button id="deleteAllClients" class="btn ghost">⚠️ Eliminar todos</button>
-     <button class="btn primary" id="addClientBtn">+ Agregar Cliente</button>    
-  </div>
+            <label>Teléfono
+              <input name="phone" type="tel" required placeholder="Ej: 3001234567">
+            </label>
 
-  <div class="card table-card">
-    <table id="clientsTable">
-  <thead>
-    <tr>
-      <th style="width:40px;text-align:center;">
-        <input type="checkbox" id="checkAllClients" />
-      </th>
-      <th>Nombre</th>
-      <th>Teléfono</th>
-      <th>Correo</th>
-      <th>Cumpleaños</th>
-      <th>Registrado</th>
-      <th>Acciones</th>
-    </tr>
-  </thead>
-  <tbody></tbody>
-</table>
+            <div class="checkout-actions">
+              <button type="button" id="next-step1" class="btn-primary">Continuar</button>
+              <button type="button" id="back-to-cart" class="btn-secondary">Volver</button>
+            </div>
+          </div>
 
-  </div>
-</section> -->
+          <!-- 🔸 Paso 2: Detalles de entrega/pago -->
+          <div class="checkout-step" id="step2">
+            <div class="client-summary" id="client-summary"></div>
 
-</main>
-
-<!-- Modal Detalle de Marca -->
-<div id="brandDetailModal" class="modal-overlay hidden">
-  <div class="modal">
-    <button class="close-btn" id="closeBrandDetail">&times;</button>
-    <h2 id="brandDetailTitle">Detalle de Marca</h2>
-    <table style="width:100%;border-collapse:collapse;margin-top:10px;">
-      <thead>
-        <tr>
-          <th style="text-align:left;">Producto</th>
-          <th>Cantidad</th>
-          <th>Costo Unit.</th>
-          <th>Total Inversión</th>
-        </tr>
-      </thead>
-      <tbody id="brandDetailBody"></tbody>
-    </table>
-  </div>
+            <div class="radio-row" role="radiogroup" aria-label="Método de entrega">
+  <label class="radio-btn">
+    <input type="radio" name="method" value="recoger" checked>
+    <span>Recoger</span>
+  </label>
+  <label class="radio-btn">
+    <input type="radio" name="method" value="domicilio">
+    <span>Domicilio</span>
+  </label>
 </div>
 
 
-<!-- MODAL PARA AÑADIR STOCK  -->
-<div id="addStockOverlay" class="modal-overlay hidden" style="display:none;">
-  <div class="modal card" id="addStockModal" style="max-width:350px;">
-    <button id="closeAddStockModal" class="modal-close">✕</button>
-    <h2>Añadir Stock</h2>
+            <label id="address-label" class="hidden">Dirección
+              <input name="address" type="text" placeholder="Dirección para entrega">
+            </label>
 
-    <label>Cantidad a agregar:</label>
-    <input id="addStockInput" type="number" min="1" placeholder="Ej: 10" style="padding:8px; width:100%; margin-bottom:15px;">
+            <label>Método de pago
+              <select name="payment" id="payment-method" required>
+                <option value="" disabled selected>Selecciona una opción</option>
+                <option value="transferencia">Transferencia</option>
+                <option value="efectivo">Efectivo</option>
+              </select>
+            </label>
 
-    <button id="confirmAddStockBtn" class="btn primary" style="width:100%;">Agregar</button>
+            <div id="transfer-info" class="hidden transfer-box">
+              <p><strong>Banco:</strong> Nequi</p>
+              <p><strong>Número de cuenta:</strong>
+                <span id="account-number">3208759798</span>
+                <button type="button" id="copy-account" class="copy-btn">Copiar</button>
+              </p>
+              <p><strong>Titular:</strong> Elk Ran</p>
+                <!-- 🔹 QR de pago (Nequi + Bancolombia) -->
+  <div class="qr-box">
+
+  <div class="qr-item">
+    <img src="images/qr-nequi.png" alt="QR Nequi" class="qr-img">
+    <p>
+      Nequi
+      <i class="fa-solid fa-download qr-download" data-img="images/qr-nequi.png"></i>
+    </p>
   </div>
+
+  <div class="qr-item">
+    <img src="images/qr-bancolombia.png" alt="QR Bancolombia" class="qr-img">
+    <p>
+      Bancolombia
+      <i class="fa-solid fa-download qr-download" data-img="images/qr-bancolombia.png"></i>
+    </p>
+  </div>
+
 </div>
+            </div>
 
+            <label>Notas (opcional)
+              <textarea name="notes" rows="2" placeholder="Ej: Sin cebolla"></textarea>
+            </label>
 
+            <div id="envio-row" class="checkout-row hidden">
+              <span>Envío</span>
+              <strong id="cart-delivery">$0</strong>
+            </div>
 
+            <div class="checkout-total">
+              <span>Total</span>
+              <strong id="cart-total-checkout">$0</strong>
+            </div>
 
-<footer style="text-align:center; padding:10px; color:#aaa;">© 2025 Vikingos Indira Group</footer>
+            <div class="checkout-actions">
+              <button type="button" id="back-step2" class="btn-secondary">Atrás</button>
+              <button type="submit" class="btn-primary">Confirmar pedido</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
 
+  </div> <!-- cierre #app -->
 
-<script src="app.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<!-- ✅ SweetAlert2 -->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script>Swal.fire({
+  <!-- ===== MENÚ LATERAL ===== -->
+  <div id="side-menu" class="side-menu hidden" role="dialog" aria-modal="true">
+    <div class="side-menu-panel">
+
+      <button id="close-menu" class="icon-btn close-menu" aria-label="Cerrar menú">
+        <i class="fa-solid fa-x"></i>
+      </button>
+
+      <div class="menu-logo">
+        <img src="images/logo.png" alt="Logo del negocio">
+      </div>
+
+      <ul class="social-links">
+        <li>
+          <a href="http://wa.me/573004029492" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>WhatsApp</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/tastyfood.bca/" target="_blank">
+            <i class="fa-brands fa-instagram"></i>
+            <span>Instagram</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/TastyFoodalwayshot/" target="_blank">
+            <i class="fa-brands fa-facebook"></i>
+            <span>Facebook</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" target="_blank">
+            <i class="fa-brands fa-tiktok"></i>
+            <span>TikTok</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="app-footer">
+    <div class="footer-content">
+      <img src="images/logo.png" alt="The Boss Logo" class="footer-logo">
+
+      <ul class="footer-social">
+        <li><a href="https://wa.me/573117650829" target="_blank"><i class="bx bxl-whatsapp"></i></a></li>
+        <li><a href="https://www.instagram.com/muud.col/" target="_blank"><i class="bx bxl-instagram"></i></a></li>
+        <li><a href="https://www.facebook.com/profile.php?id=61573196803550&ref=pl_edit_ig_profile_ac" target="_blank"><i class="bx bxl-facebook"></i></a></li>
+        <li><a href="#" target="_blank"><i class="bx bxl-tiktok"></i></a></li>
+      </ul>
+
+      <p>© 2025 🍔 Arepas Dog Burger. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+  <!-- ✅ SweetAlert2 -->
+ <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+ <script>Swal.fire({
   icon: 'success',
-  title: '¡Nueva actualizacion!',
-  html: `
-    <span style="font-size:15px;">
-      Seguimos trabajando cada dia para brindarte lo que hace falta, no te preocupes!.
-    </span>
-  `,
-  background: '#1e1e1e',
-  color: '#fff',
-  confirmButtonColor: '#4caf50',
-  confirmButtonText: 'OK'
+  title: '¡Éxito!',
+  text: 'Nueva Actualización 2.0 Esta version contiene Qr para pagos en linea, Sin embargo aun faltan fotos de algunos productos para dejar la web app o menu digital Listo. Si es posible Quedo atento al Nequi Jhonma Dios te Bendiga',
+  confirmButtonText: 'Aceptar',
+  background: '#0a0a0a',             // Fondo negro
+  color: '#ffffff',                   // Texto blanco
+  confirmButtonColor: 'rgb(230, 213, 12)', // Botón amarillo neón
+  iconColor: 'rgb(230, 213, 12)',    // Icono amarillo neón
 });
 </script>
-<script>
- 
-    emailjs.init("WG36JQzyb-sxnapxf"); // 👈 Reemplaza con tu Public Key de EmailJS
-  
-</script>
-
+  <script src="app.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+    
