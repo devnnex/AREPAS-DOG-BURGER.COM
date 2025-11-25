@@ -1,7 +1,7 @@
 // app.js — lógica completa para The Boss (con imágenes locales)
 
 // ---------- Config ----------
-const BUSINESS_PHONE = '573001234567'; // <- reemplaza por el número real (sin '+')
+const BUSINESS_PHONE = '573115990064'; // <- reemplaza por el número real (sin '+')
 const DELIVERY_FEE = 5000; // tarifa por defecto de domicilio
 
 // ---------- Datos de ejemplo ----------
@@ -206,7 +206,7 @@ const products = [
   title: 'Ranchero',
   price: 13000,
   desc: 'Salchicha ranchera con ensalada, ripio de papas, salsas y queso gratinado.',
-  image: 'images/p5.png',
+  image: 'images/ranchero.png',
   ingredients: ['Salchicha ranchera', 'Ensalada', 'Ripio de papas', 'Salsas', 'Queso gratinado'],
   extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
 },
@@ -236,7 +236,7 @@ const products = [
   title: 'Tradicional',
   price: 10000,
   desc: 'Salchicha con ensalada, ripio de papas, salsas y queso gratinado.',
-  image: 'images/p8.png',
+  image: 'images/tradicional.png',
   ingredients: ['Salchicha', 'Ensalada', 'Ripio de papas', 'Salsas', 'Queso gratinado'],
   extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
 },
