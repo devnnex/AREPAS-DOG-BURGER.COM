@@ -849,7 +849,7 @@ const products = [
   title: 'Limonada de Mango Biche',
   price: 9000,
   desc: 'Limonada con sabor a mango biche, perfecta para los amantes del toque ácido.',
-  image: 'images/limonada2.png',
+  image: 'images/mangobiche.png',
   ingredients: ['Limón', 'Pulpa de mango biche', 'Azúcar', 'Agua', 'Hielo']
 },
 {
@@ -867,16 +867,16 @@ const products = [
   title: 'Limonada Piña Colada',
   price: 9500,
   desc: 'Exquisita mezcla de limón, piña y coco con un toque tropical.',
-  image: 'images/limonada4.png',
+  image: 'images/piñacolada.png',
   ingredients: ['Limón', 'Piña', 'Crema de coco', 'Azúcar', 'Agua', 'Hielo']
 },
 {
   id: 'l5',
   category: 'limonadas',
-  title: 'Limonada Tamarindo Escarchada',
+  title: 'Tamarindo Escarchada',
   price: 9500,
   desc: 'Limonada con tamarindo natural y escarcha dulce, refrescante y diferente.',
-  image: 'images/limonada5.png',
+  image: 'images/tamarindoescarchada.png',
   ingredients: ['Limón', 'Pulpa de tamarindo', 'Azúcar', 'Agua', 'Hielo']
 },
 {
@@ -1023,7 +1023,7 @@ const products = [
     ingredients:['Salsa','Queso'],
     extras:[{name:'Pollo',price:2000}]
   },
-  { 
+  /*{ 
     id: 'bebi1',
     category: 'gaseosas',
     title: 'Fanta Naranja 330ml',
@@ -1092,7 +1092,7 @@ const products = [
     image: 'images/otros1.png',
     ingredients:['Salsa'],
     extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
-  }
+  }*/
 ];
 
 const categories = [...new Set(products.map(p=>p.category))];
@@ -1521,7 +1521,7 @@ const subtotal = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
       const deliveryEl = document.getElementById('cart-delivery');
       const totalCheckoutEl = document.getElementById('cart-total-checkout');
 
-      const DELIVERY_FEE = 5000;
+      const DELIVERY_FEE = 0;
       const delivery = (method === 'domicilio' && subtotal > 0) ? DELIVERY_FEE : 0;
       const totalUpdated = subtotal + delivery;
 
@@ -1555,7 +1555,7 @@ function updateCheckoutTotals() {
   const deliveryEl = document.getElementById('cart-delivery-checkout');
   const totalEl = document.getElementById('cart-total-checkout');
 
-  const DELIVERY_FEE = 5000; // mismo valor usado en refreshCartUI
+  const DELIVERY_FEE = 0; // mismo valor usado en refreshCartUI
 
   // Mostrar u ocultar campo de dirección
   addressLabel.classList.toggle('hidden', method !== 'domicilio');
@@ -1721,7 +1721,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const addressLabel = document.getElementById("address-label");
   const envioRow = document.getElementById("envio-row");
   const cartDelivery = document.getElementById("cart-delivery");
-  const DELIVERY_FEE = 5000; // 💰 valor del domicilio
+  const DELIVERY_FEE = 0; // 💰 valor del domicilio
   const accountNumber = document.getElementById("account-number");
   const copyBtn = document.getElementById("copy-account");
 
@@ -1878,4 +1878,5 @@ document.addEventListener("click", (e) => {
 
 
 // ============Fin de codigo de Descarga QR=================
+
 
