@@ -680,86 +680,190 @@ const products = [
   ingredients: ['Tortilla', 'Pollo desmechado', 'Tocineta', 'Queso', 'Maicitos', 'Lechuga', 'Tomate', 'Guacamole'],
   extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
 },
-
+//JUGOS
 {
   id: 'j1',
-  category: 'jugos',
+  category: 'Jugos',
   title: 'Jugo de Mango',
   price: 6000,
-  desc: 'Refrescante jugo natural de mango en agua preparado al momento.',
-  image: 'images/jugo1.png',
+  desc: 'Refrescante jugo natural de mango preparado al momento.',
   ingredients: ['Mango fresco', 'Azúcar', 'Hielo'],
-  base: ['Agua', 'Leche']
+  image: 'images/jugo1.png',
+  sizes: [
+    {
+      id: 'j1-agua',
+      label: 'En agua',
+      price: 6000,
+      image: 'images/jugo1.png'
+    },
+    {
+      id: 'j1-leche',
+      label: 'En leche',
+      price: 7000,
+      image: 'images/jugo1.png'
+    }
+  ]
 },
 {
   id: 'j2',
-  category: 'jugos',
+  category: 'Jugos',
   title: 'Jugo de Fresa',
   price: 6000,
-  desc: 'Jugo natural de fresa en agua con un sabor dulce y fresco.',
-  image: 'images/jugo2.png',
+  desc: 'Jugo natural de fresa con un sabor dulce y fresco.',
   ingredients: ['Fresas', 'Azúcar', 'Hielo'],
-  base: ['Agua', 'Leche']
+  image: 'images/jugo2.png',
+  sizes: [
+    {
+      id: 'j2-agua',
+      label: 'En agua',
+      price: 6000,
+      image: 'images/jugo2.png'
+    },
+    {
+      id: 'j2-leche',
+      label: 'En leche',
+      price: 7000,
+      image: 'images/jugo2.png'
+    }
+  ]
 },
 {
   id: 'j3',
-  category: 'jugos',
+  category: 'Jugos',
   title: 'Jugo de Mora',
   price: 6000,
-  desc: 'Jugo artesanal de mora en agua, lleno de sabor y color natural.',
-  image: 'images/jugo3.png',
+  desc: 'Jugo artesanal de mora, lleno de sabor y color natural.',
   ingredients: ['Mora fresca', 'Azúcar', 'Hielo'],
-  base: ['Agua', 'Leche']
+  image: 'images/jugo3.png',
+  sizes: [
+    {
+      id: 'j3-agua',
+      label: 'En agua',
+      price: 6000,
+      image: 'images/jugo3.png'
+    },
+    {
+      id: 'j3-leche',
+      label: 'En leche',
+      price: 7000,
+      image: 'images/jugo3.png'
+    }
+  ]
 },
 {
   id: 'j4',
-  category: 'jugos',
+  category: 'Jugos',
   title: 'Jugo de Maracuyá',
   price: 6000,
-  desc: 'Delicioso jugo de maracuyá en agua con su característico toque ácido.',
-  image: 'images/jugo4.png',
+  desc: 'Delicioso jugo de maracuyá con su característico toque ácido.',
   ingredients: ['Maracuyá', 'Azúcar', 'Hielo'],
-  base: ['Agua', 'Leche']
+  image: 'images/jugo4.png',
+  sizes: [
+    {
+      id: 'j4-agua',
+      label: 'En agua',
+      price: 6000,
+      image: 'images/jugo4.png'
+    },
+    {
+      id: 'j4-leche',
+      label: 'En leche',
+      price: 7000,
+      image: 'images/jugo4.png'
+    }
+  ]
 },
 {
   id: 'j5',
-  category: 'jugos',
+  category: 'Jugos',
   title: 'Jugo de Lulo',
   price: 6000,
-  desc: 'Tradicional jugo de lulo colombiano en agua, ácido y refrescante en agua.',
-  image: 'images/jugo5.png',
+  desc: 'Tradicional jugo de lulo colombiano, ácido y refrescante.',
   ingredients: ['Lulo', 'Azúcar', 'Hielo'],
-  base: ['Agua', 'Leche']
+  image: 'images/jugo5.png',
+  sizes: [
+    {
+      id: 'j5-agua',
+      label: 'En agua',
+      price: 6000,
+      image: 'images/jugo5.png'
+    },
+    {
+      id: 'j5-leche',
+      label: 'En leche',
+      price: 7000,
+      image: 'images/jugo5.png'
+    }
+  ]
 },
 {
   id: 'j6',
-  category: 'jugos',
+  category: 'Jugos',
   title: 'Jugo de Papaya',
   price: 6000,
-  desc: 'Suave jugo natural de papaya en agua, ideal para acompañar tus comidas.',
-  image: 'images/jugo6.png',
+  desc: 'Suave jugo natural de papaya, ideal para acompañar tus comidas.',
   ingredients: ['Papaya', 'Azúcar', 'Hielo'],
-  base: ['Agua', 'Leche']
+  image: 'images/jugo6.png',
+  sizes: [
+    {
+      id: 'j6-agua',
+      label: 'En agua',
+      price: 6000,
+      image: 'images/jugo6.png'
+    },
+    {
+      id: 'j6-leche',
+      label: 'En leche',
+      price: 7000,
+      image: 'images/jugo6.png'
+    }
+  ]
 },
 {
   id: 'j7',
-  category: 'jugos',
+  category: 'Jugos',
   title: 'Jugo de Sandía',
   price: 6000,
-  desc: 'Refrescante jugo de sandía en agua, perfecto para los días calurosos.',
-  image: 'images/jugo7.png',
+  desc: 'Refrescante jugo de sandía, perfecto para los días calurosos.',
   ingredients: ['Sandía', 'Azúcar', 'Hielo'],
-  base: ['Agua', 'Leche']
+  image: 'images/jugo7.png',
+  sizes: [
+    {
+      id: 'j7-agua',
+      label: 'En agua',
+      price: 6000,
+      image: 'images/jugo7.png'
+    },
+    {
+      id: 'j7-leche',
+      label: 'En leche',
+      price: 7000,
+      image: 'images/jugo7.png'
+    }
+  ]
 },
 {
   id: 'j8',
-  category: 'jugos',
+  category: 'Jugos',
   title: 'Jugo de Piña',
   price: 6000,
-  desc: 'Jugo tropical de piña en agua, dulce, ácido y muy refrescante.',
-  image: 'images/jugo8.png',
+  desc: 'Jugo tropical de piña, dulce, ácido y muy refrescante.',
   ingredients: ['Piña', 'Azúcar', 'Hielo'],
-  base: ['Agua', 'Leche']
+  image: 'images/jugo8.png',
+  sizes: [
+    {
+      id: 'j8-agua',
+      label: 'En agua',
+      price: 6000,
+      image: 'images/jugo8.png'
+    },
+    {
+      id: 'j8-leche',
+      label: 'En leche',
+      price: 7000,
+      image: 'images/jugo8.png'
+    }
+  ]
 },
 // {
 //   id: 'g1',
@@ -1203,12 +1307,17 @@ function renderProducts(cat) {
 // ---------- MINI MODAL CLEAN ----------
 // ---------- FUNCION CORREGIDA: openProductModal ----------
 function openProductModal(id, cartIndex = null) {
+
   const p = products.find(x => x.id === id);
   if (!p) return;
+
+  // ======== NUEVO: tamaño seleccionado (primer tamaño por defecto) ========
+  let selectedSize = p.sizes ? p.sizes[0] : { id: p.id, price: p.price, image: p.image, label: '' };
 
   // === CREAR OVERLAY ===
   const overlay = document.createElement("div");
   overlay.className = "product-overlay";
+  
   overlay.innerHTML = `
     <div class="product-sheet">
       <div class="modal-header">
@@ -1217,35 +1326,42 @@ function openProductModal(id, cartIndex = null) {
 
       <div class="modal-body">
         <div class="image-wrap">
-          <img src="${p.image}" alt="${p.title}">
+          <img id="product-img" src="${selectedSize.image}" alt="${p.title}">
         </div>
 
         <div class="info">
           <h2>${p.title}</h2>
           <p>${p.desc}</p>
 
-          ${
-            p.extras?.length
-              ? `<h3>Adiciones</h3>
-              <div class="extras-list">
-                ${p.extras
-                  .map(
-                    (e, i) => `
-                      <label>
-                        <input type="checkbox" data-name="${e.name}" data-price="${e.price}">
-                        <span>${e.name}</span>
-                        <span class="extra-controls" data-index="${i}">
-                          <button class="minus-extra">−</button>
-                          <span class="extra-qty">0</span>
-                          <button class="plus-extra">+</button>
-                        </span>
-                        <small>+$${numberWithCommas(e.price)}</small>
-                      </label>
-                    `
-                  )
-                  .join("")}
-              </div>` : ""
-          }
+          ${p.sizes ? `
+            <h3>Variedad</h3>
+            <div class="size-selector">
+              ${p.sizes.map(s => `
+                <label class="size-option">
+                  <input type="radio" name="size" value="${s.id}" ${s.id === selectedSize.id ? "checked" : ""}>
+                  ${s.label} — $${numberWithCommas(s.price)}
+                </label>
+              `).join("")}
+            </div>
+          ` : ""}
+
+          ${ p.extras?.length ? `
+            <h3>Adiciones</h3>
+            <div class="extras-list">
+              ${p.extras.map((e, i) => `
+                <label>
+                  <input type="checkbox" data-id="${e.id}" data-name="${e.name}" data-price="${e.price}">
+                  <span>${e.name}</span>
+                  <span class="extra-controls" data-index="${i}">
+                    <button class="minus-extra">−</button>
+                    <span class="extra-qty">0</span>
+                    <button class="plus-extra">+</button>
+                  </span>
+                  <small>+$${numberWithCommas(e.price)}</small>
+                </label>
+              `).join("")}
+            </div>
+          ` : "" }
 
           <div class="quantity">
             <button class="minus">−</button>
@@ -1254,89 +1370,135 @@ function openProductModal(id, cartIndex = null) {
           </div>
 
           <button class="add-btn">
-            ${cartIndex !== null ? 'Actualizar' : 'Agregar'} <span class="price">$${numberWithCommas(p.price)}</span>
+            ${cartIndex !== null ? 'Actualizar' : 'Agregar'} 
+            <span class="price">$${numberWithCommas(selectedSize.price)}</span>
           </button>
         </div>
       </div>
     </div>
   `;
+
   document.body.appendChild(overlay);
 
-  // === CIERRE DEL MODAL ===
-  const closeBtn = overlay.querySelector(".close");
-  closeBtn.addEventListener("click", () => overlay.remove());
-  overlay.addEventListener("click", e => {
-    if (e.target === overlay) overlay.remove();
-  });
+  // ---- Cierre ----
+  overlay.querySelector(".close").addEventListener("click", () => overlay.remove());
+  overlay.addEventListener("click", e => { if (e.target === overlay) overlay.remove(); });
 
-  // === VARIABLES ===
+  // ===== VARIABLES =====
   let qty = 1;
   const qtyEl = overlay.querySelector(".qty");
   const priceEl = overlay.querySelector(".price");
   const extrasQty = Array(p.extras?.length || 0).fill(0);
   const extrasInputs = overlay.querySelectorAll(".extras-list input");
 
-  // --- SI ES EDICIÓN, CARGAR VALORES EXISTENTES ---
+  // ===== SI ES EDICIÓN =====
   if (cartIndex !== null) {
     const item = cart[cartIndex];
+
+    // Encontrar el tamaño usado
+    if (p.sizes) {
+      selectedSize = p.sizes.find(s => s.id === item.sizeId) || p.sizes[0];
+      overlay.querySelector("#product-img").src = selectedSize.image;
+      overlay.querySelector(`input[value="${selectedSize.id}"]`).checked = true;
+    }
+
     qty = item.qty;
     qtyEl.textContent = qty;
+
     if (item.extras?.length) {
       item.extras.forEach(e => {
-        const index = p.extras.findIndex(pe => pe.name === e.name);
-        if (index > -1) extrasQty[index] = e.qty;
+        const idx = p.extras.findIndex(pe => pe.name === e.name);
+        if (idx >= 0) extrasQty[idx] = e.qty;
       });
     }
+
     extrasInputs.forEach((input, i) => {
       input.checked = extrasQty[i] > 0;
-      const qtyDisplay = input.closest('label').querySelector('.extra-qty');
-      qtyDisplay.textContent = extrasQty[i];
+      input.closest("label").querySelector(".extra-qty").textContent = extrasQty[i];
     });
-    updatePrice();
   }
 
-  // === ACTUALIZAR PRECIO ===
+  // ===== UPDATE PRICE =====
   function updatePrice() {
-    const extrasTotal = (p.extras || []).reduce((sum, e, i) => sum + e.price * extrasQty[i], 0);
-    const total = (p.price + extrasTotal) * qty;
+    const extrasTotal = (p.extras || [])
+      .reduce((sum, e, i) => sum + e.price * extrasQty[i], 0);
+
+    const total = (selectedSize.price + extrasTotal) * qty;
     priceEl.textContent = `$${numberWithCommas(total)}`;
   }
 
-  // === BOTONES DE CANTIDAD PRINCIPAL ===
+  updatePrice();
+
+  // ===== CAMBIAR TAMAÑO DINÁMICAMENTE =====
+  overlay.querySelectorAll("input[name='size']").forEach(radio => {
+    radio.addEventListener("change", e => {
+      const sizeId = e.target.value;
+      selectedSize = p.sizes.find(s => s.id === sizeId);
+
+      overlay.querySelector("#product-img").src = selectedSize.image;
+
+      updatePrice();
+    });
+  });
+
+  // ===== CANTIDAD =====
   overlay.querySelector(".plus").addEventListener("click", () => { qty++; qtyEl.textContent = qty; updatePrice(); });
-  overlay.querySelector(".minus").addEventListener("click", () => { if(qty>1){qty--;qtyEl.textContent=qty;updatePrice();} });
+  overlay.querySelector(".minus").addEventListener("click", () => { if (qty > 1) qty--; qtyEl.textContent = qty; updatePrice(); });
 
-  // === BOTONES DE CADA EXTRA ===
+  // ===== ADICIONES =====
   overlay.querySelectorAll(".plus-extra").forEach(btn => {
-    const index = Number(btn.parentElement.dataset.index);
+    const i = parseInt(btn.parentElement.dataset.index);
     const qtyDisplay = btn.parentElement.querySelector(".extra-qty");
-    btn.addEventListener("click", () => { extrasQty[index]++; qtyDisplay.textContent=extrasQty[index]; extrasInputs[index].checked=extrasQty[index]>0; updatePrice(); });
+
+    btn.addEventListener("click", () => {
+      extrasQty[i]++;
+      qtyDisplay.textContent = extrasQty[i];
+      extrasInputs[i].checked = true;
+      updatePrice();
+    });
   });
+
   overlay.querySelectorAll(".minus-extra").forEach(btn => {
-    const index = Number(btn.parentElement.dataset.index);
+    const i = parseInt(btn.parentElement.dataset.index);
     const qtyDisplay = btn.parentElement.querySelector(".extra-qty");
-    btn.addEventListener("click", () => { if(extrasQty[index]>0){ extrasQty[index]--; qtyDisplay.textContent=extrasQty[index]; extrasInputs[index].checked=extrasQty[index]>0; updatePrice(); } });
+
+    btn.addEventListener("click", () => {
+      if (extrasQty[i] > 0) {
+        extrasQty[i]--;
+        qtyDisplay.textContent = extrasQty[i];
+        extrasInputs[i].checked = extrasQty[i] > 0;
+        updatePrice();
+      }
+    });
   });
 
-  // === AGREGAR O ACTUALIZAR EN EL CARRITO ===
+  // ===== AGREGAR AL CARRITO =====
   overlay.querySelector(".add-btn").addEventListener("click", () => {
-    const extras = (p.extras || []).map((e, i) => ({ name: e.name, price: e.price, qty: extrasQty[i] })).filter(e => e.qty > 0);
-    const extrasSum = extras.reduce((a, e) => a + e.price * e.qty, 0);
-    const finalUnitPrice = p.price + extrasSum;
+    const extras = (p.extras || [])
+      .map((e, i) => ({ name: e.name, price: e.price, qty: extrasQty[i] }))
+      .filter(e => e.qty > 0);
 
-    const item = { productId: p.id, title: p.title, price: finalUnitPrice, qty, image: p.image, extras };
+    const item = {
+      productId: p.id,
+      sizeId: selectedSize.id,
+      title: `${p.title} (${selectedSize.label})`,
+      price: selectedSize.price,
+      qty,
+      image: selectedSize.image,
+      extras
+    };
 
     if (cartIndex !== null) {
-      cart[cartIndex] = item; // actualizar producto existente
+      cart[cartIndex] = item;
     } else {
-      addToCart(item); // agregar producto nuevo
+      addToCart(item);
     }
 
     persistCart();
     refreshCartUI();
     updateCartBadge();
     overlay.remove();
-    cartDrawer.classList.remove('hidden'); // mostrar carrito actualizado
+    cartDrawer.classList.remove("hidden");
   });
 }
 
@@ -1879,6 +2041,7 @@ document.addEventListener("click", (e) => {
 
 
 // ============Fin de codigo de Descarga QR=================
+
 
 
 
