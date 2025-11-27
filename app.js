@@ -864,7 +864,7 @@ const products = [
       image: 'images/jugo8.png'
     }
   ]
-},
+}
 // {
 //   id: 'g1',
 //   category: 'gaseosas',
@@ -1065,8 +1065,8 @@ const products = [
   image: 'images/malteada8.png',
   ingredients: ['Leche', 'Mango', 'Helado de vainilla']
 }*/
-  ,
-
+  
+,
 //PAPAS
   { 
     id: 'pap1',
@@ -2041,6 +2041,7 @@ document.addEventListener("click", (e) => {
 
 
 // ============Fin de codigo de Descarga QR=================
+
 
 
 
