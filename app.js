@@ -865,78 +865,7 @@ const products = [
     }
   ]
 },
-// {
-//   id: 'g1',
-//   category: 'gaseosas',
-//   title: 'Coca-Cola 400ml',
-//   price: 5000,
-//   desc: 'Refrescante Coca-Cola en botella de 400 mililitros.',
-//   image: 'images/gaseosa1.png',
-//   ingredients: ['Coca-Cola 400ml']
-// },
-// {
-//   id: 'g2',
-//   category: 'gaseosas',
-//   title: 'Coca-Cola 1.5L',
-//   price: 9000,
-//   desc: 'Botella familiar de Coca-Cola de 1.5 litros.',
-//   image: 'images/gaseosa2.png',
-//   ingredients: ['Coca-Cola 1.5L']
-// },
-// {
-//   id: 'g3',
-//   category: 'gaseosas',
-//   title: 'Pepsi 400ml',
-//   price: 5000,
-//   desc: 'Refrescante Pepsi individual de 400 mililitros.',
-//   image: 'images/gaseosa3.png',
-//   ingredients: ['Pepsi 400ml']
-// },
-// {
-//   id: 'g4',
-//   category: 'gaseosas',
-//   title: 'Pepsi 1.5L',
-//   price: 9000,
-//   desc: 'Botella grande de Pepsi para compartir.',
-//   image: 'images/gaseosa4.png',
-//   ingredients: ['Pepsi 1.5L']
-// },
-// {
-//   id: 'g5',
-//   category: 'gaseosas',
-//   title: 'Manzana Postobón 400ml',
-//   price: 5000,
-//   desc: 'Deliciosa Manzana Postobón en presentación de 400 mililitros.',
-//   image: 'images/gaseosa5.png',
-//   ingredients: ['Manzana Postobón 400ml']
-// },
-// {
-//   id: 'g6',
-//   category: 'gaseosas',
-//   title: 'Manzana Postobón 1.5L',
-//   price: 9000,
-//   desc: 'Manzana Postobón familiar de 1.5 litros.',
-//   image: 'images/gaseosa6.png',
-//   ingredients: ['Manzana Postobón 1.5L']
-// },
-// {
-//   id: 'g7',
-//   category: 'gaseosas',
-//   title: 'Sprite 400ml',
-//   price: 5000,
-//   desc: 'Refrescante Sprite con su sabor cítrico único.',
-//   image: 'images/gaseosa7.png',
-//   ingredients: ['Sprite 400ml']
-// },
-// {
-//   id: 'g8',
-//   category: 'gaseosas',
-//   title: 'Colombiana 400ml',
-//   price: 5000,
-//   desc: 'Tradicional Colombiana en presentación individual.',
-//   image: 'images/gaseosa8.png',
-//   ingredients: ['Colombiana 400ml']
-// },
+
 // === LIMONADAS ===
 {
   id: 'l1',
@@ -1002,71 +931,7 @@ const products = [
   image: 'images/malteada1.png',
   ingredients: ['Leche', 'Helado de vainilla', 'Crema batida']
 },
-/*{
-  id: 'm2',
-  category: 'malteadas',
-  title: 'Malteada de Chocolate',
-  price: 12000,
-  desc: 'Deliciosa malteada de chocolate con trozos de cacao.',
-  image: 'images/malteada2.png',
-  ingredients: ['Leche', 'Helado de chocolate', 'Cacao']
-},
-{
-  id: 'm3',
-  category: 'malteadas',
-  title: 'Malteada de Fresa',
-  price: 12000,
-  desc: 'Malteada de fresa natural con crema batida.',
-  image: 'images/malteada3.png',
-  ingredients: ['Leche', 'Fresas naturales', 'Helado de fresa']
-},
-{
-  id: 'm4',
-  category: 'malteadas',
-  title: 'Malteada de Oreo',
-  price: 13000,
-  desc: 'Cremosa malteada de vainilla con galletas Oreo trituradas.',
-  image: 'images/malteada4.png',
-  ingredients: ['Leche', 'Helado de vainilla', 'Galletas Oreo']
-},
-{
-  id: 'm5',
-  category: 'malteadas',
-  title: 'Malteada de Arequipe',
-  price: 13000,
-  desc: 'Malteada con helado de vainilla y arequipe artesanal.',
-  image: 'images/malteada5.png',
-  ingredients: ['Leche', 'Helado de vainilla', 'Arequipe']
-},
-{
-  id: 'm6',
-  category: 'malteadas',
-  title: 'Malteada de Café',
-  price: 13000,
-  desc: 'Refrescante malteada con sabor a café colombiano.',
-  image: 'images/malteada6.png',
-  ingredients: ['Leche', 'Helado de café', 'Café espresso']
-},
-{
-  id: 'm7',
-  category: 'malteadas',
-  title: 'Malteada de Brownie',
-  price: 14000,
-  desc: 'Helado de chocolate con trozos de brownie y crema.',
-  image: 'images/malteada7.png',
-  ingredients: ['Leche', 'Helado de chocolate', 'Brownie']
-},
-{
-  id: 'm8',
-  category: 'malteadas',
-  title: 'Malteada de Mango',
-  price: 12000,
-  desc: 'Malteada tropical con mango natural y helado de vainilla.',
-  image: 'images/malteada8.png',
-  ingredients: ['Leche', 'Mango', 'Helado de vainilla']
-}*/
-  
-,
+
 //PAPAS
 { 
     id: 'pap1',
@@ -1127,77 +992,8 @@ const products = [
     image: 'images/pap6.png',
     ingredients:['Salsa','Queso'],
     extras:[{name:'Pollo',price:2000}]
-  },
-  /*{ 
-    id: 'bebi1',
-    category: 'gaseosas',
-    title: 'Fanta Naranja 330ml',
-    price: 4500,
-    desc:'Refresco',
-    image: 'images/beb1.png',
-    ingredients:[],
-    extras:[]
-  },
-  { 
-    id: 'bebi2',
-    category: 'gaseosas',
-    title: 'Coca Cola 1.5L',
-    price: 7500,
-    desc:'Refresco',
-    image: 'images/beb2.png',
-    ingredients:[],
-    extras:[]
-  },
-  { 
-    id: 'bebi3',
-    category: 'gaseosas',
-    title: 'Fanta Lata',
-    price: 3500,
-    desc:'Refresco',
-    image: 'images/beb3.png',
-    ingredients:[],
-    extras:[]
-  },
-  { 
-    id: 'bebi4',
-    category: 'gaseosas',
-    title: 'Pepsi Lata',
-    price: 5500,
-    desc:'Refresco',
-    image: 'images/beb4.png',
-    ingredients:[],
-    extras:[]
-  },
-  { 
-    id: 'bebi5',
-    category: 'gaseosas',
-    title: 'Monster Lata',
-    price: 7500,
-    desc:'Refresco',
-    image: 'images/beb5.png',
-    ingredients:[],
-    extras:[]
-  },
-  { 
-    id: 'bebi6',
-    category: 'gaseosas',
-    title: 'Schweppes Lata',
-    price: 5500,
-    desc:'Refresco',
-    image: 'images/beb6.png',
-    ingredients:[],
-    extras:[]
-  },
-  { 
-    id: 'o1',
-    category: 'otros',
-    title: 'Nuggets + Papas',
-    price: 25000,
-    desc:'Con salsa especial',
-    image: 'images/otros1.png',
-    ingredients:['Salsa'],
-    extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
-  }*/
+  }
+ 
 ];
 
 const categories = [...new Set(products.map(p=>p.category))];
@@ -2041,6 +1837,7 @@ document.addEventListener("click", (e) => {
 
 
 // ============Fin de codigo de Descarga QR=================
+
 
 
 
