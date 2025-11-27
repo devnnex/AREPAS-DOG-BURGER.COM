@@ -2,7 +2,7 @@
 
 // ---------- Config ----------
 const BUSINESS_PHONE = '573115990064'; // <- reemplaza por el número real (sin '+')
-const DELIVERY_FEE = 5000; // tarifa por defecto de domicilio
+const DELIVERY_FEE = 0; // tarifa por defecto de domicilio
 
 // ---------- Datos de ejemplo ----------
 // ---------- Datos de ejemplo ----------
@@ -1878,3 +1878,4 @@ document.addEventListener("click", (e) => {
 
 
 // ============Fin de codigo de Descarga QR=================
+
