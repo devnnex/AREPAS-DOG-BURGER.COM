@@ -864,7 +864,7 @@ const products = [
       image: 'images/jugo8.png'
     }
   ]
-}
+},
 // {
 //   id: 'g1',
 //   category: 'gaseosas',
@@ -1068,7 +1068,7 @@ const products = [
   
 ,
 //PAPAS
-  { 
+{ 
     id: 'pap1',
     category: 'papas',
     title: 'Papas Locas',
@@ -2041,7 +2041,6 @@ document.addEventListener("click", (e) => {
 
 
 // ============Fin de codigo de Descarga QR=================
-
 
 
 
