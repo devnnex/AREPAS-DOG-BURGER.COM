@@ -685,8 +685,8 @@ const products = [
   id: 'j1',
   category: 'jugos',
   title: 'Jugo de Mango',
-  price: 7000,
-  desc: 'Refrescante jugo natural de mango preparado al momento.',
+  price: 6000,
+  desc: 'Refrescante jugo natural de mango en agua preparado al momento.',
   image: 'images/jugo1.png',
   ingredients: ['Mango fresco', 'Azúcar', 'Hielo'],
   base: ['Agua', 'Leche']
@@ -695,8 +695,8 @@ const products = [
   id: 'j2',
   category: 'jugos',
   title: 'Jugo de Fresa',
-  price: 7000,
-  desc: 'Jugo natural de fresa con un sabor dulce y fresco.',
+  price: 6000,
+  desc: 'Jugo natural de fresa en agua con un sabor dulce y fresco.',
   image: 'images/jugo2.png',
   ingredients: ['Fresas', 'Azúcar', 'Hielo'],
   base: ['Agua', 'Leche']
@@ -705,8 +705,8 @@ const products = [
   id: 'j3',
   category: 'jugos',
   title: 'Jugo de Mora',
-  price: 7000,
-  desc: 'Jugo artesanal de mora, lleno de sabor y color natural.',
+  price: 6000,
+  desc: 'Jugo artesanal de mora en agua, lleno de sabor y color natural.',
   image: 'images/jugo3.png',
   ingredients: ['Mora fresca', 'Azúcar', 'Hielo'],
   base: ['Agua', 'Leche']
@@ -715,8 +715,8 @@ const products = [
   id: 'j4',
   category: 'jugos',
   title: 'Jugo de Maracuyá',
-  price: 7000,
-  desc: 'Delicioso jugo de maracuyá con su característico toque ácido.',
+  price: 6000,
+  desc: 'Delicioso jugo de maracuyá en agua con su característico toque ácido.',
   image: 'images/jugo4.png',
   ingredients: ['Maracuyá', 'Azúcar', 'Hielo'],
   base: ['Agua', 'Leche']
@@ -725,8 +725,8 @@ const products = [
   id: 'j5',
   category: 'jugos',
   title: 'Jugo de Lulo',
-  price: 7000,
-  desc: 'Tradicional jugo de lulo colombiano, ácido y refrescante.',
+  price: 6000,
+  desc: 'Tradicional jugo de lulo colombiano en agua, ácido y refrescante en agua.',
   image: 'images/jugo5.png',
   ingredients: ['Lulo', 'Azúcar', 'Hielo'],
   base: ['Agua', 'Leche']
@@ -735,8 +735,8 @@ const products = [
   id: 'j6',
   category: 'jugos',
   title: 'Jugo de Papaya',
-  price: 7000,
-  desc: 'Suave jugo natural de papaya, ideal para acompañar tus comidas.',
+  price: 6000,
+  desc: 'Suave jugo natural de papaya en agua, ideal para acompañar tus comidas.',
   image: 'images/jugo6.png',
   ingredients: ['Papaya', 'Azúcar', 'Hielo'],
   base: ['Agua', 'Leche']
@@ -745,8 +745,8 @@ const products = [
   id: 'j7',
   category: 'jugos',
   title: 'Jugo de Sandía',
-  price: 7000,
-  desc: 'Refrescante jugo de sandía, perfecto para los días calurosos.',
+  price: 6000,
+  desc: 'Refrescante jugo de sandía en agua, perfecto para los días calurosos.',
   image: 'images/jugo7.png',
   ingredients: ['Sandía', 'Azúcar', 'Hielo'],
   base: ['Agua', 'Leche']
@@ -755,8 +755,8 @@ const products = [
   id: 'j8',
   category: 'jugos',
   title: 'Jugo de Piña',
-  price: 7000,
-  desc: 'Jugo tropical de piña, dulce, ácido y muy refrescante.',
+  price: 6000,
+  desc: 'Jugo tropical de piña en agua, dulce, ácido y muy refrescante.',
   image: 'images/jugo8.png',
   ingredients: ['Piña', 'Azúcar', 'Hielo'],
   base: ['Agua', 'Leche']
@@ -888,17 +888,17 @@ const products = [
   image: 'images/limonada6.png',
   ingredients: ['Soda', 'Limón', 'Azúcar', 'Hielo granizado']
 },
-
+//MALTEADAS
 {
   id: 'm1',
   category: 'malteadas',
-  title: 'Malteada de Vainilla',
+  title: 'Malteadas',
   price: 12000,
-  desc: 'Cremosa malteada de vainilla con helado premium.',
+  desc: 'Cremosas malteadas! Pregunta por nuestros Sabores disponibles.',
   image: 'images/malteada1.png',
   ingredients: ['Leche', 'Helado de vainilla', 'Crema batida']
 },
-{
+/*{
   id: 'm2',
   category: 'malteadas',
   title: 'Malteada de Chocolate',
@@ -960,9 +960,10 @@ const products = [
   desc: 'Malteada tropical con mango natural y helado de vainilla.',
   image: 'images/malteada8.png',
   ingredients: ['Leche', 'Mango', 'Helado de vainilla']
-},
+}*/
+  ,
 
-
+//PAPAS
   { 
     id: 'pap1',
     category: 'papas',
@@ -1878,6 +1879,7 @@ document.addEventListener("click", (e) => {
 
 
 // ============Fin de codigo de Descarga QR=================
+
 
 
 
