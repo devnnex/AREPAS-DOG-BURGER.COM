@@ -1775,8 +1775,10 @@ function refreshCartUI() {
   cart.forEach((item, idx) => {
     // --- CALCULAR PRECIO REAL DEL ITEM CON EXTRAS ---
     const extrasTotal = item.extras?.reduce((sum, e) => sum + e.price * e.qty, 0) || 0;
-    const itemUnitPrice = item.price - extrasTotal; // precio base
-    const itemTotal = (itemUnitPrice + extrasTotal) * item.qty;
+
+    // 🔥 FIX: precio del item sumando adiciones
+    const itemTotal = (item.price + extrasTotal) * item.qty;
+
     subtotal += itemTotal;
 
     const extrasText = item.extras?.length
@@ -1841,9 +1843,10 @@ function refreshCartUI() {
 
   cartSubtotalEl.textContent = `$${numberWithCommas(subtotal)}`;
   cartDeliveryEl.textContent = `$${numberWithCommas(DELIVERY_FEE)}`;
-  cartTotalEl.textContent = `$${numberWithCommas(subtotal)}`;
+  cartTotalEl.textContent = `$${numberWithCommas(subtotal + DELIVERY_FEE)}`;
   updateCartBadge();
 }
+
 
 
 
