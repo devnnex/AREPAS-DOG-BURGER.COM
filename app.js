@@ -482,62 +482,122 @@ const products = [
   id: 'sa1',
   category: 'salchipapa',
   title: 'Salchicostilla',
-  price: 29000,
   desc: 'Papas a la francesa, salchicha, carne desmechada, pollo desmechado, costilla, madurito, tocineta, guacamole, queso y maicitos.',
   image: 'images/salchipapa.png',
+  sizes: [
+    { id: 'sa1-n', label: 'Normal', price: 29000, image: 'images/salchipapa.png' },
+    { id: 'sa1-f', label: 'Familiar', price: 57000, image: 'images/salchipapa.png' }
+  ],
   ingredients: ['Papas a la francesa', 'Salchicha', 'Carne desmechada', 'Pollo desmechado', 'Costilla', 'Madurito', 'Tocineta', 'Guacamole', 'Queso', 'Maicitos'],
-  extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
+  extras: [
+    { name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },
+    { name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },
+    { name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },
+    { name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },
+    { name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }
+  ]
 },
+
 { 
   id: 'sa2',
   category: 'salchipapa',
   title: 'Salchitoci',
-  price: 29000,
   desc: 'Papas a la francesa con salchicha, carne desmechada, pollo desmechado, madurito, tocineta carnuda, guacamole, picadillo, queso y maicitos.',
   image: 'images/salchipapa2.png',
+  sizes: [
+    { id: 'sa2-n', label: 'Normal', price: 29000, image: 'images/salchipapa2.png' },
+    { id: 'sa2-f', label: 'Familiar', price: 57000, image: 'images/salchipapa2.png' }
+  ],
   ingredients: ['Papas a la francesa', 'Salchicha', 'Carne desmechada', 'Pollo desmechado', 'Madurito', 'Tocineta carnuda', 'Guacamole', 'Picadillo', 'Queso', 'Maicitos'],
-  extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
+  extras: [
+    { name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },
+    { name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },
+    { name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },
+    { name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },
+    { name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }
+  ]
 },
+
 { 
   id: 'sa3',
   category: 'salchipapa',
   title: 'Salchiranchera',
-  price: 27000,
   desc: 'Papas con carne, salchicha ranchera, pollo desmechado, suiza, madurito, tocineta, guacamole y maicitos.',
   image: 'images/salchiranchera.png',
+  sizes: [
+    { id: 'sa3-n', label: 'Normal', price: 27000, image: 'images/salchiranchera.png' },
+    { id: 'sa3-f', label: 'Familiar', price: 56000, image: 'images/salchiranchera.png' }
+  ],
   ingredients: ['Papas a la francesa', 'Carne', 'Salchicha ranchera', 'Pollo desmechado', 'Suiza', 'Madurito', 'Tocineta', 'Guacamole', 'Maicitos'],
- extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
+  extras: [
+    { name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },
+    { name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },
+    { name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },
+    { name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },
+    { name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }
+  ]
 },
+
 { 
   id: 'sa4',
   category: 'salchipapa',
   title: 'Salchiquesuda',
-  price: 26000,
   desc: 'Papas a la francesa con carne desmechada, pollo desmechado, madurito, tocineta y cubierta de queso gratinado.',
   image: 'images/salchipapa4.png',
+  sizes: [
+    { id: 'sa4-n', label: 'Normal', price: 26000, image: 'images/salchipapa4.png' },
+    { id: 'sa4-f', label: 'Familiar', price: 54000, image: 'images/salchipapa4.png' }
+  ],
   ingredients: ['Papas a la francesa', 'Carne desmechada', 'Pollo desmechado', 'Madurito', 'Tocineta', 'Queso gratinado'],
-  extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
+  extras: [
+    { name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },
+    { name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },
+    { name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },
+    { name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },
+    { name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }
+  ]
 },
+
 { 
   id: 'sa5',
   category: 'salchipapa',
   title: 'Salchipaisa',
-  price: 25000,
   desc: 'Papas con salchicha, carne, salchicha suiza, pollo, huevo de codorniz, madurito, tocineta, guacamole y maicitos.',
   image: 'images/Salchipaisa.png',
+  sizes: [
+    { id: 'sa5-n', label: 'Normal', price: 25000, image: 'images/Salchipaisa.png' },
+    { id: 'sa5-f', label: 'Familiar', price: 52000, image: 'images/Salchipaisa.png' }
+  ],
   ingredients: ['Papas a la francesa', 'Salchicha', 'Carne', 'Suiza', 'Pollo', 'Huevo de codorniz', 'Madurito', 'Tocineta', 'Guacamole', 'Maicitos'],
-  extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
+  extras: [
+    { name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },
+    { name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },
+    { name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },
+    { name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },
+    { name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }
+  ]
 },
+
 { 
   id: 'sa6',
   category: 'salchipapa',
   title: 'Salchimixta',
-  price: 23000,
   desc: 'Papas a la francesa con salchicha, carne desmechada, pollo desmechado, huevo de codorniz, madurito, tocineta y guacamole.',
   image: 'images/salchipapa6.png',
+  sizes: [
+    { id: 'sa6-n', label: 'Normal', price: 23000, image: 'images/salchipapa6.png' },
+    { id: 'sa6-f', label: 'Familiar', price: 50000, image: 'images/salchipapa6.png' }
+  ],
   ingredients: ['Papas a la francesa', 'Salchicha', 'Carne desmechada', 'Pollo desmechado', 'Huevo de codorniz', 'Madurito', 'Tocineta', 'Guacamole'],
-  extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
+  extras: [
+    { name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },
+    { name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },
+    { name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },
+    { name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },
+    { name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }
+  ]
 },
+
 { 
   id: 'sa7',
   category: 'salchipapa',
@@ -548,16 +608,7 @@ const products = [
   ingredients: ['Papas a la francesa', 'Salchicha', 'Queso gratinado', 'Huevo de codorniz'],
   extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
-{ 
-  id: 'sa8',
-  category: 'salchipapa',
-  title: 'Salchipapa Familiar',
-  price: 57000,
-  desc: 'Porción grande para compartir con pollo, carne, salchicha, madurito, tocineta, queso, guacamole y maicitos.',
-  image: 'images/salchipapa8.png',
-  ingredients: ['Papas a la francesa', 'Pollo', 'Carne', 'Salchicha', 'Madurito', 'Tocineta', 'Queso', 'Guacamole', 'Maicitos'],
-  extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
-},
+
 // === AREPAS ===
 { 
   id: 'a1',
