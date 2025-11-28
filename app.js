@@ -1067,76 +1067,132 @@ const products = [
 }
 ,
 // === GASEOSAS ===
-{
+{ //contiene sizes
   id: 'g1',
   category: 'gaseosas',
   title: 'Postobon',
   price: 5000,
-  desc: 'Refrescante Postobón sabor tradicional, disponible en presentaciones personales y familiares.',
-  image: 'images/gaseosa1.png',
-  ingredients: ['Postobón 400ml']
+  desc: 'Refrescante Postobón sabor tradicional, disponible en presentacion personal y familiar. Pregunta nuestros sabores disponibles',
+  image: 'images/postobon.png',
+  ingredients: ['Postobón 400ml'],
+   sizes: [
+    {
+      id: 'gaseperso1',
+      label: 'personal',
+      price: 5000,
+      image: 'images/postobon.png'
+    },
+    {
+      id: 'gasefami1',
+      label: 'familiar',
+      price: 8000,
+      image: 'images/postobon.png'
+    }
+  ]
 },
 {
   id: 'g2',
   category: 'gaseosas',
   title: 'Sprite',
-  price: 9000,
-  desc: 'Clásica Sprite con su sabor cítrico único, disponible en presentaciones personales y familiares.',
-  image: 'images/gaseosa2.png',
+  price: 5000,
+  desc: 'Clásica Sprite con su sabor cítrico único, disponible en presentacion personal.',
+  image: 'images/sprite.png',
   ingredients: ['Sprite 1.5L']
 },
-{
+{//contiene sizes
   id: 'g3',
   category: 'gaseosas',
   title: 'Quatro',
   price: 5000,
-  desc: 'Refrescante Quatro con su toque cítrico natural, disponible en presentaciones personales y familiares.',
-  image: 'images/gaseosa3.png',
-  ingredients: ['Quatro 400ml']
+  desc: 'Refrescante Quatro con su toque cítrico natural, disponible en presentacion personal y familiar.',
+  image: 'images/quatro.png',
+  ingredients: ['Quatro 400ml'],
+  sizes: [
+    {
+      id: 'gaseperso3',
+      label: 'personal',
+      price: 5000,
+      image: 'images/quatro.png'
+    },
+    {
+      id: 'gasefami3',
+      label: 'familiar',
+      price: 8000,
+      image: 'images/quatro.png'
+    }
+  ]
 },
-{
+{ //contiene sizes
   id: 'g4',
   category: 'gaseosas',
   title: 'Coca-Cola',
-  price: 9000,
-  desc: 'Tradicional Coca-Cola para acompañar cualquier comida, disponible en presentaciones personales y familiares.',
-  image: 'images/gaseosa4.png',
-  ingredients: ['Coca-Cola 1.5L']
+  price: 5000,
+  desc: 'Tradicional Coca-Cola para acompañar cualquier comida, disponible en presentacion personal y familiar.',
+  image: 'images/cocaCola.png',
+  ingredients: ['Coca-Cola 1.5L'],
+    sizes: [
+    {
+      id: 'gaseperso4',
+      label: 'personal',
+      price: 5000,
+      image: 'images/cocaCola.png'
+    },
+    {
+      id: 'gasefami4',
+      label: 'familiar',
+      price: 8000,
+      image: 'images/cocaCola.png'
+    }
+  ]
 },
 {
   id: 'g5',
   category: 'gaseosas',
   title: 'Bretaña',
   price: 5000,
-  desc: 'Clásica Bretaña, refrescante y equilibrada, disponible en presentaciones personales y familiares.',
-  image: 'images/gaseosa5.png',
+  desc: 'Clásica Bretaña, refrescante y equilibrada, disponible en presentacion personal.',
+  image: 'images/bretana.png',
   ingredients: ['Bretaña 400ml']
 },
 {
   id: 'g6',
   category: 'gaseosas',
   title: 'H2O',
-  price: 9000,
-  desc: 'Deliciosa H2O saborizada, perfecta para refrescarte, disponible en presentaciones personales y familiares.',
-  image: 'images/gaseosa6.png',
+  price: 5000,
+  desc: 'Deliciosa H2O saborizada, perfecta para refrescarte, disponible en presentaciones personal',
+  image: 'images/H2O.png',
   ingredients: ['H2O 1.5L']
 },
-{
+{//contiene sizes
   id: 'g7',
   category: 'gaseosas',
   title: 'Hit',
   price: 5000,
-  desc: 'Dulce y refrescante jugo Hit, disponible en presentaciones personales y familiares.',
-  image: 'images/gaseosa7.png',
-  ingredients: ['Hit 400ml']
+  desc: 'Dulce y refrescante jugo Hit, disponible en presentacion personal y familiar. Pregunta nuestros sabores disponibles',
+  image: 'images/hit.png',
+  ingredients: ['Hit 400ml'],
+      sizes: [
+    {
+      id: 'hitperso7',
+      label: 'personal',
+      price: 5000,
+      image: 'images/hit.png'
+    },
+    {
+      id: 'hitfami7',
+      label: 'familiar',
+      price: 8000,
+      image: 'images/hit.png'
+    }
+  ]
 },
 {
   id: 'g8',
   category: 'gaseosas',
   title: 'Premio',
   price: 5000,
-  desc: 'Refrescante gaseosa Premio, disponible en presentaciones personales y familiares.',
-  image: 'images/gaseosa8.png',
+  desc: 'Refrescante gaseosa Premio, disponible en presentacion personal.',
+  image: 'images/premio.png',
   ingredients: ['Premio 400ml']
 },
 
