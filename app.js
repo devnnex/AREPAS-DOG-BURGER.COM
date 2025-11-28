@@ -608,21 +608,32 @@ const products = [
   ingredients: ['Papas a la francesa', 'Salchicha', 'Queso gratinado', 'Huevo de codorniz'],
   extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
+// === DORILOCOS ===
+{
+  id: 'd1',
+  category: 'dorilocos',
+  title: 'Dorilocos',
+  price: 15000,
+  desc: 'Pollo desmechado, carne desmechada, queso, tocineta, maicitos, picadillo de cebolla y tomate, guacamole.',
+  image: 'images/dorilocos1.png',
+  ingredients: ['Pollo desmechado', 'Carne desmechada', 'Queso', 'Tocineta', 'Maicitos', 'Cebolla', 'Tomate', 'Guacamole'],
+  extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
+},
 
 // === AREPAS ===
 { 
   id: 'a1',
   category: 'arepas',
   title: 'Doble Carne Dog',
-  price: 17000,
-  desc: 'Arepa con tocineta, pollo desmechado, dos carnes, ensalada, ripio de papas, salsas y queso gratinado.',
+  price: 17500,
+  desc: 'Arepa con tocineta, pollo desmechado, dos carnes, ensalada, ripio de papas, salsas, tomate y queso gratinado.',
   image: 'images/arepa1.png',
   ingredients: ['Arepa asada', 'Tocineta', 'Pollo desmechado', '2 Carnes', 'Ensalada', 'Ripio de papas', 'Salsas', 'Queso gratinado'],
   extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
 { 
   id: 'a2',
-  category: 'arepas',
+  category: 'arepas', 
   title: 'Quesuda Dog',
   price: 17000,
   desc: 'Arepa con tocineta, carne artesanal, tomate, ensalada, ripio de papas, salsas y cubierta de queso.',
@@ -644,7 +655,7 @@ const products = [
   id: 'a4',
   category: 'arepas',
   title: 'Mixta Dog',
-  price: 15000,
+  price: 15500,
   desc: 'Arepa con tocineta, pollo desmechado, carne artesanal, ensalada, ripio de papas, salsas, queso gratinado y tomate.',
   image: 'images/arepa4.png',
   ingredients: ['Arepa asada', 'Tocineta', 'Pollo desmechado', 'Carne artesanal', 'Ensalada', 'Ripio de papas', 'Salsas', 'Queso gratinado', 'Tomate'],
@@ -654,8 +665,8 @@ const products = [
   id: 'a5',
   category: 'arepas',
   title: 'Paisa Dog',
-  price: 15000,
-  desc: 'Arepa con carne, ensalada, ripio de papas, salsas, queso gratinado, tomate y maicitos.',
+  price: 16000,
+  desc: 'Arepa con carne, ensalada, ripio de papas, salsas, queso gratinado, tomate, tocineta y maicitos.',
   image: 'images/arepa5.png',
   ingredients: ['Arepa asada', 'Carne', 'Ensalada', 'Ripio de papas', 'Salsas', 'Queso gratinado', 'Tomate', 'Maicitos'],
   extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
@@ -674,8 +685,8 @@ const products = [
   id: 'a7',
   category: 'arepas',
   title: 'Arepaburger',
-  price: 13000,
-  desc: 'Arepa con carne, ensalada, ripio de papas, salsas y queso gratinado.',
+  price: 15000,
+  desc: 'Arepa con carne, ensalada, ripio de papa, salsas y queso gratinado.',
   image: 'images/Arepaburger.png',
   ingredients: ['Arepa asada', 'Carne', 'Ensalada', 'Ripio de papas', 'Salsas', 'Queso gratinado'],
   extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
@@ -684,30 +695,21 @@ const products = [
   id: 'a8',
   category: 'arepas',
   title: 'Con Pollo Dog',
-  price: 13000,
+  price: 15000,
   desc: 'Arepa con pollo desmechado, ensalada, ripio de papas, salsas y queso gratinado.',
   image: 'images/arepa8.png',
   ingredients: ['Arepa asada', 'Pollo desmechado', 'Ensalada', 'Ripio de papas', 'Salsas', 'Queso gratinado'],
   extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
 
-{
-  id: 'd1',
-  category: 'dorilocos',
-  title: 'Dorilocos',
-  price: 15000,
-  desc: 'Pollo desmechado, carne desmechada, queso, tocineta, maicitos, picadillo de cebolla y tomate, guacamole.',
-  image: 'images/dorilocos1.png',
-  ingredients: ['Pollo desmechado', 'Carne desmechada', 'Queso', 'Tocineta', 'Maicitos', 'Cebolla', 'Tomate', 'Guacamole'],
-  extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
-},
+
 // === BURRITOS ===
 {
   id: 'b1',
   category: 'burritos',
   title: 'Pernil de Cerdo',
   price: 16000,
-  desc: 'Burrito de pernil de cerdo con queso, maicitos, picadillo de lechuga y tomate, y guacamole.',
+  desc: 'Burrito de pernil de cerdo con queso, maicitos, picadillo de lechuga, tomate y guacamole.',
   image: 'images/burrito1.png',
   ingredients: ['Tortilla', 'Pernil de cerdo', 'Queso', 'Maicitos', 'Lechuga', 'Tomate', 'Guacamole'],
   extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
@@ -717,7 +719,7 @@ const products = [
   category: 'burritos',
   title: 'Mixto',
   price: 15500,
-  desc: 'Burrito mixto con pollo desmechado, carne desmechada, queso, maicitos, lechuga, tomate y guacamole.',
+  desc: 'Burrito mixto con pollo desmechado, carne desmechada, queso, maicitos, picadillo de lechuga, tomate y guacamole.',
   image: 'images/burrito2.png',
   ingredients: ['Tortilla', 'Pollo desmechado', 'Carne desmechada', 'Queso', 'Maicitos', 'Lechuga', 'Tomate', 'Guacamole'],
   extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
@@ -726,8 +728,8 @@ const products = [
   id: 'b3',
   category: 'burritos',
   title: 'Pollo y Tocineta',
-  price: 14000,
-  desc: 'Burrito con pollo desmechado, tocineta, queso, maicitos, picadillo de lechuga y tomate, y guacamole.',
+  price: 14500,
+  desc: 'Burrito con pollo desmechado, tocineta, queso, maicitos, picadillo de lechuga, tomate, y guacamole.',
   image: 'images/burrito3.png',
   ingredients: ['Tortilla', 'Pollo desmechado', 'Tocineta', 'Queso', 'Maicitos', 'Lechuga', 'Tomate', 'Guacamole'],
   extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
@@ -920,7 +922,7 @@ const products = [
 // {
 //   id: 'g1',
 //   category: 'gaseosas',
-//   title: 'Coca-Cola 400ml',
+//   title: 'Postobon',
 //   price: 5000,
 //   desc: 'Refrescante Coca-Cola en botella de 400 mililitros.',
 //   image: 'images/gaseosa1.png',
@@ -929,7 +931,7 @@ const products = [
 // {
 //   id: 'g2',
 //   category: 'gaseosas',
-//   title: 'Coca-Cola 1.5L',
+//   title: 'Sprite',
 //   price: 9000,
 //   desc: 'Botella familiar de Coca-Cola de 1.5 litros.',
 //   image: 'images/gaseosa2.png',
@@ -938,7 +940,7 @@ const products = [
 // {
 //   id: 'g3',
 //   category: 'gaseosas',
-//   title: 'Pepsi 400ml',
+//   title: 'Quatro',
 //   price: 5000,
 //   desc: 'Refrescante Pepsi individual de 400 mililitros.',
 //   image: 'images/gaseosa3.png',
@@ -947,7 +949,7 @@ const products = [
 // {
 //   id: 'g4',
 //   category: 'gaseosas',
-//   title: 'Pepsi 1.5L',
+//   title: 'Coca-Cola',
 //   price: 9000,
 //   desc: 'Botella grande de Pepsi para compartir.',
 //   image: 'images/gaseosa4.png',
@@ -956,7 +958,7 @@ const products = [
 // {
 //   id: 'g5',
 //   category: 'gaseosas',
-//   title: 'Manzana Postobón 400ml',
+//   title: 'Bretaña',
 //   price: 5000,
 //   desc: 'Deliciosa Manzana Postobón en presentación de 400 mililitros.',
 //   image: 'images/gaseosa5.png',
@@ -965,7 +967,7 @@ const products = [
 // {
 //   id: 'g6',
 //   category: 'gaseosas',
-//   title: 'Manzana Postobón 1.5L',
+//   title: 'H2O',
 //   price: 9000,
 //   desc: 'Manzana Postobón familiar de 1.5 litros.',
 //   image: 'images/gaseosa6.png',
@@ -974,7 +976,7 @@ const products = [
 // {
 //   id: 'g7',
 //   category: 'gaseosas',
-//   title: 'Sprite 400ml',
+//   title: 'Hit',
 //   price: 5000,
 //   desc: 'Refrescante Sprite con su sabor cítrico único.',
 //   image: 'images/gaseosa7.png',
@@ -983,7 +985,7 @@ const products = [
 // {
 //   id: 'g8',
 //   category: 'gaseosas',
-//   title: 'Colombiana 400ml',
+//   title: 'Premio',
 //   price: 5000,
 //   desc: 'Tradicional Colombiana en presentación individual.',
 //   image: 'images/gaseosa8.png',
@@ -1044,6 +1046,80 @@ const products = [
   image: 'images/limonada6.png',
   ingredients: ['Soda', 'Limón', 'Azúcar', 'Hielo granizado']
 },
+// === GASEOSAS ===
+{
+  id: 'g1',
+  category: 'gaseosas',
+  title: 'Postobon',
+  price: 5000,
+  desc: 'Refrescante Coca-Cola en botella de 400 mililitros.',
+  image: 'images/gaseosa1.png',
+  ingredients: ['Coca-Cola 400ml']
+},
+{
+  id: 'g2',
+  category: 'gaseosas',
+  title: 'Sprite',
+  price: 9000,
+  desc: 'Botella familiar de Coca-Cola de 1.5 litros.',
+  image: 'images/gaseosa2.png',
+  ingredients: ['Coca-Cola 1.5L']
+},
+{
+  id: 'g3',
+  category: 'gaseosas',
+  title: 'Quatro',
+  price: 5000,
+  desc: 'Refrescante Pepsi individual de 400 mililitros.',
+  image: 'images/gaseosa3.png',
+  ingredients: ['Pepsi 400ml']
+},
+{
+  id: 'g4',
+  category: 'gaseosas',
+  title: 'Coca-Cola',
+  price: 9000,
+  desc: 'Botella grande de Pepsi para compartir.',
+  image: 'images/gaseosa4.png',
+  ingredients: ['Pepsi 1.5L']
+},
+{
+  id: 'g5',
+  category: 'gaseosas',
+  title: 'Bretaña',
+  price: 5000,
+  desc: 'Deliciosa Manzana Postobón en presentación de 400 mililitros.',
+  image: 'images/gaseosa5.png',
+  ingredients: ['Manzana Postobón 400ml']
+},
+{
+  id: 'g6',
+  category: 'gaseosas',
+  title: 'H2O',
+  price: 9000,
+  desc: 'Manzana Postobón familiar de 1.5 litros.',
+  image: 'images/gaseosa6.png',
+  ingredients: ['Manzana Postobón 1.5L']
+},
+{
+  id: 'g7',
+  category: 'gaseosas',
+  title: 'Hit',
+  price: 5000,
+  desc: 'Refrescante Sprite con su sabor cítrico único.',
+  image: 'images/gaseosa7.png',
+  ingredients: ['Sprite 400ml']
+},
+{
+  id: 'g8',
+  category: 'gaseosas',
+  title: 'Premio',
+  price: 5000,
+  desc: 'Tradicional Colombiana en presentación individual.',
+  image: 'images/gaseosa8.png',
+  ingredients: ['Colombiana 400ml']
+},
+
 //MALTEADAS
 {
   id: 'm1',
