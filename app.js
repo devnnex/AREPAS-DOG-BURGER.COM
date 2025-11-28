@@ -341,7 +341,7 @@ const products = [
   title: 'Chuzo Mixto',
   price: 17000,
   desc: 'Carne de res y cerdo con arepa y papas.',
-  image: 'images/carne5.png',
+  image: 'images/chuzomixto.png',
   ingredients: ['Carne de res', 'Carne de cerdo', 'Arepa', 'Papas a la francesa'],
   extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
@@ -351,7 +351,7 @@ const products = [
   title: 'Chuzo de Cerdo',
   price: 15000,
   desc: 'Chuzo de cerdo con papas a la francesa, arepa y tomate.',
-  image: 'images/carne6.png',
+  image: 'images/chuzodecerdo.png',
   ingredients: ['Cerdo', 'Papas a la francesa', 'Arepa', 'Tomate'],
   extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
@@ -482,11 +482,12 @@ const products = [
   id: 'sa1',
   category: 'salchipapa',
   title: 'Salchicostilla',
+  price: 29000,
   desc: 'Papas a la francesa, salchicha, carne desmechada, pollo desmechado, costilla, madurito, tocineta, guacamole, queso y maicitos.',
-  image: 'images/salchipapa.png',
+  image: 'images/Salchicostilla.png',
   sizes: [
-    { id: 'sa1-n', label: 'Normal', price: 29000, image: 'images/salchipapa.png' },
-    { id: 'sa1-f', label: 'Familiar', price: 57000, image: 'images/salchipapa.png' }
+    { id: 'sa1-n', label: 'Normal', price: 29000, image: 'images/Salchicostilla.png' },
+    { id: 'sa1-f', label: 'Familiar', price: 57000, image: 'images/Salchicostilla.png' }
   ],
   ingredients: ['Papas a la francesa', 'Salchicha', 'Carne desmechada', 'Pollo desmechado', 'Costilla', 'Madurito', 'Tocineta', 'Guacamole', 'Queso', 'Maicitos'],
   extras: [
@@ -502,11 +503,12 @@ const products = [
   id: 'sa2',
   category: 'salchipapa',
   title: 'Salchitoci',
+  price: 29000,
   desc: 'Papas a la francesa con salchicha, carne desmechada, pollo desmechado, madurito, tocineta carnuda, guacamole, picadillo, queso y maicitos.',
-  image: 'images/salchipapa2.png',
+  image: 'images/salchitoci.png',
   sizes: [
-    { id: 'sa2-n', label: 'Normal', price: 29000, image: 'images/salchipapa2.png' },
-    { id: 'sa2-f', label: 'Familiar', price: 57000, image: 'images/salchipapa2.png' }
+    { id: 'sa2-n', label: 'Normal', price: 29000, image: 'images/salchitoci.png' },
+    { id: 'sa2-f', label: 'Familiar', price: 57000, image: 'images/salchitoci.png' }
   ],
   ingredients: ['Papas a la francesa', 'Salchicha', 'Carne desmechada', 'Pollo desmechado', 'Madurito', 'Tocineta carnuda', 'Guacamole', 'Picadillo', 'Queso', 'Maicitos'],
   extras: [
@@ -522,6 +524,7 @@ const products = [
   id: 'sa3',
   category: 'salchipapa',
   title: 'Salchiranchera',
+  price: 27000,
   desc: 'Papas con carne, salchicha ranchera, pollo desmechado, suiza, madurito, tocineta, guacamole y maicitos.',
   image: 'images/salchiranchera.png',
   sizes: [
@@ -542,6 +545,7 @@ const products = [
   id: 'sa4',
   category: 'salchipapa',
   title: 'Salchiquesuda',
+  price: 26000,
   desc: 'Papas a la francesa con carne desmechada, pollo desmechado, madurito, tocineta y cubierta de queso gratinado.',
   image: 'images/salchipapa4.png',
   sizes: [
@@ -562,6 +566,7 @@ const products = [
   id: 'sa5',
   category: 'salchipapa',
   title: 'Salchipaisa',
+  price: 25000,
   desc: 'Papas con salchicha, carne, salchicha suiza, pollo, huevo de codorniz, madurito, tocineta, guacamole y maicitos.',
   image: 'images/Salchipaisa.png',
   sizes: [
@@ -582,6 +587,7 @@ const products = [
   id: 'sa6',
   category: 'salchipapa',
   title: 'Salchimixta',
+  price: 23000,
   desc: 'Papas a la francesa con salchicha, carne desmechada, pollo desmechado, huevo de codorniz, madurito, tocineta y guacamole.',
   image: 'images/salchipapa6.png',
   sizes: [
@@ -604,7 +610,7 @@ const products = [
   title: 'Salchipapa Dog',
   price: 16000,
   desc: 'Papas a la francesa con salchicha, queso gratinado y huevo de codorniz.',
-  image: 'images/salchipapa7.png',
+  image: 'images/salchipapa.png',
   ingredients: ['Papas a la francesa', 'Salchicha', 'Queso gratinado', 'Huevo de codorniz'],
   extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
@@ -999,7 +1005,21 @@ const products = [
   price: 9000,
   desc: 'Refrescante limonada de coco, cremosa y tropical, disponible en agua o en leche.',
   image: 'images/limonada1.png',
-  ingredients: ['Limón', 'Crema de coco', 'Agua o Leche', 'Azúcar', 'Hielo']
+  ingredients: ['Limón', 'Crema de coco', 'Agua o Leche', 'Azúcar', 'Hielo'],
+  sizes: [
+    {
+      id: 'l1-agua',
+      label: 'En agua',
+      price: 9000,
+      image: 'images/limonada1.png'
+    },
+    {
+      id: 'l1-leche',
+      label: 'En leche',
+      price: 10000,
+      image: 'images/limonada1.png'
+    }
+  ]
 },
 {
   id: 'l2',
@@ -1008,7 +1028,21 @@ const products = [
   price: 9000,
   desc: 'Limonada con sabor a mango biche, perfecta para los amantes del toque ácido.',
   image: 'images/mangobiche.png',
-  ingredients: ['Limón', 'Pulpa de mango biche', 'Azúcar', 'Agua', 'Hielo']
+  ingredients: ['Limón', 'Pulpa de mango biche', 'Azúcar', 'Agua', 'Hielo'],
+  sizes: [
+    {
+      id: 'l2-agua',
+      label: 'En agua',
+      price: 9000,
+      image: 'images/mangobiche.png'
+    },
+    {
+      id: 'l2-leche',
+      label: 'En leche',
+      price: 10000,
+      image: 'images/mangobiche.png'
+    }
+  ]
 },
 {
   id: 'l3',
@@ -1017,7 +1051,21 @@ const products = [
   price: 9000,
   desc: 'Limonada con un toque dulce de cereza, ideal para acompañar tus comidas.',
   image: 'images/limonada3.png',
-  ingredients: ['Limón', 'Cereza', 'Azúcar', 'Agua', 'Hielo']
+  ingredients: ['Limón', 'Cereza', 'Azúcar', 'Agua', 'Hielo'],
+  sizes: [
+    {
+      id: 'l3-agua',
+      label: 'En agua',
+      price: 9000,
+      image: 'images/limonada3.png'
+    },
+    {
+      id: 'l3-leche',
+      label: 'En leche',
+      price: 10000,
+      image: 'images/limonada3.png'
+    }
+  ]
 },
 {
   id: 'l4',
@@ -1026,7 +1074,21 @@ const products = [
   price: 9500,
   desc: 'Exquisita mezcla de limón, piña y coco con un toque tropical.',
   image: 'images/piñacolada.png',
-  ingredients: ['Limón', 'Piña', 'Crema de coco', 'Azúcar', 'Agua', 'Hielo']
+  ingredients: ['Limón', 'Piña', 'Crema de coco', 'Azúcar', 'Agua', 'Hielo'],
+  sizes: [
+    {
+      id: 'l4-agua',
+      label: 'En agua',
+      price: 9500,
+      image: 'images/piñacolada.png'
+    },
+    {
+      id: 'l4-leche',
+      label: 'En leche',
+      price: 10500,
+      image: 'images/piñacolada.png'
+    }
+  ]
 },
 {
   id: 'l5',
@@ -1035,7 +1097,21 @@ const products = [
   price: 9500,
   desc: 'Limonada con tamarindo natural y escarcha dulce, refrescante y diferente.',
   image: 'images/tamarindoescarchada.png',
-  ingredients: ['Limón', 'Pulpa de tamarindo', 'Azúcar', 'Agua', 'Hielo']
+  ingredients: ['Limón', 'Pulpa de tamarindo', 'Azúcar', 'Agua', 'Hielo'],
+  sizes: [
+    {
+      id: 'l5-agua',
+      label: 'En agua',
+      price: 9500,
+      image: 'images/tamarindoescarchada.png'
+    },
+    {
+      id: 'l5-leche',
+      label: 'En leche',
+      price: 10500,
+      image: 'images/tamarindoescarchada.png'
+    }
+  ]
 },
 {
   id: 'l6',
@@ -1044,8 +1120,23 @@ const products = [
   price: 9500,
   desc: 'Refrescante soda escarchada con toque cítrico y hielo granizado.',
   image: 'images/limonada6.png',
-  ingredients: ['Soda', 'Limón', 'Azúcar', 'Hielo granizado']
-},
+  ingredients: ['Soda', 'Limón', 'Azúcar', 'Hielo granizado'],
+  sizes: [
+    {
+      id: 'l6-agua',
+      label: 'En agua',
+      price: 9500,
+      image: 'images/limonada6.png'
+    },
+    {
+      id: 'l6-leche',
+      label: 'En leche',
+      price: 10500,
+      image: 'images/limonada6.png'
+    }
+  ]
+}
+,
 // === GASEOSAS ===
 {
   id: 'g1',
