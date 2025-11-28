@@ -258,7 +258,7 @@ const products = [
   title: 'Sandwich Combinado',
   price: 18500,
   desc: 'Filete de pollo, carne artesanal, lechuga, tomate, salsa de maíz, tocineta, queso y guacamole.',
-  image: 'images/SandwichCombinado.png',
+  image: 'images/Sandwichcombinado.png',
   ingredients: ['Filete de pollo', 'Carne artesanal', 'Lechuga', 'Tomate', 'Salsa de maíz', 'Tocineta', 'Queso', 'Guacamole'],
   extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
@@ -450,10 +450,10 @@ const products = [
 { 
   id: 'm2',
   category: 'maicitos',
-  title: 'Maicitos Ranchero',
+  title: 'Maicitos Rancheros',
   price: 15000,
   desc: 'Maicitos con pollo, salchicha ranchera, tocineta y queso.',
-  image: 'images/maicito2.png',
+  image: 'images/maicitosrancheros.png',
   ingredients: ['Maicitos', 'Pollo', 'Salchicha ranchera', 'Tocineta', 'Queso'],
   extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
@@ -633,7 +633,7 @@ const products = [
   title: 'Doble Carne Dog',
   price: 17500,
   desc: 'Arepa con tocineta, pollo desmechado, dos carnes, ensalada, ripio de papas, salsas, tomate y queso gratinado.',
-  image: 'images/arepa1.png',
+  image: 'images/Arepadoblecarne.png',
   ingredients: ['Arepa asada', 'Tocineta', 'Pollo desmechado', '2 Carnes', 'Ensalada', 'Ripio de papas', 'Salsas', 'Queso gratinado'],
   extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
@@ -683,7 +683,7 @@ const products = [
   title: 'Con Filete Dog',
   price: 14000,
   desc: 'Arepa con tocineta, filete de pollo, ensalada, tomate, ripio de papas, salsas y queso gratinado.',
-  image: 'images/arepa6.png',
+  image: 'images/arepafiletedepollo.png',
   ingredients: ['Arepa asada', 'Tocineta', 'Filete de pollo', 'Ensalada', 'Tomate', 'Ripio de papas', 'Salsas', 'Queso gratinado'],
   extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
