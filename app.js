@@ -925,78 +925,7 @@ const products = [
     }
   ]
 },
-// {
-//   id: 'g1',
-//   category: 'gaseosas',
-//   title: 'Postobon',
-//   price: 5000,
-//   desc: 'Refrescante Coca-Cola en botella de 400 mililitros.',
-//   image: 'images/gaseosa1.png',
-//   ingredients: ['Coca-Cola 400ml']
-// },
-// {
-//   id: 'g2',
-//   category: 'gaseosas',
-//   title: 'Sprite',
-//   price: 9000,
-//   desc: 'Botella familiar de Coca-Cola de 1.5 litros.',
-//   image: 'images/gaseosa2.png',
-//   ingredients: ['Coca-Cola 1.5L']
-// },
-// {
-//   id: 'g3',
-//   category: 'gaseosas',
-//   title: 'Quatro',
-//   price: 5000,
-//   desc: 'Refrescante Pepsi individual de 400 mililitros.',
-//   image: 'images/gaseosa3.png',
-//   ingredients: ['Pepsi 400ml']
-// },
-// {
-//   id: 'g4',
-//   category: 'gaseosas',
-//   title: 'Coca-Cola',
-//   price: 9000,
-//   desc: 'Botella grande de Pepsi para compartir.',
-//   image: 'images/gaseosa4.png',
-//   ingredients: ['Pepsi 1.5L']
-// },
-// {
-//   id: 'g5',
-//   category: 'gaseosas',
-//   title: 'Bretaña',
-//   price: 5000,
-//   desc: 'Deliciosa Manzana Postobón en presentación de 400 mililitros.',
-//   image: 'images/gaseosa5.png',
-//   ingredients: ['Manzana Postobón 400ml']
-// },
-// {
-//   id: 'g6',
-//   category: 'gaseosas',
-//   title: 'H2O',
-//   price: 9000,
-//   desc: 'Manzana Postobón familiar de 1.5 litros.',
-//   image: 'images/gaseosa6.png',
-//   ingredients: ['Manzana Postobón 1.5L']
-// },
-// {
-//   id: 'g7',
-//   category: 'gaseosas',
-//   title: 'Hit',
-//   price: 5000,
-//   desc: 'Refrescante Sprite con su sabor cítrico único.',
-//   image: 'images/gaseosa7.png',
-//   ingredients: ['Sprite 400ml']
-// },
-// {
-//   id: 'g8',
-//   category: 'gaseosas',
-//   title: 'Premio',
-//   price: 5000,
-//   desc: 'Tradicional Colombiana en presentación individual.',
-//   image: 'images/gaseosa8.png',
-//   ingredients: ['Colombiana 400ml']
-// },
+
 // === LIMONADAS ===
 {
   id: 'l1',
@@ -1213,7 +1142,7 @@ const products = [
 
 //MALTEADAS
 {
-  id: 'm1',
+  id: 'malte1',
   category: 'malteadas',
   title: 'Malteadas',
   price: 12000,
@@ -1700,7 +1629,7 @@ function openProductModal(id, cartIndex = null) {
     const item = {
       productId: p.id,
       sizeId: selectedSize.id,
-      title: `${p.title} (${selectedSize.label})`,
+      title: selectedSize.label ? `${p.title} (${selectedSize.label})` : p.title,
       price: selectedSize.price,
       qty,
       image: selectedSize.image,
