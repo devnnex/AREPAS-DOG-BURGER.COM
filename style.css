@@ -1322,7 +1322,7 @@ body {
 }
 
 .extras-list small {
-    color: rgb(255, 255, 255);
+    color: rgb(0 0 0);
     font-weight: 600;
     padding-left: 5px;
 }
@@ -1513,7 +1513,7 @@ body {
     min-width: 18px;
     text-align: center;
     font-weight: bold;
-    color: rgb(255, 255, 255);
+    color: rgb(0 0 0);
 }
 
 .radio-row {
