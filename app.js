@@ -1650,6 +1650,21 @@ function openProductModal(id, cartIndex = null) {
   overlay.querySelector(".minus").addEventListener("click", () => { if (qty > 1) qty--; qtyEl.textContent = qty; updatePrice(); });
 
   // ===== ADICIONES =====
+
+  // *** NUEVO: si el usuario marca el checkbox sin tocar +, qty = 1 automáticamente ***
+  extrasInputs.forEach((input, i) => {
+    input.addEventListener("change", () => {
+      if (input.checked && extrasQty[i] === 0) {
+        extrasQty[i] = 1;
+        input.closest("label").querySelector(".extra-qty").textContent = 1;
+      } else if (!input.checked) {
+        extrasQty[i] = 0;
+        input.closest("label").querySelector(".extra-qty").textContent = 0;
+      }
+      updatePrice();
+    });
+  });
+
   overlay.querySelectorAll(".plus-extra").forEach(btn => {
     const i = parseInt(btn.parentElement.dataset.index);
     const qtyDisplay = btn.parentElement.querySelector(".extra-qty");
@@ -1705,6 +1720,7 @@ function openProductModal(id, cartIndex = null) {
     cartDrawer.classList.remove("hidden");
   });
 }
+
 
 
 
