@@ -15,7 +15,7 @@ const products = [
     desc: 'Pan brioche, pernil de cerdo, filete de pollo, carne artesanal, queso, cebolla, ensalada, tomate y salsa de la casa.',
     image: 'images/3Carnes.png',
     ingredients: ['Pan Brioche','Pernil de cerdo','Filete de pollo','Carne artesanal','Queso','Cebolla','Ensalada','Tomate','Salsa de la casa'],
-    extras: [{ name:'Maicitos',price:2000 },{ name:'Porción de papas a la francesa',price:3500 },{ name:'Huevos de codorniz',price:1500 },{ name:'Queso',price:1500 },{ name:'Tocineta',price:2500 }]
+    extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
   },
 
   { 
@@ -26,7 +26,7 @@ const products = [
     desc: 'Pan brioche, lechuga, tomate, carne, queso asado, ranchera asada, picadillo de piña y salsa de la casa.',
     image: 'images/Ranchera.png',
     ingredients: ['Pan brioche','Lechuga','Tomate','Carne','Queso asado','Ranchera asada','Picadillo de piña','Salsa de la casa'],
-    extras: [{ name:'Maicitos',price:2000 },{ name:'Porción de papas a la francesa',price:3500 },{ name:'Huevos de codorniz',price:1500 },{ name:'Queso',price:1500 },{ name:'Tocineta',price:2500 }]
+    extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
   },
 
   { 
@@ -37,7 +37,7 @@ const products = [
     desc: 'Pan brioche, lechuga, guacamole, tomate, carne artesanal, queso mozzarella, maduritos, trozos de tocino, salsa de la casa y cebolla caramelizada.',
     image: 'images/TociBurger.png',
     ingredients: ['Pan Brioche','Lechuga','Guacamole','Tomate','Carne Artesanal','Queso Mozzarella','Maduritos','Trozos de tocino','Salsa de la casa','Cebolla caramelizada'],
-    extras: [{ name:'Maicitos',price:2000 },{ name:'Porción de papas a la francesa',price:3500 },{ name:'Huevos de codorniz',price:1500 },{ name:'Queso',price:1500 },{ name:'Tocineta',price:2500 }]
+    extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
   },
 
   { 
@@ -45,10 +45,10 @@ const products = [
     category: 'hamburguesas',
     title: 'Triple Carne',
     price: 23000,
-    desc: 'Pan brioche, 3 carnes artesanales, queso, cebolla, tomate y salsa de la casa.',
+    desc: 'Pan brioche, 3 carnes artesanales, pollo desmechado, queso, tocineta, aros de cebolla, ensalada, tomate y salsa de la casa.',
     image: 'images/TripleCarne.png',
     ingredients: ['Pan Brioche','Carne Artesanal x3','Queso','Cebolla','Tomate','Salsa de la casa'],
-    extras: [{ name:'Maicitos',price:2000 },{ name:'Porción de papas a la francesa',price:3500 },{ name:'Huevos de codorniz',price:1500 },{ name:'Queso',price:1500 },{ name:'Tocineta',price:2500 }]
+    extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
   },
 
   { 
@@ -56,10 +56,10 @@ const products = [
     category: 'hamburguesas',
     title: 'Super',
     price: 21000,
-    desc: 'Pan brioche, carne artesanal, pollo desmechado, queso, tocineta, trozos de cebolla, ensalada, tomate y salsa.',
+    desc: 'Pan brioche, 2 carnes artesanales, pollo desmechado, queso, tocineta, aros de cebolla, ensalada, tomate, salsa de la casa + papas a la francesa.',
     image: 'images/Super.png',
     ingredients: ['Pan Brioche','Carne Artesanal','Pollo Desmechado','Queso','Tocineta','Cebolla','Ensalada','Tomate','Salsa de la casa'],
-    extras: [{ name:'Maicitos',price:2000 },{ name:'Porción de papas a la francesa',price:3500 },{ name:'Huevos de codorniz',price:1500 },{ name:'Queso',price:1500 },{ name:'Tocineta',price:2500 }]
+    extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
   },
 
   { 
@@ -67,10 +67,10 @@ const products = [
     category: 'hamburguesas',
     title: 'Royal',
     price: 21000,
-    desc: 'Pan brioche, lechuga, guacamole, tomate, carne artesanal, tocineta, queso salado, salsa tártara y cebolla grille.',
+     desc: 'Pan brioche, lechuga, guacamole, tomate, pollo en salsa, carne artesanal, salsa de la casa, queso a la plancha, cebolla con tocineta caramelizada, trozos de pollo y ranchera',
     image: 'images/Royal.png',
     ingredients: ['Pan Brioche','Lechuga','Guacamole','Tomate','Carne Artesanal','Tocineta','Queso salado','Salsa tártara','Cebolla grille'],
-    extras: [{ name:'Maicitos',price:2000 },{ name:'Porción de papas a la francesa',price:3500 },{ name:'Huevos de codorniz',price:1500 },{ name:'Queso',price:1500 },{ name:'Tocineta',price:2500 }]
+    extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
   },
 
   { 
@@ -78,10 +78,10 @@ const products = [
     category: 'hamburguesas',
     title: 'Combinada',
     price: 20000,
-    desc: 'Pan brioche, carne artesanal, filete de pollo, tocineta, queso, ensalada, tomate y salsa de la casa.',
+    desc: 'Pan brioche, carne artesanal, filete de pollo, queso, tocineta, ensalada, tomate, salsa de la casa y aros de cebolla.',
     image: 'images/combinada.png',
     ingredients: ['Pan Brioche','Carne Artesanal','Filete de Pollo','Tocineta','Queso','Ensalada','Tomate','Salsa de la casa'],
-    extras: [{ name:'Maicitos',price:2000 },{ name:'Porción de papas a la francesa',price:3500 },{ name:'Huevos de codorniz',price:1500 },{ name:'Queso',price:1500 },{ name:'Tocineta',price:2500 }]
+    extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
   },
 
   { 
@@ -89,10 +89,10 @@ const products = [
     category: 'hamburguesas',
     title: 'Doble Carne',
     price: 19000,
-    desc: 'Pan brioche, doble carne artesanal, queso, cebolla y salsa de la casa.',
+    desc: 'Pan brioche, doble carne artesanal, queso, pollo desmechado, tocineta, cebolla, ensalada, tomate y salsa de la casa.',
     image: 'images/DobleCarne.png',
     ingredients: ['Pan Brioche','Carne Artesanal x2','Queso','Cebolla','Salsa de la casa'],
-    extras: [{ name:'Maicitos',price:2000 },{ name:'Porción de papas a la francesa',price:3500 },{ name:'Huevos de codorniz',price:1500 },{ name:'Queso',price:1500 },{ name:'Tocineta',price:2500 }]
+    extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
   },
 
   { 
@@ -100,10 +100,10 @@ const products = [
     category: 'hamburguesas',
     title: 'Paisa',
     price: 18500,
-    desc: 'Pan brioche, carne artesanal, pollo desmechado, queso, tocineta, salsa tártara y cebolla grille.',
+    desc: 'Pan brioche, carne artesanal, pollo desmechado, queso, tocineta, maicitos, salchicha ranchera, ensalada, tomate, salsa de la casa y aros de cebolla.',
     image: 'images/paisa.png',
     ingredients: ['Pan Brioche','Carne Artesanal','Pollo desmechado','Queso','Tocineta','Salsa tártara','Cebolla grille'],
-    extras: [{ name:'Maicitos',price:2000 },{ name:'Porción de papas a la francesa',price:3500 },{ name:'Huevos de codorniz',price:1500 },{ name:'Queso',price:1500 },{ name:'Tocineta',price:2500 }]
+    extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
   },
 
   { 
@@ -111,10 +111,10 @@ const products = [
     category: 'hamburguesas',
     title: 'Pernil de Cerdo',
     price: 17000,
-    desc: 'Pan brioche, pernil de cerdo, queso, tocineta, cebolla, tomate y salsa de la casa.',
+    desc: 'Pan brioche, pernil de cerdo, queso, tocineta, aros de cebolla, ensalada, tomate y salsa de la casa.',
     image: 'images/hamburgesa14.png',
     ingredients: ['Pan Brioche','Pernil de cerdo','Queso','Tocineta','Cebolla','Tomate','Salsa de la casa'],
-    extras: [{ name:'Maicitos',price:2000 },{ name:'Porción de papas a la francesa',price:3500 },{ name:'Huevos de codorniz',price:1500 },{ name:'Queso',price:1500 },{ name:'Tocineta',price:2500 }]
+    extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
   },
 
   { 
@@ -122,10 +122,10 @@ const products = [
     category: 'hamburguesas',
     title: 'Quesuda',
     price: 17000,
-    desc: 'Pan brioche, carne artesanal, queso doble, cebolla, ensalada, tomate y salsa de la casa.',
+    desc: 'Pan brioche, carne artesanal, queso, tocineta, aros de cebolla, ensalada, tomate y salsa de la casa cubierta de queso.',
     image: 'images/hamburgesa9.png',
     ingredients: ['Pan Brioche','Carne Artesanal','Doble queso','Cebolla','Ensalada','Tomate','Salsa de la casa'],
-    extras: [{ name:'Maicitos',price:2000 },{ name:'Porción de papas a la francesa',price:3500 },{ name:'Huevos de codorniz',price:1500 },{ name:'Queso',price:1500 },{ name:'Tocineta',price:2500 }]
+    extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
   },
 
   { 
@@ -133,10 +133,10 @@ const products = [
     category: 'hamburguesas',
     title: 'Mixta',
     price: 16000,
-    desc: 'Pan brioche, filete de pollo, carne artesanal, queso, tomate, ensalada y salsa de la casa.',
+    desc: 'Pan brioche, carne artesanal, pollo desmechado, queso, tocineta, ensalada, tomate y salsa de la casa.',
     image: 'images/mixta.png',
     ingredients: ['Pan Brioche','Filete de Pollo','Carne Artesanal','Queso','Tomate','Ensalada','Salsa de la casa'],
-    extras: [{ name:'Maicitos',price:2000 },{ name:'Porción de papas a la francesa',price:3500 },{ name:'Huevos de codorniz',price:1500 },{ name:'Queso',price:1500 },{ name:'Tocineta',price:2500 }]
+    extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
   },
 
   { 
@@ -144,10 +144,10 @@ const products = [
     category: 'hamburguesas',
     title: 'Filete de Pollo',
     price: 15500,
-    desc: 'Pan brioche, filete de pollo, queso, cebolla, ensalada, tomate y salsa de la casa.',
+    desc: 'Pan brioche, filete de pollo, queso, tocineta, ensalada, tomate y salsa de la casa.',
     image: 'images/hamburgesa11.png',
     ingredients: ['Pan Brioche','Filete de Pollo','Queso','Cebolla','Ensalada','Tomate','Salsa de la casa'],
-    extras: [{ name:'Maicitos',price:2000 },{ name:'Porción de papas a la francesa',price:3500 },{ name:'Huevos de codorniz',price:1500 },{ name:'Queso',price:1500 },{ name:'Tocineta',price:2500 }]
+    extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
   },
 
   { 
@@ -155,11 +155,12 @@ const products = [
     category: 'hamburguesas',
     title: 'Tradicional',
     price: 15000,
-    desc: 'Pan brioche, carne artesanal, queso, cebolla, ensalada, tomate y salsa de la casa.',
+    desc: 'Pan brioche, carne artesanal, queso, tocineta, ensalada, tomate y salsa de la casa.',
     image: 'images/hamburgesa12.png',
     ingredients: ['Pan Brioche','Carne Artesanal','Queso','Cebolla','Ensalada','Tomate','Salsa de la casa'],
-    extras: [{ name:'Maicitos',price:2000 },{ name:'Porción de papas a la francesa',price:3500 },{ name:'Huevos de codorniz',price:1500 },{ name:'Queso',price:1500 },{ name:'Tocineta',price:2500 }]
+    extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
   },
+  // === PERROS ===
 {  
   id: 'p1',
   category: 'perros',
@@ -168,17 +169,17 @@ const products = [
   desc: 'Salchicha suiza con ensalada, ripio de papas, salsas, tocineta y queso gratinado.',
   image: 'images/perraDog.png',
   ingredients: ['Salchicha suiza', 'Ensalada', 'Ripio de papas', 'Salsas', 'Tocineta', 'Queso gratinado'],
-  extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
+  extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
 {  
   id: 'p2',
   category: 'perros',
   title: 'Paisa',
   price: 16000,
-  desc: 'Salchicha americana con pollo desmechado, maicitos, ensalada y ripio de papas.',
+  desc: 'Salchicha americana con pollo desmechado, maicitos, ensalada, salsas y ripio de papas.',
   image: 'images/perroPaisa.png',
   ingredients: ['Salchicha americana', 'Pollo desmechado', 'Maicitos', 'Ensalada', 'Ripio de papas', 'Salsas'],
-  extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
+  extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
 {  
   id: 'p3',
@@ -188,7 +189,7 @@ const products = [
   desc: 'Salchicha americana con ensalada, ripio de papas, salsas, tocineta y cubierta de queso.',
   image: 'images/Quesudo.png',
   ingredients: ['Salchicha americana', 'Ensalada', 'Ripio de papas', 'Salsas', 'Tocineta', 'Queso gratinado'],
-  extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
+  extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
 {  
   id: 'p4',
@@ -198,7 +199,7 @@ const products = [
   desc: 'Dos salchichas americanas con ensalada, ripio de papas, tocineta, salsas y queso gratinado.',
   image: 'images/p4.png',
   ingredients: ['2 Salchichas americanas', 'Ensalada', 'Ripio de papas', 'Tocineta', 'Salsas', 'Queso gratinado'],
-  extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
+  extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
 {  
   id: 'p5',
@@ -208,7 +209,7 @@ const products = [
   desc: 'Salchicha ranchera con ensalada, ripio de papas, salsas y queso gratinado.',
   image: 'images/ranchero.png',
   ingredients: ['Salchicha ranchera', 'Ensalada', 'Ripio de papas', 'Salsas', 'Queso gratinado'],
-  extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
+  extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
 {  
   id: 'p6',
@@ -218,7 +219,7 @@ const products = [
   desc: 'Dos salchichas con ensalada, ripio de papas, salsas y queso gratinado.',
   image: 'images/p6.png',
   ingredients: ['2 Salchichas', 'Ensalada', 'Ripio de papas', 'Salsas', 'Queso gratinado'],
-  extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
+  extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
 {  
   id: 'p7',
@@ -228,7 +229,7 @@ const products = [
   desc: 'Salchicha americana con ensalada, ripio de papas, salsas y queso gratinado.',
   image: 'images/p7.png',
   ingredients: ['Salchicha americana', 'Ensalada', 'Ripio de papas', 'Salsas', 'Queso gratinado'],
-  extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
+  extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
 {  
   id: 'p8',
@@ -238,7 +239,7 @@ const products = [
   desc: 'Salchicha con ensalada, ripio de papas, salsas y queso gratinado.',
   image: 'images/tradicional.png',
   ingredients: ['Salchicha', 'Ensalada', 'Ripio de papas', 'Salsas', 'Queso gratinado'],
-  extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
+  extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
 // === SANDWICHES ===
 { 
@@ -249,7 +250,7 @@ const products = [
   desc: 'Pernil de cerdo, lechuga, tomate, guacamole, tocineta y queso.',
   image: 'images/SandwichPernil.png',
   ingredients: ['Pernil de cerdo', 'Lechuga', 'Tomate', 'Guacamole', 'Tocineta', 'Queso'],
-  extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
+  extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
 { 
   id: 's2',
@@ -259,7 +260,7 @@ const products = [
   desc: 'Filete de pollo, carne artesanal, lechuga, tomate, salsa de maíz, tocineta, queso y guacamole.',
   image: 'images/SandwichCombinado.png',
   ingredients: ['Filete de pollo', 'Carne artesanal', 'Lechuga', 'Tomate', 'Salsa de maíz', 'Tocineta', 'Queso', 'Guacamole'],
-  extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
+  extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
 { 
   id: 's3',
@@ -269,7 +270,7 @@ const products = [
   desc: 'Pollo desmechado, carne artesanal, lechuga, tomate, guacamole, salsa de maíz, tocineta y queso.',
   image: 'images/SandwichMixto.png',
   ingredients: ['Pollo desmechado', 'Carne artesanal', 'Lechuga', 'Tomate', 'Guacamole', 'Salsa de maíz', 'Tocineta', 'Queso'],
-  extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
+  extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
 { 
   id: 's4',
@@ -279,7 +280,7 @@ const products = [
   desc: 'Filete de pollo, lechuga, tomate, guacamole, tocineta y queso.',
   image: 'images/SandwichFiletedePollo.png',
   ingredients: ['Filete de pollo', 'Lechuga', 'Tomate', 'Guacamole', 'Tocineta', 'Queso'],
-  extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
+  extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
 { 
   id: 's5',
@@ -289,7 +290,7 @@ const products = [
   desc: 'Pollo desmechado, lechuga, tomate, guacamole, salsa de maíz, tocineta y queso.',
   image: 'images/SandwichPolloDesmechado.png',
   ingredients: ['Pollo desmechado', 'Lechuga', 'Tomate', 'Guacamole', 'Salsa de maíz', 'Tocineta', 'Queso'],
-  extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
+  extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
 
 
@@ -298,21 +299,21 @@ const products = [
   id: 'c1',
   category: 'carnes',
   title: 'Churrasco',
-  price: 28000,
+  price: 30000,
   desc: 'Papas a la francesa, arepa con queso y tomate.',
   image: 'images/carne1.png',
   ingredients: ['Churrasco', 'Papas a la francesa', 'Arepa con queso', 'Tomate'],
-  extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
+  extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
 { 
   id: 'c2',
   category: 'carnes',
   title: 'Asado Mixto',
-  price: 26000,
+  price: 30000,
   desc: 'Carne de res, cerdo y filete de pollo con papas y tomate.',
   image: 'images/carne2.png',
   ingredients: ['Carne de res', 'Cerdo', 'Filete de pollo', 'Papas', 'Tomate'],
-  extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
+  extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
 { 
   id: 'c3',
@@ -322,7 +323,7 @@ const products = [
   desc: 'Papas a la francesa, arepa y tomate.',
   image: 'images/carne3.png',
   ingredients: ['Carne de cerdo', 'Papas a la francesa', 'Arepa', 'Tomate'],
-  extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
+  extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
 { 
   id: 'c4',
@@ -332,7 +333,7 @@ const products = [
   desc: 'Filete de pollo con papas a la francesa, arepa y tomate.',
   image: 'images/FileteDePollo.png',
   ingredients: ['Filete de pollo', 'Papas a la francesa', 'Arepa', 'Tomate'],
-  extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
+  extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
 { 
   id: 'c5',
@@ -342,7 +343,7 @@ const products = [
   desc: 'Carne de res y cerdo con arepa y papas.',
   image: 'images/carne5.png',
   ingredients: ['Carne de res', 'Carne de cerdo', 'Arepa', 'Papas a la francesa'],
-  extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
+  extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
 { 
   id: 'c6',
@@ -352,17 +353,17 @@ const products = [
   desc: 'Chuzo de cerdo con papas a la francesa, arepa y tomate.',
   image: 'images/carne6.png',
   ingredients: ['Cerdo', 'Papas a la francesa', 'Arepa', 'Tomate'],
-  extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
+  extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
 { 
   id: 'c7',
   category: 'carnes',
   title: 'Suiza',
-  price: 14500,
+  price: 15000,
   desc: 'Papas a la francesa, arepa y tomate.',
   image: 'images/carne7.png',
   ingredients: ['Carne', 'Papas a la francesa', 'Arepa', 'Tomate'],
-  extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
+ extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
 { 
   id: 'c8',
@@ -372,7 +373,7 @@ const products = [
   desc: 'Chuzo de pollo con papas a la francesa, arepa y tomate.',
   image: 'images/carne8.png',
   ingredients: ['Pollo', 'Papas a la francesa', 'Arepa', 'Tomate'],
-  extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
+  extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
 // === PATACONES ===
 { 
@@ -383,7 +384,7 @@ const products = [
   desc: 'Tocineta, pollo desmechado, carne desmechada, ensalada, ripio de papas, salsas y cubierta de queso.',
   image: 'images/PataconQuesudo.png',
   ingredients: ['Tocineta', 'Pollo desmechado', 'Carne desmechada', 'Ensalada', 'Ripio de papas', 'Salsas', 'Queso gratinado'],
-  extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
+  extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
 { 
   id: 'pt2',
@@ -393,7 +394,7 @@ const products = [
   desc: 'Tocineta, pollo desmechado, carne desmechada, ensalada, ripio de papas, salsas y queso gratinado.',
   image: 'images/patacon2.png',
   ingredients: ['Tocineta', 'Pollo desmechado', 'Carne desmechada', 'Ensalada', 'Ripio de papas', 'Salsas', 'Queso gratinado'],
-  extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
+  extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
 { 
   id: 'pt3',
@@ -403,27 +404,27 @@ const products = [
   desc: 'Tocineta, pollo desmechado, carne, ensalada, ripio de papas, salsas y queso gratinado.',
   image: 'images/patacon3.png',
   ingredients: ['Tocineta', 'Pollo desmechado', 'Carne', 'Ensalada', 'Ripio de papas', 'Salsas', 'Queso gratinado'],
-  extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
+  extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
 { 
   id: 'pt4',
   category: 'patacones',
   title: 'Patacón Pollo Desmechado',
   price: 17000,
-  desc: 'Pollo desmechado, ensalada, ripio de papas, salsas y queso gratinado.',
+  desc: 'Pollo desmechado, tocineta, ensalada, ripio de papas, salsas y queso gratinado.',
   image: 'images/PataconPolloDesmechado.png',
   ingredients: ['Pollo desmechado', 'Ensalada', 'Ripio de papas', 'Salsas', 'Queso gratinado'],
-  extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
+  extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
 { 
   id: 'pt5',
   category: 'patacones',
   title: 'Patacón Carne Desmechada',
   price: 17000,
-  desc: 'Carne desmechada, ensalada, ripio de papas, salsas y queso gratinado.',
+  desc: 'Carne desmechada, tocineta, ensalada, ripio de papas, salsas y queso gratinado.',
   image: 'images/PataconCarneDesmechada.png',
   ingredients: ['Carne desmechada', 'Ensalada', 'Ripio de papas', 'Salsas', 'Queso gratinado'],
-  extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
+  extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
 { 
   id: 'pt6',
@@ -433,7 +434,7 @@ const products = [
   desc: 'Plátano maduro, tocineta, pollo desmechado, carne artesanal, ensalada, cebolla caramelizada, salsa de la casa y queso.',
   image: 'images/Pataburger.png',
   ingredients: ['Plátano maduro', 'Tocineta', 'Pollo desmechado', 'Carne artesanal', 'Ensalada', 'Cebolla caramelizada', 'Salsa de la casa', 'Queso'],
-  extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
+  extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
 // === MAICITOS ===
 { 
@@ -444,7 +445,7 @@ const products = [
   desc: 'Maicitos con pollo desmechado, carne desmechada, tocineta y queso gratinado.',
   image: 'images/maicito1.png',
   ingredients: ['Maicitos', 'Pollo desmechado', 'Carne desmechada', 'Tocineta', 'Queso gratinado'],
-  extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
+  extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
 { 
   id: 'm2',
@@ -454,7 +455,7 @@ const products = [
   desc: 'Maicitos con pollo, salchicha ranchera, tocineta y queso.',
   image: 'images/maicito2.png',
   ingredients: ['Maicitos', 'Pollo', 'Salchicha ranchera', 'Tocineta', 'Queso'],
-  extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
+  extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
 { 
   id: 'm3',
@@ -464,7 +465,7 @@ const products = [
   desc: 'Maicitos con pollo, tocineta, queso y piña.',
   image: 'images/maicito3.png',
   ingredients: ['Maicitos', 'Pollo', 'Tocineta', 'Queso', 'Piña'],
-  extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
+  extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
 { 
   id: 'm4',
@@ -474,7 +475,7 @@ const products = [
   desc: 'Maicitos con pollo, tocineta y queso.',
   image: 'images/maicito4.png',
   ingredients: ['Maicitos', 'Pollo', 'Tocineta', 'Queso'],
- extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
+  extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
 // === SALCHIPAPAS ===
 { 
@@ -485,7 +486,7 @@ const products = [
   desc: 'Papas a la francesa, salchicha, carne desmechada, pollo desmechado, costilla, madurito, tocineta, guacamole, queso y maicitos.',
   image: 'images/salchipapa.png',
   ingredients: ['Papas a la francesa', 'Salchicha', 'Carne desmechada', 'Pollo desmechado', 'Costilla', 'Madurito', 'Tocineta', 'Guacamole', 'Queso', 'Maicitos'],
-  extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
+  extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
 { 
   id: 'sa2',
@@ -495,7 +496,7 @@ const products = [
   desc: 'Papas a la francesa con salchicha, carne desmechada, pollo desmechado, madurito, tocineta carnuda, guacamole, picadillo, queso y maicitos.',
   image: 'images/salchipapa2.png',
   ingredients: ['Papas a la francesa', 'Salchicha', 'Carne desmechada', 'Pollo desmechado', 'Madurito', 'Tocineta carnuda', 'Guacamole', 'Picadillo', 'Queso', 'Maicitos'],
-  extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
+  extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
 { 
   id: 'sa3',
@@ -505,7 +506,7 @@ const products = [
   desc: 'Papas con carne, salchicha ranchera, pollo desmechado, suiza, madurito, tocineta, guacamole y maicitos.',
   image: 'images/salchiranchera.png',
   ingredients: ['Papas a la francesa', 'Carne', 'Salchicha ranchera', 'Pollo desmechado', 'Suiza', 'Madurito', 'Tocineta', 'Guacamole', 'Maicitos'],
-  extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
+ extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
 { 
   id: 'sa4',
@@ -515,37 +516,37 @@ const products = [
   desc: 'Papas a la francesa con carne desmechada, pollo desmechado, madurito, tocineta y cubierta de queso gratinado.',
   image: 'images/salchipapa4.png',
   ingredients: ['Papas a la francesa', 'Carne desmechada', 'Pollo desmechado', 'Madurito', 'Tocineta', 'Queso gratinado'],
-  extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
+  extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
 { 
   id: 'sa5',
   category: 'salchipapa',
   title: 'Salchipaisa',
   price: 25000,
-  desc: 'Papas con salchicha, carne, suiza, pollo, huevo de codorniz, madurito, tocineta, guacamole y maicitos.',
+  desc: 'Papas con salchicha, carne, salchicha suiza, pollo, huevo de codorniz, madurito, tocineta, guacamole y maicitos.',
   image: 'images/Salchipaisa.png',
   ingredients: ['Papas a la francesa', 'Salchicha', 'Carne', 'Suiza', 'Pollo', 'Huevo de codorniz', 'Madurito', 'Tocineta', 'Guacamole', 'Maicitos'],
-  extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
+  extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
 { 
   id: 'sa6',
   category: 'salchipapa',
   title: 'Salchimixta',
   price: 23000,
-  desc: 'Papas con salchicha, carne desmechada, pollo desmechado, huevo de codorniz, madurito, tocineta y guacamole.',
+  desc: 'Papas a la francesa con salchicha, carne desmechada, pollo desmechado, huevo de codorniz, madurito, tocineta y guacamole.',
   image: 'images/salchipapa6.png',
   ingredients: ['Papas a la francesa', 'Salchicha', 'Carne desmechada', 'Pollo desmechado', 'Huevo de codorniz', 'Madurito', 'Tocineta', 'Guacamole'],
-  extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
+  extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
 { 
   id: 'sa7',
   category: 'salchipapa',
   title: 'Salchipapa Dog',
-  price: 15000,
+  price: 16000,
   desc: 'Papas a la francesa con salchicha, queso gratinado y huevo de codorniz.',
   image: 'images/salchipapa7.png',
   ingredients: ['Papas a la francesa', 'Salchicha', 'Queso gratinado', 'Huevo de codorniz'],
-  extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
+  extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
 { 
   id: 'sa8',
@@ -555,7 +556,7 @@ const products = [
   desc: 'Porción grande para compartir con pollo, carne, salchicha, madurito, tocineta, queso, guacamole y maicitos.',
   image: 'images/salchipapa8.png',
   ingredients: ['Papas a la francesa', 'Pollo', 'Carne', 'Salchicha', 'Madurito', 'Tocineta', 'Queso', 'Guacamole', 'Maicitos'],
-  extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
+  extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
 // === AREPAS ===
 { 
@@ -566,7 +567,7 @@ const products = [
   desc: 'Arepa con tocineta, pollo desmechado, dos carnes, ensalada, ripio de papas, salsas y queso gratinado.',
   image: 'images/arepa1.png',
   ingredients: ['Arepa asada', 'Tocineta', 'Pollo desmechado', '2 Carnes', 'Ensalada', 'Ripio de papas', 'Salsas', 'Queso gratinado'],
-  extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
+  extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
 { 
   id: 'a2',
@@ -576,7 +577,7 @@ const products = [
   desc: 'Arepa con tocineta, carne artesanal, tomate, ensalada, ripio de papas, salsas y cubierta de queso.',
   image: 'images/arepa2.png',
   ingredients: ['Arepa asada', 'Tocineta', 'Carne artesanal', 'Tomate', 'Ensalada', 'Ripio de papas', 'Salsas', 'Queso gratinado'],
-  extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
+  extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
 { 
   id: 'a3',
@@ -586,7 +587,7 @@ const products = [
   desc: 'Arepa con queso, pollo desmechado, carne desmechada, chicharrón, guiso, guacamole, maduritos y salchicha ranchera.',
   image: 'images/arepa3.png',
   ingredients: ['Arepa asada', 'Queso', 'Pollo desmechado', 'Carne desmechada', 'Chicharrón', 'Guiso', 'Guacamole', 'Maduritos', 'Salchicha ranchera'],
-  extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
+  extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
 { 
   id: 'a4',
@@ -596,7 +597,7 @@ const products = [
   desc: 'Arepa con tocineta, pollo desmechado, carne artesanal, ensalada, ripio de papas, salsas, queso gratinado y tomate.',
   image: 'images/arepa4.png',
   ingredients: ['Arepa asada', 'Tocineta', 'Pollo desmechado', 'Carne artesanal', 'Ensalada', 'Ripio de papas', 'Salsas', 'Queso gratinado', 'Tomate'],
-  extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
+  extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
 { 
   id: 'a5',
@@ -606,7 +607,7 @@ const products = [
   desc: 'Arepa con carne, ensalada, ripio de papas, salsas, queso gratinado, tomate y maicitos.',
   image: 'images/arepa5.png',
   ingredients: ['Arepa asada', 'Carne', 'Ensalada', 'Ripio de papas', 'Salsas', 'Queso gratinado', 'Tomate', 'Maicitos'],
-  extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
+  extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
 { 
   id: 'a6',
@@ -616,7 +617,7 @@ const products = [
   desc: 'Arepa con tocineta, filete de pollo, ensalada, tomate, ripio de papas, salsas y queso gratinado.',
   image: 'images/arepa6.png',
   ingredients: ['Arepa asada', 'Tocineta', 'Filete de pollo', 'Ensalada', 'Tomate', 'Ripio de papas', 'Salsas', 'Queso gratinado'],
-  extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
+  extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
 { 
   id: 'a7',
@@ -626,7 +627,7 @@ const products = [
   desc: 'Arepa con carne, ensalada, ripio de papas, salsas y queso gratinado.',
   image: 'images/Arepaburger.png',
   ingredients: ['Arepa asada', 'Carne', 'Ensalada', 'Ripio de papas', 'Salsas', 'Queso gratinado'],
-  extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
+  extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
 { 
   id: 'a8',
@@ -636,7 +637,7 @@ const products = [
   desc: 'Arepa con pollo desmechado, ensalada, ripio de papas, salsas y queso gratinado.',
   image: 'images/arepa8.png',
   ingredients: ['Arepa asada', 'Pollo desmechado', 'Ensalada', 'Ripio de papas', 'Salsas', 'Queso gratinado'],
- extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
+  extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
 
 {
@@ -647,7 +648,7 @@ const products = [
   desc: 'Pollo desmechado, carne desmechada, queso, tocineta, maicitos, picadillo de cebolla y tomate, guacamole.',
   image: 'images/dorilocos1.png',
   ingredients: ['Pollo desmechado', 'Carne desmechada', 'Queso', 'Tocineta', 'Maicitos', 'Cebolla', 'Tomate', 'Guacamole'],
-  extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
+  extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
 // === BURRITOS ===
 {
@@ -658,7 +659,7 @@ const products = [
   desc: 'Burrito de pernil de cerdo con queso, maicitos, picadillo de lechuga y tomate, y guacamole.',
   image: 'images/burrito1.png',
   ingredients: ['Tortilla', 'Pernil de cerdo', 'Queso', 'Maicitos', 'Lechuga', 'Tomate', 'Guacamole'],
-  extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
+  extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
 {
   id: 'b2',
@@ -668,7 +669,7 @@ const products = [
   desc: 'Burrito mixto con pollo desmechado, carne desmechada, queso, maicitos, lechuga, tomate y guacamole.',
   image: 'images/burrito2.png',
   ingredients: ['Tortilla', 'Pollo desmechado', 'Carne desmechada', 'Queso', 'Maicitos', 'Lechuga', 'Tomate', 'Guacamole'],
-  extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
+  extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
 {
   id: 'b3',
@@ -678,7 +679,7 @@ const products = [
   desc: 'Burrito con pollo desmechado, tocineta, queso, maicitos, picadillo de lechuga y tomate, y guacamole.',
   image: 'images/burrito3.png',
   ingredients: ['Tortilla', 'Pollo desmechado', 'Tocineta', 'Queso', 'Maicitos', 'Lechuga', 'Tomate', 'Guacamole'],
-  extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
+  extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
 //JUGOS
 {
@@ -865,7 +866,78 @@ const products = [
     }
   ]
 },
-
+// {
+//   id: 'g1',
+//   category: 'gaseosas',
+//   title: 'Coca-Cola 400ml',
+//   price: 5000,
+//   desc: 'Refrescante Coca-Cola en botella de 400 mililitros.',
+//   image: 'images/gaseosa1.png',
+//   ingredients: ['Coca-Cola 400ml']
+// },
+// {
+//   id: 'g2',
+//   category: 'gaseosas',
+//   title: 'Coca-Cola 1.5L',
+//   price: 9000,
+//   desc: 'Botella familiar de Coca-Cola de 1.5 litros.',
+//   image: 'images/gaseosa2.png',
+//   ingredients: ['Coca-Cola 1.5L']
+// },
+// {
+//   id: 'g3',
+//   category: 'gaseosas',
+//   title: 'Pepsi 400ml',
+//   price: 5000,
+//   desc: 'Refrescante Pepsi individual de 400 mililitros.',
+//   image: 'images/gaseosa3.png',
+//   ingredients: ['Pepsi 400ml']
+// },
+// {
+//   id: 'g4',
+//   category: 'gaseosas',
+//   title: 'Pepsi 1.5L',
+//   price: 9000,
+//   desc: 'Botella grande de Pepsi para compartir.',
+//   image: 'images/gaseosa4.png',
+//   ingredients: ['Pepsi 1.5L']
+// },
+// {
+//   id: 'g5',
+//   category: 'gaseosas',
+//   title: 'Manzana Postobón 400ml',
+//   price: 5000,
+//   desc: 'Deliciosa Manzana Postobón en presentación de 400 mililitros.',
+//   image: 'images/gaseosa5.png',
+//   ingredients: ['Manzana Postobón 400ml']
+// },
+// {
+//   id: 'g6',
+//   category: 'gaseosas',
+//   title: 'Manzana Postobón 1.5L',
+//   price: 9000,
+//   desc: 'Manzana Postobón familiar de 1.5 litros.',
+//   image: 'images/gaseosa6.png',
+//   ingredients: ['Manzana Postobón 1.5L']
+// },
+// {
+//   id: 'g7',
+//   category: 'gaseosas',
+//   title: 'Sprite 400ml',
+//   price: 5000,
+//   desc: 'Refrescante Sprite con su sabor cítrico único.',
+//   image: 'images/gaseosa7.png',
+//   ingredients: ['Sprite 400ml']
+// },
+// {
+//   id: 'g8',
+//   category: 'gaseosas',
+//   title: 'Colombiana 400ml',
+//   price: 5000,
+//   desc: 'Tradicional Colombiana en presentación individual.',
+//   image: 'images/gaseosa8.png',
+//   ingredients: ['Colombiana 400ml']
+// },
 // === LIMONADAS ===
 {
   id: 'l1',
@@ -931,9 +1003,73 @@ const products = [
   image: 'images/malteada1.png',
   ingredients: ['Leche', 'Helado de vainilla', 'Crema batida']
 },
+/*{
+  id: 'm2',
+  category: 'malteadas',
+  title: 'Malteada de Chocolate',
+  price: 12000,
+  desc: 'Deliciosa malteada de chocolate con trozos de cacao.',
+  image: 'images/malteada2.png',
+  ingredients: ['Leche', 'Helado de chocolate', 'Cacao']
+},
+{
+  id: 'm3',
+  category: 'malteadas',
+  title: 'Malteada de Fresa',
+  price: 12000,
+  desc: 'Malteada de fresa natural con crema batida.',
+  image: 'images/malteada3.png',
+  ingredients: ['Leche', 'Fresas naturales', 'Helado de fresa']
+},
+{
+  id: 'm4',
+  category: 'malteadas',
+  title: 'Malteada de Oreo',
+  price: 13000,
+  desc: 'Cremosa malteada de vainilla con galletas Oreo trituradas.',
+  image: 'images/malteada4.png',
+  ingredients: ['Leche', 'Helado de vainilla', 'Galletas Oreo']
+},
+{
+  id: 'm5',
+  category: 'malteadas',
+  title: 'Malteada de Arequipe',
+  price: 13000,
+  desc: 'Malteada con helado de vainilla y arequipe artesanal.',
+  image: 'images/malteada5.png',
+  ingredients: ['Leche', 'Helado de vainilla', 'Arequipe']
+},
+{
+  id: 'm6',
+  category: 'malteadas',
+  title: 'Malteada de Café',
+  price: 13000,
+  desc: 'Refrescante malteada con sabor a café colombiano.',
+  image: 'images/malteada6.png',
+  ingredients: ['Leche', 'Helado de café', 'Café espresso']
+},
+{
+  id: 'm7',
+  category: 'malteadas',
+  title: 'Malteada de Brownie',
+  price: 14000,
+  desc: 'Helado de chocolate con trozos de brownie y crema.',
+  image: 'images/malteada7.png',
+  ingredients: ['Leche', 'Helado de chocolate', 'Brownie']
+},
+{
+  id: 'm8',
+  category: 'malteadas',
+  title: 'Malteada de Mango',
+  price: 12000,
+  desc: 'Malteada tropical con mango natural y helado de vainilla.',
+  image: 'images/malteada8.png',
+  ingredients: ['Leche', 'Mango', 'Helado de vainilla']
+}*/
+  
 
 //PAPAS
-{ 
+/*{ 
     id: 'pap1',
     category: 'papas',
     title: 'Papas Locas',
@@ -992,8 +1128,77 @@ const products = [
     image: 'images/pap6.png',
     ingredients:['Salsa','Queso'],
     extras:[{name:'Pollo',price:2000}]
-  }
- 
+  },
+  { 
+    id: 'bebi1',
+    category: 'gaseosas',
+    title: 'Fanta Naranja 330ml',
+    price: 4500,
+    desc:'Refresco',
+    image: 'images/beb1.png',
+    ingredients:[],
+    extras:[]
+  },
+  { 
+    id: 'bebi2',
+    category: 'gaseosas',
+    title: 'Coca Cola 1.5L',
+    price: 7500,
+    desc:'Refresco',
+    image: 'images/beb2.png',
+    ingredients:[],
+    extras:[]
+  },
+  { 
+    id: 'bebi3',
+    category: 'gaseosas',
+    title: 'Fanta Lata',
+    price: 3500,
+    desc:'Refresco',
+    image: 'images/beb3.png',
+    ingredients:[],
+    extras:[]
+  },
+  { 
+    id: 'bebi4',
+    category: 'gaseosas',
+    title: 'Pepsi Lata',
+    price: 5500,
+    desc:'Refresco',
+    image: 'images/beb4.png',
+    ingredients:[],
+    extras:[]
+  },
+  { 
+    id: 'bebi5',
+    category: 'gaseosas',
+    title: 'Monster Lata',
+    price: 7500,
+    desc:'Refresco',
+    image: 'images/beb5.png',
+    ingredients:[],
+    extras:[]
+  },
+  { 
+    id: 'bebi6',
+    category: 'gaseosas',
+    title: 'Schweppes Lata',
+    price: 5500,
+    desc:'Refresco',
+    image: 'images/beb6.png',
+    ingredients:[],
+    extras:[]
+  },
+  { 
+    id: 'o1',
+    category: 'otros',
+    title: 'Nuggets + Papas',
+    price: 25000,
+    desc:'Con salsa especial',
+    image: 'images/otros1.png',
+    ingredients:['Salsa'],
+    extras: [{ name: 'Maicitos', price: 2000 },{ name: 'Porción de papas a la francesa', price: 3500 },{ name: 'Huevos de codorniz', price: 1500 },{ name: 'Queso', price: 1500 },{ name: 'Tocineta', price: 2500 }]
+  }*/
 ];
 
 const categories = [...new Set(products.map(p=>p.category))];
@@ -1837,7 +2042,6 @@ document.addEventListener("click", (e) => {
 
 
 // ============Fin de codigo de Descarga QR=================
-
 
 
 
