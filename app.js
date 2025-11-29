@@ -483,7 +483,7 @@ const products = [
   category: 'salchipapa',
   title: 'Salchicostilla',
   price: 29000,
-  desc: 'Papas a la francesa, salchicha, carne desmechada, pollo desmechado, costilla, madurito, tocineta, guacamole, queso y maicitos.',
+  desc: 'PERSONAL/FAMILIAR: Papas a la francesa, salchicha, carne desmechada, pollo desmechado, costilla, madurito, tocineta, guacamole, queso y maicitos.',
   image: 'images/Salchicostilla.png',
   sizes: [
     { id: 'sa1-n', label: 'Normal', price: 29000, image: 'images/Salchicostilla.png' },
@@ -504,7 +504,7 @@ const products = [
   category: 'salchipapa',
   title: 'Salchitoci',
   price: 29000,
-  desc: 'Papas a la francesa con salchicha, carne desmechada, pollo desmechado, madurito, tocineta carnuda, guacamole, picadillo, queso y maicitos.',
+  desc: 'PERSONAL/FAMILIAR: Papas a la francesa con salchicha, carne desmechada, pollo desmechado, madurito, tocineta carnuda, guacamole, picadillo, queso y maicitos.',
   image: 'images/salchitoci.png',
   sizes: [
     { id: 'sa2-n', label: 'Normal', price: 29000, image: 'images/salchitoci.png' },
@@ -525,7 +525,7 @@ const products = [
   category: 'salchipapa',
   title: 'Salchiranchera',
   price: 27000,
-  desc: 'Papas con carne, salchicha ranchera, pollo desmechado, suiza, madurito, tocineta, guacamole y maicitos.',
+  desc: 'PERSONAL/FAMILIAR: Papas con carne, salchicha ranchera, pollo desmechado, suiza, madurito, tocineta, guacamole y maicitos.',
   image: 'images/salchiranchera.png',
   sizes: [
     { id: 'sa3-n', label: 'Normal', price: 27000, image: 'images/salchiranchera.png' },
@@ -546,7 +546,7 @@ const products = [
   category: 'salchipapa',
   title: 'Salchiquesuda',
   price: 26000,
-  desc: 'Papas a la francesa con carne desmechada, pollo desmechado, madurito, tocineta y cubierta de queso gratinado.',
+  desc: 'PERSONAL/FAMILIAR: Papas a la francesa con carne desmechada, pollo desmechado, madurito, tocineta y cubierta de queso gratinado.',
   image: 'images/salchipapa4.png',
   sizes: [
     { id: 'sa4-n', label: 'Normal', price: 26000, image: 'images/salchipapa4.png' },
@@ -567,7 +567,7 @@ const products = [
   category: 'salchipapa',
   title: 'Salchipaisa',
   price: 25000,
-  desc: 'Papas con salchicha, carne, salchicha suiza, pollo, huevo de codorniz, madurito, tocineta, guacamole y maicitos.',
+  desc: 'PERSONAL/FAMILIAR: Papas con salchicha, carne, salchicha suiza, pollo, huevo de codorniz, madurito, tocineta, guacamole y maicitos.',
   image: 'images/Salchipaisa.png',
   sizes: [
     { id: 'sa5-n', label: 'Normal', price: 25000, image: 'images/Salchipaisa.png' },
@@ -588,7 +588,7 @@ const products = [
   category: 'salchipapa',
   title: 'Salchimixta',
   price: 23000,
-  desc: 'Papas a la francesa con salchicha, carne desmechada, pollo desmechado, huevo de codorniz, madurito, tocineta y guacamole.',
+  desc: 'PERSONAL/FAMILIAR: Papas a la francesa con salchicha, carne desmechada, pollo desmechado, huevo de codorniz, madurito, tocineta y guacamole.',
   image: 'images/salchipapa6.png',
   sizes: [
     { id: 'sa6-n', label: 'Normal', price: 23000, image: 'images/salchipapa6.png' },
@@ -609,7 +609,7 @@ const products = [
   category: 'salchipapa',
   title: 'Salchipapa Dog',
   price: 16000,
-  desc: 'Papas a la francesa con salchicha, queso gratinado y huevo de codorniz.',
+  desc: 'PERSONAL/FAMILIAR: Papas a la francesa con salchicha, queso gratinado y huevo de codorniz.',
   image: 'images/salchipapa.png',
   ingredients: ['Papas a la francesa', 'Salchicha', 'Queso gratinado', 'Huevo de codorniz'],
   extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
@@ -931,7 +931,7 @@ const products = [
   id: 'l1',
   category: 'limonadas',
   title: 'Limonada de Coco',
-  price: 9000,
+  price: 8500,
   desc: 'Refrescante limonada de coco, cremosa y tropical, disponible en agua o en leche.',
   image: 'images/limonada1.png',
   ingredients: ['Limón', 'Crema de coco', 'Agua o Leche', 'Azúcar', 'Hielo'],
@@ -939,13 +939,13 @@ const products = [
     {
       id: 'l1-agua',
       label: 'En agua',
-      price: 9000,
+      price: 8500,
       image: 'images/limonada1.png'
     },
     {
       id: 'l1-leche',
       label: 'En leche',
-      price: 10000,
+      price: 9500,
       image: 'images/limonada1.png'
     }
   ]
@@ -954,7 +954,7 @@ const products = [
   id: 'l2',
   category: 'limonadas',
   title: 'Limonada de Mango Biche',
-  price: 9000,
+  price: 8500,
   desc: 'Limonada con sabor a mango biche, perfecta para los amantes del toque ácido.',
   image: 'images/mangobiche.png',
   ingredients: ['Limón', 'Pulpa de mango biche', 'Azúcar', 'Agua', 'Hielo'],
@@ -962,13 +962,13 @@ const products = [
     {
       id: 'l2-agua',
       label: 'En agua',
-      price: 9000,
+      price: 8500,
       image: 'images/mangobiche.png'
     },
     {
       id: 'l2-leche',
       label: 'En leche',
-      price: 10000,
+      price: 9500,
       image: 'images/mangobiche.png'
     }
   ]
@@ -977,7 +977,7 @@ const products = [
   id: 'l3',
   category: 'limonadas',
   title: 'Limonada de Cereza',
-  price: 9000,
+  price: 8500,
   desc: 'Limonada con un toque dulce de cereza, ideal para acompañar tus comidas.',
   image: 'images/limonada3.png',
   ingredients: ['Limón', 'Cereza', 'Azúcar', 'Agua', 'Hielo'],
@@ -985,13 +985,13 @@ const products = [
     {
       id: 'l3-agua',
       label: 'En agua',
-      price: 9000,
+      price: 8500,
       image: 'images/limonada3.png'
     },
     {
       id: 'l3-leche',
       label: 'En leche',
-      price: 10000,
+      price: 9500,
       image: 'images/limonada3.png'
     }
   ]
@@ -1000,7 +1000,7 @@ const products = [
   id: 'l4',
   category: 'limonadas',
   title: 'Limonada Piña Colada',
-  price: 9500,
+  price: 8500,
   desc: 'Exquisita mezcla de limón, piña y coco con un toque tropical.',
   image: 'images/piñacolada.png',
   ingredients: ['Limón', 'Piña', 'Crema de coco', 'Azúcar', 'Agua', 'Hielo'],
@@ -1008,13 +1008,13 @@ const products = [
     {
       id: 'l4-agua',
       label: 'En agua',
-      price: 9500,
+      price: 8500,
       image: 'images/piñacolada.png'
     },
     {
       id: 'l4-leche',
       label: 'En leche',
-      price: 10500,
+      price: 9500,
       image: 'images/piñacolada.png'
     }
   ]
@@ -1023,7 +1023,7 @@ const products = [
   id: 'l5',
   category: 'limonadas',
   title: 'Tamarindo Escarchada',
-  price: 9500,
+  price: 8500,
   desc: 'Limonada con tamarindo natural y escarcha dulce, refrescante y diferente.',
   image: 'images/tamarindoescarchada.png',
   ingredients: ['Limón', 'Pulpa de tamarindo', 'Azúcar', 'Agua', 'Hielo'],
@@ -1031,13 +1031,13 @@ const products = [
     {
       id: 'l5-agua',
       label: 'En agua',
-      price: 9500,
+      price: 8500,
       image: 'images/tamarindoescarchada.png'
     },
     {
       id: 'l5-leche',
       label: 'En leche',
-      price: 10500,
+      price: 9500,
       image: 'images/tamarindoescarchada.png'
     }
   ]
@@ -1046,7 +1046,7 @@ const products = [
   id: 'l6',
   category: 'limonadas',
   title: 'Soda Escarchada',
-  price: 9500,
+  price: 8500,
   desc: 'Refrescante soda escarchada con toque cítrico y hielo granizado.',
   image: 'images/limonada6.png',
   ingredients: ['Soda', 'Limón', 'Azúcar', 'Hielo granizado'],
@@ -1054,13 +1054,13 @@ const products = [
     {
       id: 'l6-agua',
       label: 'En agua',
-      price: 9500,
+      price: 8500,
       image: 'images/limonada6.png'
     },
     {
       id: 'l6-leche',
       label: 'En leche',
-      price: 10500,
+      price: 9500,
       image: 'images/limonada6.png'
     }
   ]
@@ -1085,7 +1085,7 @@ const products = [
     {
       id: 'gasefami1',
       label: 'familiar',
-      price: 8000,
+      price: 7000,
       image: 'images/postobon.png'
     }
   ]
@@ -1094,7 +1094,7 @@ const products = [
   id: 'g2',
   category: 'gaseosas',
   title: 'Sprite',
-  price: 5000,
+  price: 4000,
   desc: 'Clásica Sprite con su sabor cítrico único, disponible en presentacion personal.',
   image: 'images/sprite.png',
   ingredients: ['Sprite 1.5L']
@@ -1140,7 +1140,7 @@ const products = [
     {
       id: 'gasefami4',
       label: 'familiar',
-      price: 8000,
+      price: 7000,
       image: 'images/cocaCola.png'
     }
   ]
@@ -1158,7 +1158,7 @@ const products = [
   id: 'g6',
   category: 'gaseosas',
   title: 'H2O',
-  price: 5000,
+  price: 3000,
   desc: 'Deliciosa H2O saborizada, perfecta para refrescarte, disponible en presentaciones personal',
   image: 'images/H2O.png',
   ingredients: ['H2O 1.5L']
@@ -1167,7 +1167,7 @@ const products = [
   id: 'g7',
   category: 'gaseosas',
   title: 'Hit',
-  price: 5000,
+  price: 4000,
   desc: 'Dulce y refrescante jugo Hit, disponible en presentacion personal y familiar. Pregunta nuestros sabores disponibles',
   image: 'images/hit.png',
   ingredients: ['Hit 400ml'],
@@ -1175,13 +1175,13 @@ const products = [
     {
       id: 'hitperso7',
       label: 'personal',
-      price: 5000,
+      price: 4000,
       image: 'images/hit.png'
     },
     {
       id: 'hitfami7',
       label: 'familiar',
-      price: 8000,
+      price: 5500,
       image: 'images/hit.png'
     }
   ]
@@ -1201,7 +1201,7 @@ const products = [
   id: 'malte1',
   category: 'malteadas',
   title: 'Malteadas',
-  price: 12000,
+  price: 13000,
   desc: 'Cremosas malteadas! Pregunta por nuestros Sabores disponibles.',
   image: 'images/malteada1.png',
   ingredients: ['Leche', 'Helado de vainilla', 'Crema batida']
