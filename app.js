@@ -120,7 +120,7 @@ const products = [
   { 
     id: 'b9',
     category: 'hamburguesas',
-    title: 'Quesuda',
+    title: 'Hamburguesa Quesuda',
     price: 17000,
     desc: 'Pan brioche, carne artesanal, queso, tocineta, aros de cebolla, ensalada, tomate y salsa de la casa cubierta de queso.',
     image: 'images/hamburgesa9.png',
@@ -640,7 +640,7 @@ const products = [
 { 
   id: 'a2',
   category: 'arepas', 
-  title: 'Quesuda Dog',
+  title: 'Arepa Quesuda Dog',
   price: 17000,
   desc: 'Arepa con tocineta, carne artesanal, tomate, ensalada, ripio de papas, salsas y cubierta de queso.',
   image: 'images/arepa2.png',
@@ -1876,7 +1876,15 @@ function openCheckout() {
   }
 
   // 🔹 Recalcular subtotal actual (incluyendo extras)
-const subtotal = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+// 🔥 Recalcular subtotal REAL (incluye extras)
+let subtotal = 0;
+
+cart.forEach(item => {
+  const extrasTotal = item.extras?.reduce((sum, e) => sum + e.price * e.qty, 0) || 0;
+  const itemTotal = (item.price + extrasTotal) * item.qty;
+  subtotal += itemTotal;
+});
+
 
 
   const delivery = 0; // por defecto
@@ -1941,28 +1949,33 @@ function updateCheckoutTotals() {
   const deliveryEl = document.getElementById('cart-delivery-checkout');
   const totalEl = document.getElementById('cart-total-checkout');
 
-  const DELIVERY_FEE = 0; // mismo valor usado en refreshCartUI
+  const DELIVERY_FEE = 0;
 
   // Mostrar u ocultar campo de dirección
   addressLabel.classList.toggle('hidden', method !== 'domicilio');
 
-  // 🧾 Heredamos los valores que ya calcula refreshCartUI()
-  const subtotal = cart.reduce((acc, item) => acc + item.price * item.qty, 0);
+  // 🔥 CALCULAR SUBTOTAL EXACTO (CON EXTRAS)
+  let subtotal = 0;
 
-  // 🚚 Si el método es domicilio, se suma el envío
+  cart.forEach(item => {
+    const extrasTotal = item.extras?.reduce((sum, e) => sum + e.price * e.qty, 0) || 0;
+    const itemTotal = (item.price + extrasTotal) * item.qty;
+    subtotal += itemTotal;
+  });
+
+  // Envío
   const delivery = method === 'domicilio' && subtotal > 0 ? DELIVERY_FEE : 0;
   const total = subtotal + delivery;
 
   // Mostrar/ocultar fila de envío
   envioRow.classList.toggle('hidden', method !== 'domicilio');
 
-  // ✅ Actualizar DOM (heredado del refreshCartUI, con ajuste solo si hay envío)
-  subtotalEl.textContent = document.getElementById('cart-subtotal').textContent;
-  deliveryEl.textContent = document.getElementById('cart-delivery').textContent;
-  totalEl.textContent = method === 'domicilio'
-    ? `$${numberWithCommas(total)}`
-    : document.getElementById('cart-total-checkout').textContent;
+  // Actualizar valores visibles
+  subtotalEl.textContent = `$${numberWithCommas(subtotal)}`;
+  deliveryEl.textContent = `$${numberWithCommas(delivery)}`;
+  totalEl.textContent = `$${numberWithCommas(total)}`;
 }
+
 
 
 checkoutForm.addEventListener('change', updateCheckoutTotals);
