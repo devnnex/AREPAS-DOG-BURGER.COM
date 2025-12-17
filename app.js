@@ -1515,13 +1515,15 @@ function openProductModal(id, cartIndex = null) {
   const p = products.find(x => x.id === id);
   if (!p) return;
 
-  // ======== NUEVO: tamaño seleccionado (primer tamaño por defecto) ========
-  let selectedSize = p.sizes ? p.sizes[0] : { id: p.id, price: p.price, image: p.image, label: '' };
+  // ===== TAMAÑO SELECCIONADO =====
+  let selectedSize = p.sizes
+    ? p.sizes[0]
+    : { id: p.id, price: p.price, image: p.image, label: "" };
 
-  // === CREAR OVERLAY ===
+  // ===== OVERLAY =====
   const overlay = document.createElement("div");
   overlay.className = "product-overlay";
-  
+
   overlay.innerHTML = `
     <div class="product-sheet">
       <div class="modal-header">
@@ -1549,14 +1551,16 @@ function openProductModal(id, cartIndex = null) {
             </div>
           ` : ""}
 
-          ${ p.extras?.length ? `
+          ${p.extras?.length ? `
             <h3>Adiciones</h3>
             <div class="extras-list">
-              ${p.extras.map((e, i) => `
+              ${p.extras.map(e => `
                 <label>
-                  <input type="checkbox" data-id="${e.id}" data-name="${e.name}" data-price="${e.price}">
+                  <input type="checkbox"
+                         data-key="${e.name}"
+                         data-price="${e.price}">
                   <span>${e.name}</span>
-                  <span class="extra-controls" data-index="${i}">
+                  <span class="extra-controls">
                     <button class="minus-extra">−</button>
                     <span class="extra-qty">0</span>
                     <button class="plus-extra">+</button>
@@ -1565,7 +1569,7 @@ function openProductModal(id, cartIndex = null) {
                 </label>
               `).join("")}
             </div>
-          ` : "" }
+          ` : ""}
 
           <div class="quantity">
             <button class="minus">−</button>
@@ -1574,7 +1578,7 @@ function openProductModal(id, cartIndex = null) {
           </div>
 
           <button class="add-btn">
-            ${cartIndex !== null ? 'Actualizar' : 'Agregar'} 
+            ${cartIndex !== null ? "Actualizar" : "Agregar"}
             <span class="price">$${numberWithCommas(selectedSize.price)}</span>
           </button>
         </div>
@@ -1584,22 +1588,24 @@ function openProductModal(id, cartIndex = null) {
 
   document.body.appendChild(overlay);
 
-  // ---- Cierre ----
-  overlay.querySelector(".close").addEventListener("click", () => overlay.remove());
-  overlay.addEventListener("click", e => { if (e.target === overlay) overlay.remove(); });
+  // ===== CERRAR =====
+  overlay.querySelector(".close").onclick = () => overlay.remove();
+  overlay.onclick = e => { if (e.target === overlay) overlay.remove(); };
 
   // ===== VARIABLES =====
   let qty = 1;
   const qtyEl = overlay.querySelector(".qty");
   const priceEl = overlay.querySelector(".price");
-  const extrasQty = Array(p.extras?.length || 0).fill(0);
   const extrasInputs = overlay.querySelectorAll(".extras-list input");
 
-  // ===== SI ES EDICIÓN =====
+  // 🔐 ESTADO ROBUSTO DE EXTRAS
+  const extrasState = {};
+  // { "Tocineta": { qty: 3, price: 3000 } }
+
+  // ===== EDICIÓN =====
   if (cartIndex !== null) {
     const item = cart[cartIndex];
 
-    // Encontrar el tamaño usado
     if (p.sizes) {
       selectedSize = p.sizes.find(s => s.id === item.sizeId) || p.sizes[0];
       overlay.querySelector("#product-img").src = selectedSize.image;
@@ -1611,91 +1617,130 @@ function openProductModal(id, cartIndex = null) {
 
     if (item.extras?.length) {
       item.extras.forEach(e => {
-        const idx = p.extras.findIndex(pe => pe.name === e.name);
-        if (idx >= 0) extrasQty[idx] = e.qty;
+        extrasState[e.name] = { qty: e.qty, price: e.price };
+      });
+
+      extrasInputs.forEach(input => {
+        const key = input.dataset.key;
+        if (extrasState[key]) {
+          input.checked = true;
+          input.closest("label").querySelector(".extra-qty").textContent =
+            extrasState[key].qty;
+        }
       });
     }
-
-    extrasInputs.forEach((input, i) => {
-      input.checked = extrasQty[i] > 0;
-      input.closest("label").querySelector(".extra-qty").textContent = extrasQty[i];
-    });
   }
 
-  // ===== UPDATE PRICE =====
+  // ===== PRECIO FINAL (CORREGIDO) =====
   function updatePrice() {
-    const extrasTotal = (p.extras || [])
-      .reduce((sum, e, i) => sum + e.price * extrasQty[i], 0);
+    let extrasTotal = 0;
 
-    const total = (selectedSize.price + extrasTotal) * qty;
+    Object.values(extrasState).forEach(e => {
+      extrasTotal += e.price * e.qty;
+    });
+
+    // 🔑 CLAVE: el producto se multiplica, los extras NO
+    const total = (selectedSize.price * qty) + extrasTotal;
+
     priceEl.textContent = `$${numberWithCommas(total)}`;
   }
 
   updatePrice();
 
-  // ===== CAMBIAR TAMAÑO DINÁMICAMENTE =====
+  // ===== CAMBIO DE TAMAÑO =====
   overlay.querySelectorAll("input[name='size']").forEach(radio => {
-    radio.addEventListener("change", e => {
-      const sizeId = e.target.value;
-      selectedSize = p.sizes.find(s => s.id === sizeId);
-
+    radio.onchange = e => {
+      selectedSize = p.sizes.find(s => s.id === e.target.value);
       overlay.querySelector("#product-img").src = selectedSize.image;
-
       updatePrice();
-    });
+    };
   });
 
   // ===== CANTIDAD =====
-  overlay.querySelector(".plus").addEventListener("click", () => { qty++; qtyEl.textContent = qty; updatePrice(); });
-  overlay.querySelector(".minus").addEventListener("click", () => { if (qty > 1) qty--; qtyEl.textContent = qty; updatePrice(); });
+  overlay.querySelector(".plus").onclick = () => {
+    qty++;
+    qtyEl.textContent = qty;
+    updatePrice();
+  };
 
-  // ===== ADICIONES =====
+  overlay.querySelector(".minus").onclick = () => {
+    if (qty > 1) {
+      qty--;
+      qtyEl.textContent = qty;
+      updatePrice();
+    }
+  };
 
-  // *** NUEVO: si el usuario marca el checkbox sin tocar +, qty = 1 automáticamente ***
-  extrasInputs.forEach((input, i) => {
-    input.addEventListener("change", () => {
-      if (input.checked && extrasQty[i] === 0) {
-        extrasQty[i] = 1;
-        input.closest("label").querySelector(".extra-qty").textContent = 1;
-      } else if (!input.checked) {
-        extrasQty[i] = 0;
-        input.closest("label").querySelector(".extra-qty").textContent = 0;
+  // ===== CHECKBOX EXTRAS =====
+  extrasInputs.forEach(input => {
+    const key = input.dataset.key;
+    const price = Number(input.dataset.price);
+    const qtyEl = input.closest("label").querySelector(".extra-qty");
+
+    input.onchange = () => {
+      if (input.checked) {
+        extrasState[key] = { qty: 1, price };
+        qtyEl.textContent = 1;
+      } else {
+        delete extrasState[key];
+        qtyEl.textContent = 0;
       }
       updatePrice();
-    });
+    };
   });
 
+  // ===== + EXTRA =====
   overlay.querySelectorAll(".plus-extra").forEach(btn => {
-    const i = parseInt(btn.parentElement.dataset.index);
-    const qtyDisplay = btn.parentElement.querySelector(".extra-qty");
+    btn.onclick = () => {
+      const label = btn.closest("label");
+      const input = label.querySelector("input");
+      const key = input.dataset.key;
+      const price = Number(input.dataset.price);
+      const qtyEl = label.querySelector(".extra-qty");
 
-    btn.addEventListener("click", () => {
-      extrasQty[i]++;
-      qtyDisplay.textContent = extrasQty[i];
-      extrasInputs[i].checked = true;
-      updatePrice();
-    });
-  });
-
-  overlay.querySelectorAll(".minus-extra").forEach(btn => {
-    const i = parseInt(btn.parentElement.dataset.index);
-    const qtyDisplay = btn.parentElement.querySelector(".extra-qty");
-
-    btn.addEventListener("click", () => {
-      if (extrasQty[i] > 0) {
-        extrasQty[i]--;
-        qtyDisplay.textContent = extrasQty[i];
-        extrasInputs[i].checked = extrasQty[i] > 0;
-        updatePrice();
+      if (!extrasState[key]) {
+        extrasState[key] = { qty: 0, price };
+        input.checked = true;
       }
-    });
+
+      extrasState[key].qty++;
+      qtyEl.textContent = extrasState[key].qty;
+      updatePrice();
+    };
   });
 
-  // ===== AGREGAR AL CARRITO =====
-  overlay.querySelector(".add-btn").addEventListener("click", () => {
-    const extras = (p.extras || [])
-      .map((e, i) => ({ name: e.name, price: e.price, qty: extrasQty[i] }))
-      .filter(e => e.qty > 0);
+  // ===== − EXTRA =====
+  overlay.querySelectorAll(".minus-extra").forEach(btn => {
+    btn.onclick = () => {
+      const label = btn.closest("label");
+      const input = label.querySelector("input");
+      const key = input.dataset.key;
+      const qtyEl = label.querySelector(".extra-qty");
+
+      if (!extrasState[key]) return;
+
+      extrasState[key].qty--;
+
+      if (extrasState[key].qty <= 0) {
+        delete extrasState[key];
+        input.checked = false;
+        qtyEl.textContent = 0;
+      } else {
+        qtyEl.textContent = extrasState[key].qty;
+      }
+
+      updatePrice();
+    };
+  });
+
+  // ===== AGREGAR / ACTUALIZAR =====
+  overlay.querySelector(".add-btn").onclick = () => {
+
+    const extras = Object.entries(extrasState).map(([name, e]) => ({
+      name,
+      price: e.price,
+      qty: e.qty
+    }));
 
     const item = {
       productId: p.id,
@@ -1718,8 +1763,10 @@ function openProductModal(id, cartIndex = null) {
     updateCartBadge();
     overlay.remove();
     cartDrawer.classList.remove("hidden");
-  });
+  };
 }
+
+
 
 
 
@@ -1761,6 +1808,7 @@ function updateCartBadge() {
 // ---------- refreshCartUI CORREGIDA PARA REFLEJAR CAMBIOS ----------
 function refreshCartUI() {
   cartItemsEl.innerHTML = '';
+
   if (cart.length === 0) {
     cartItemsEl.innerHTML = '<div class="empty">Tu carrito está vacío 🍔</div>';
     cartSubtotalEl.textContent = '$0';
@@ -1773,20 +1821,27 @@ function refreshCartUI() {
   let subtotal = 0;
 
   cart.forEach((item, idx) => {
-    // --- CALCULAR PRECIO REAL DEL ITEM CON EXTRAS ---
-    const extrasTotal = item.extras?.reduce((sum, e) => sum + e.price * e.qty, 0) || 0;
 
-    // 🔥 FIX: precio del item sumando adiciones
-    const itemTotal = (item.price + extrasTotal) * item.qty;
+    // ===== TOTAL DE EXTRAS (NO SE MULTIPLICA POR qty) =====
+    const extrasTotal =
+      item.extras?.reduce((sum, e) => sum + (e.price * e.qty), 0) || 0;
+
+    // 🔑 CLAVE: producto * cantidad + extras
+    const itemTotal = (item.price * item.qty) + extrasTotal;
 
     subtotal += itemTotal;
 
     const extrasText = item.extras?.length
-      ? item.extras.map(e => `+ ${e.name} x${e.qty} ($${numberWithCommas(e.price * e.qty)})`).join('<br>')
+      ? item.extras
+          .map(e =>
+            `+ ${e.name} x${e.qty} ($${numberWithCommas(e.price * e.qty)})`
+          )
+          .join('<br>')
       : '';
 
     const div = document.createElement('div');
     div.className = 'cart-item';
+
     div.innerHTML = `
       <img class="cart-item-img" src="${item.image}" alt="${item.title}">
       <div class="info">
@@ -1804,7 +1859,7 @@ function refreshCartUI() {
       </div>
     `;
 
-    // --- CONTROL DE CANTIDAD ---
+    // ===== CONTROL DE CANTIDAD =====
     div.querySelector('.plus').addEventListener('click', () => {
       item.qty++;
       persistCart();
@@ -1821,7 +1876,7 @@ function refreshCartUI() {
       refreshCartUI();
     });
 
-    // --- ELIMINAR PRODUCTO ---
+    // ===== ELIMINAR =====
     div.querySelector('.remove-btn').addEventListener('click', () => {
       if (confirm(`¿Eliminar "${item.title}" del carrito?`)) {
         cart.splice(idx, 1);
@@ -1830,11 +1885,15 @@ function refreshCartUI() {
       }
     });
 
-    // --- EDITAR PRODUCTO DESDE EL CARRITO ---
+    // ===== EDITAR =====
     div.addEventListener('click', (e) => {
-      if (!e.target.classList.contains('minus') && !e.target.classList.contains('plus') && !e.target.classList.contains('remove-btn')) {
-        cartDrawer.classList.add('hidden'); // esconder carrito
-        openProductModal(item.productId, idx); // enviar índice para edición
+      if (
+        !e.target.classList.contains('minus') &&
+        !e.target.classList.contains('plus') &&
+        !e.target.classList.contains('remove-btn')
+      ) {
+        cartDrawer.classList.add('hidden');
+        openProductModal(item.productId, idx);
       }
     });
 
@@ -1846,6 +1905,7 @@ function refreshCartUI() {
   cartTotalEl.textContent = `$${numberWithCommas(subtotal + DELIVERY_FEE)}`;
   updateCartBadge();
 }
+
 
 
 
@@ -1880,8 +1940,10 @@ function openCheckout() {
 let subtotal = 0;
 
 cart.forEach(item => {
-  const extrasTotal = item.extras?.reduce((sum, e) => sum + e.price * e.qty, 0) || 0;
-  const itemTotal = (item.price + extrasTotal) * item.qty;
+  const extrasTotal =
+    item.extras?.reduce((sum, e) => sum + e.price * e.qty, 0) || 0;
+
+  const itemTotal = (item.price * item.qty) + extrasTotal;
   subtotal += itemTotal;
 });
 
@@ -1955,13 +2017,15 @@ function updateCheckoutTotals() {
   addressLabel.classList.toggle('hidden', method !== 'domicilio');
 
   // 🔥 CALCULAR SUBTOTAL EXACTO (CON EXTRAS)
-  let subtotal = 0;
+let subtotal = 0;
 
-  cart.forEach(item => {
-    const extrasTotal = item.extras?.reduce((sum, e) => sum + e.price * e.qty, 0) || 0;
-    const itemTotal = (item.price + extrasTotal) * item.qty;
-    subtotal += itemTotal;
-  });
+cart.forEach(item => {
+  const extrasTotal =
+    item.extras?.reduce((sum, e) => sum + e.price * e.qty, 0) || 0;
+
+  const itemTotal = (item.price * item.qty) + extrasTotal;
+  subtotal += itemTotal;
+});
 
   // Envío
   const delivery = method === 'domicilio' && subtotal > 0 ? DELIVERY_FEE : 0;
@@ -2011,24 +2075,31 @@ checkoutForm.addEventListener('submit', (e) => {
 
   let subtotal = 0;
 
-  cart.forEach(item => {
-    // Calcular precio de extras individualmente
-    const extras = item.extras || [];
-    const extrasLines = extras.map(e => `   ➕ ${e.qty}x ${e.name} ($${numberWithCommas(e.price * e.qty)})`).join('\n');
-    const extrasSum = extras.reduce((sum, e) => sum + e.price * e.qty, 0);
+cart.forEach(item => {
+  // Calcular precio de extras individualmente
+  const extras = item.extras || [];
+  const extrasLines = extras
+    .map(e => `   ➕ ${e.qty}x ${e.name} ($${numberWithCommas(e.price * e.qty)})`)
+    .join('\n');
 
-    const itemTotal = (item.price + extrasSum) * item.qty;
-    subtotal += itemTotal;
+  const extrasSum = extras.reduce((sum, e) => sum + e.price * e.qty, 0);
 
-    // Mostrar solo precio del artículo base + extras detallados
-    textParts.push(`${item.qty}x ${item.title} — *$${numberWithCommas(item.price * item.qty)}*`);
-    if (extrasLines) textParts.push(extrasLines);
+  // 🔑 FIX: NO multiplicar extras por la cantidad del producto
+  const itemTotal = (item.price * item.qty) + extrasSum;
+  subtotal += itemTotal;
 
-    // Si hay toppings removidos
-    if (item.removed && item.removed.length) {
-      textParts.push(`   ⚠️ Toppings removidos: ${item.removed.join(', ')}`);
-    }
-  });
+  // Mostrar producto base
+  textParts.push(
+    `${item.qty}x ${item.title} — *$${numberWithCommas(item.price * item.qty)}*`
+  );
+
+  if (extrasLines) textParts.push(extrasLines);
+
+  // Toppings removidos
+  if (item.removed && item.removed.length) {
+    textParts.push(`   ⚠️ Toppings removidos: ${item.removed.join(', ')}`);
+  }
+});
 
   const delivery = method === 'domicilio' ? DELIVERY_FEE : 0;
   const total = subtotal + delivery;
