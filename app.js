@@ -744,10 +744,10 @@ const products = [
 {
   id: 'j1',
   category: 'Jugos',
-  title: 'Jugo de Mango',
+  title: 'Jugo de Maracuyá',
   price: 6000,
-  desc: 'Refrescante jugo natural de mango preparado al momento.',
-  ingredients: ['Mango fresco', 'Azúcar', 'Hielo'],
+  desc: 'Delicioso jugo natural de maracuyá, refrescante y con un toque ácido.',
+  ingredients: ['Maracuyá', 'Azúcar', 'Hielo'],
   image: 'images/jugo1.png',
   sizes: [
     {
@@ -767,10 +767,10 @@ const products = [
 {
   id: 'j2',
   category: 'Jugos',
-  title: 'Jugo de Fresa',
+  title: 'Jugo de Guanábana',
   price: 6000,
-  desc: 'Jugo natural de fresa con un sabor dulce y fresco.',
-  ingredients: ['Fresas', 'Azúcar', 'Hielo'],
+  desc: 'Jugo natural de guanábana, cremoso, suave y lleno de sabor tropical.',
+  ingredients: ['Guanábana', 'Azúcar', 'Hielo'],
   image: 'images/jugo2.png',
   sizes: [
     {
@@ -792,7 +792,7 @@ const products = [
   category: 'Jugos',
   title: 'Jugo de Mora',
   price: 6000,
-  desc: 'Jugo artesanal de mora, lleno de sabor y color natural.',
+  desc: 'Jugo artesanal de mora, intenso, refrescante y de color natural.',
   ingredients: ['Mora fresca', 'Azúcar', 'Hielo'],
   image: 'images/jugo3.png',
   sizes: [
@@ -813,10 +813,10 @@ const products = [
 {
   id: 'j4',
   category: 'Jugos',
-  title: 'Jugo de Maracuyá',
+  title: 'Jugo de Mango',
   price: 6000,
-  desc: 'Delicioso jugo de maracuyá con su característico toque ácido.',
-  ingredients: ['Maracuyá', 'Azúcar', 'Hielo'],
+  desc: 'Refrescante jugo natural de mango, dulce, suave y preparado al momento.',
+  ingredients: ['Mango fresco', 'Azúcar', 'Hielo'],
   image: 'images/jugo4.png',
   sizes: [
     {
@@ -830,98 +830,6 @@ const products = [
       label: 'En leche',
       price: 7000,
       image: 'images/jugo4.png'
-    }
-  ]
-},
-{
-  id: 'j5',
-  category: 'Jugos',
-  title: 'Jugo de Lulo',
-  price: 6000,
-  desc: 'Tradicional jugo de lulo colombiano, ácido y refrescante.',
-  ingredients: ['Lulo', 'Azúcar', 'Hielo'],
-  image: 'images/jugo5.png',
-  sizes: [
-    {
-      id: 'j5-agua',
-      label: 'En agua',
-      price: 6000,
-      image: 'images/jugo5.png'
-    },
-    {
-      id: 'j5-leche',
-      label: 'En leche',
-      price: 7000,
-      image: 'images/jugo5.png'
-    }
-  ]
-},
-{
-  id: 'j6',
-  category: 'Jugos',
-  title: 'Jugo de Papaya',
-  price: 6000,
-  desc: 'Suave jugo natural de papaya, ideal para acompañar tus comidas.',
-  ingredients: ['Papaya', 'Azúcar', 'Hielo'],
-  image: 'images/jugo6.png',
-  sizes: [
-    {
-      id: 'j6-agua',
-      label: 'En agua',
-      price: 6000,
-      image: 'images/jugo6.png'
-    },
-    {
-      id: 'j6-leche',
-      label: 'En leche',
-      price: 7000,
-      image: 'images/jugo6.png'
-    }
-  ]
-},
-{
-  id: 'j7',
-  category: 'Jugos',
-  title: 'Jugo de Sandía',
-  price: 6000,
-  desc: 'Refrescante jugo de sandía, perfecto para los días calurosos.',
-  ingredients: ['Sandía', 'Azúcar', 'Hielo'],
-  image: 'images/jugo7.png',
-  sizes: [
-    {
-      id: 'j7-agua',
-      label: 'En agua',
-      price: 6000,
-      image: 'images/jugo7.png'
-    },
-    {
-      id: 'j7-leche',
-      label: 'En leche',
-      price: 7000,
-      image: 'images/jugo7.png'
-    }
-  ]
-},
-{
-  id: 'j8',
-  category: 'Jugos',
-  title: 'Jugo de Piña',
-  price: 6000,
-  desc: 'Jugo tropical de piña, dulce, ácido y muy refrescante.',
-  ingredients: ['Piña', 'Azúcar', 'Hielo'],
-  image: 'images/jugo8.png',
-  sizes: [
-    {
-      id: 'j8-agua',
-      label: 'En agua',
-      price: 6000,
-      image: 'images/jugo8.png'
-    },
-    {
-      id: 'j8-leche',
-      label: 'En leche',
-      price: 7000,
-      image: 'images/jugo8.png'
     }
   ]
 },
@@ -2348,6 +2256,7 @@ document.addEventListener("click", (e) => {
 
 
 // ============Fin de codigo de Descarga QR=================
+
 
 
 
