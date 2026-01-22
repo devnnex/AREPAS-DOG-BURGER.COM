@@ -630,7 +630,7 @@ const products = [
 { 
   id: 'a1',
   category: 'arepas',
-  title: 'Doble Carne Dog',
+  title: 'Arepa Doble Carne Dog',
   price: 17500,
   desc: 'Arepa con tocineta, pollo desmechado, dos carnes, ensalada, ripio de papas, salsas, tomate y queso gratinado.',
   image: 'images/Arepadoblecarne.png',
@@ -650,7 +650,7 @@ const products = [
 { 
   id: 'a3',
   category: 'arepas',
-  title: 'Rellena',
+  title: 'Arepa Rellena',
   price: 15000,
   desc: 'Arepa con queso, pollo desmechado, carne desmechada, chicharrón, guiso, guacamole, maduritos y salchicha ranchera.',
   image: 'images/arepa3.png',
@@ -660,7 +660,7 @@ const products = [
 { 
   id: 'a4',
   category: 'arepas',
-  title: 'Mixta Dog',
+  title: 'Arepa Mixta Dog',
   price: 15500,
   desc: 'Arepa con tocineta, pollo desmechado, carne artesanal, ensalada, ripio de papas, salsas, queso gratinado y tomate.',
   image: 'images/arepa4.png',
@@ -670,7 +670,7 @@ const products = [
 { 
   id: 'a5',
   category: 'arepas',
-  title: 'Paisa Dog',
+  title: 'Arepa Paisa Dog',
   price: 16000,
   desc: 'Arepa con carne, ensalada, ripio de papas, salsas, queso gratinado, tomate, tocineta y maicitos.',
   image: 'images/arepa5.png',
@@ -680,7 +680,7 @@ const products = [
 { 
   id: 'a6',
   category: 'arepas',
-  title: 'Con Filete Dog',
+  title: 'Arepa Con Filete Dog',
   price: 14000,
   desc: 'Arepa con tocineta, filete de pollo, ensalada, tomate, ripio de papas, salsas y queso gratinado.',
   image: 'images/arepafiletedepollo.png',
@@ -700,7 +700,7 @@ const products = [
 { 
   id: 'a8',
   category: 'arepas',
-  title: 'Con Pollo Dog',
+  title: 'Arepa Con Pollo Dog',
   price: 15000,
   desc: 'Arepa con pollo desmechado, ensalada, ripio de papas, salsas y queso gratinado.',
   image: 'images/arepa8.png',
@@ -713,7 +713,7 @@ const products = [
 {
   id: 'b1',
   category: 'burritos',
-  title: 'Pernil de Cerdo',
+  title: 'Burrito Pernil de Cerdo',
   price: 16000,
   desc: 'Burrito de pernil de cerdo con queso, maicitos, picadillo de lechuga, tomate y guacamole.',
   image: 'images/burrito1.png',
@@ -723,7 +723,7 @@ const products = [
 {
   id: 'b2',
   category: 'burritos',
-  title: 'Mixto',
+  title: 'Burrito Mixto',
   price: 15500,
   desc: 'Burrito mixto con pollo desmechado, carne desmechada, queso, maicitos, picadillo de lechuga, tomate y guacamole.',
   image: 'images/burrito2.png',
@@ -733,7 +733,7 @@ const products = [
 {
   id: 'b3',
   category: 'burritos',
-  title: 'Pollo y Tocineta',
+  title: 'Burrito Pollo y Tocineta',
   price: 14500,
   desc: 'Burrito con pollo desmechado, tocineta, queso, maicitos, picadillo de lechuga, tomate, y guacamole.',
   image: 'images/burrito3.png',
@@ -2256,6 +2256,7 @@ document.addEventListener("click", (e) => {
 
 
 // ============Fin de codigo de Descarga QR=================
+
 
 
 
