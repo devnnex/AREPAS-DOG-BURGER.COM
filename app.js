@@ -10,7 +10,7 @@ const products = [
   { 
     id: 'b1',
     category: 'hamburguesas',
-    title: '3 Carnes',
+    title: 'Hamburguesa 3 Carnes',
     price: 28000,
     desc: 'Pan brioche, pernil de cerdo, filete de pollo, carne artesanal, queso, cebolla, ensalada, tomate y salsa de la casa.',
     image: 'images/3Carnes.png',
@@ -21,7 +21,7 @@ const products = [
   { 
     id: 'b13',
     category: 'hamburguesas',
-    title: 'Ranchera',
+    title: 'Hamburguesa Ranchera',
     price: 25000,
     desc: 'Pan brioche, lechuga, tomate, carne, queso asado, ranchera asada, picadillo de piña y salsa de la casa.',
     image: 'images/Ranchera.png',
@@ -32,7 +32,7 @@ const products = [
   { 
     id: 'b2',
     category: 'hamburguesas',
-    title: 'TociBurger',
+    title: 'Hamburguesa TociBurger',
     price: 24000,
     desc: 'Pan brioche, lechuga, guacamole, tomate, carne artesanal, queso mozzarella, maduritos, trozos de tocino, salsa de la casa y cebolla caramelizada.',
     image: 'images/TociBurger.png',
@@ -54,7 +54,7 @@ const products = [
   { 
     id: 'b4',
     category: 'hamburguesas',
-    title: 'Super',
+    title: 'Hamburguesa Super',
     price: 21000,
     desc: 'Pan brioche, 2 carnes artesanales, pollo desmechado, queso, tocineta, aros de cebolla, ensalada, tomate, salsa de la casa + papas a la francesa.',
     image: 'images/Super.png',
@@ -65,7 +65,7 @@ const products = [
   { 
     id: 'b5',
     category: 'hamburguesas',
-    title: 'Royal',
+    title: 'Hamburguesa Royal',
     price: 21000,
      desc: 'Pan brioche, lechuga, guacamole, tomate, pollo en salsa, carne artesanal, salsa de la casa, queso a la plancha, cebolla con tocineta caramelizada, trozos de pollo y ranchera',
     image: 'images/Royal.png',
@@ -76,7 +76,7 @@ const products = [
   { 
     id: 'b6',
     category: 'hamburguesas',
-    title: 'Combinada',
+    title: 'Hamburguesa Combinada',
     price: 20000,
     desc: 'Pan brioche, carne artesanal, filete de pollo, queso, tocineta, ensalada, tomate, salsa de la casa y aros de cebolla.',
     image: 'images/combinada.png',
@@ -87,7 +87,7 @@ const products = [
   { 
     id: 'b7',
     category: 'hamburguesas',
-    title: 'Doble Carne',
+    title: 'Hamburguesa Doble Carne',
     price: 19000,
     desc: 'Pan brioche, doble carne artesanal, queso, pollo desmechado, tocineta, cebolla, ensalada, tomate y salsa de la casa.',
     image: 'images/DobleCarne.png',
@@ -98,7 +98,7 @@ const products = [
   { 
     id: 'b8',
     category: 'hamburguesas',
-    title: 'Paisa',
+    title: 'Hamburguesa Paisa',
     price: 18500,
     desc: 'Pan brioche, carne artesanal, pollo desmechado, queso, tocineta, maicitos, salchicha ranchera, ensalada, tomate, salsa de la casa y aros de cebolla.',
     image: 'images/paisa.png',
@@ -109,7 +109,7 @@ const products = [
   { 
     id: 'b14',
     category: 'hamburguesas',
-    title: 'Pernil de Cerdo',
+    title: 'Hamburguesa Pernil de Cerdo',
     price: 17000,
     desc: 'Pan brioche, pernil de cerdo, queso, tocineta, aros de cebolla, ensalada, tomate y salsa de la casa.',
     image: 'images/hamburgesa14.png',
@@ -131,7 +131,7 @@ const products = [
   { 
     id: 'b10',
     category: 'hamburguesas',
-    title: 'Mixta',
+    title: 'Hamburguesa Mixta',
     price: 16000,
     desc: 'Pan brioche, carne artesanal, pollo desmechado, queso, tocineta, ensalada, tomate y salsa de la casa.',
     image: 'images/mixta.png',
@@ -142,7 +142,7 @@ const products = [
   { 
     id: 'b11',
     category: 'hamburguesas',
-    title: 'Filete de Pollo',
+    title: 'Hamburguesa Filete de Pollo',
     price: 15500,
     desc: 'Pan brioche, filete de pollo, queso, tocineta, ensalada, tomate y salsa de la casa.',
     image: 'images/hamburgesa11.png',
@@ -153,7 +153,7 @@ const products = [
   { 
     id: 'b12',
     category: 'hamburguesas',
-    title: 'Tradicional',
+    title: 'Hamburguesa Tradicional',
     price: 15000,
     desc: 'Pan brioche, carne artesanal, queso, tocineta, ensalada, tomate y salsa de la casa.',
     image: 'images/hamburgesa12.png',
@@ -174,7 +174,7 @@ const products = [
 {  
   id: 'p2',
   category: 'perros',
-  title: 'Paisa',
+  title: 'Perro Paisa',
   price: 17000,
   desc: 'Salchicha americana con pollo desmechado, maicitos, ensalada, salsas y ripio de papas.',
   image: 'images/perroPaisa.png',
@@ -184,7 +184,7 @@ const products = [
 {  
   id: 'p3',
   category: 'perros',
-  title: 'Quesudo',
+  title: 'Perro Quesudo',
   price: 16000,
   desc: 'Salchicha americana con ensalada, ripio de papas, salsas, tocineta y cubierta de queso.',
   image: 'images/Quesudo.png',
@@ -194,7 +194,7 @@ const products = [
 {  
   id: 'p4',
   category: 'perros',
-  title: 'Doble Americano',
+  title: 'Perro Doble Americano',
   price: 15500,
   desc: 'Dos salchichas americanas con ensalada, ripio de papas, tocineta, salsas y queso gratinado.',
   image: 'images/p4.png',
@@ -204,7 +204,7 @@ const products = [
 {  
   id: 'p5',
   category: 'perros',
-  title: 'Ranchero',
+  title: 'Perro Ranchero',
   price: 13500,
   desc: 'Salchicha ranchera con ensalada, ripio de papas, salsas y queso gratinado.',
   image: 'images/ranchero.png',
@@ -214,7 +214,7 @@ const products = [
 {  
   id: 'p6',
   category: 'perros',
-  title: 'Doble Salchicha',
+  title: 'Perro Doble Salchicha',
   price: 13000,
   desc: 'Dos salchichas con ensalada, ripio de papas, salsas y queso gratinado.',
   image: 'images/p6.png',
@@ -224,7 +224,7 @@ const products = [
 {  
   id: 'p7',
   category: 'perros',
-  title: 'Americano',
+  title: 'Perro Americano',
   price: 12500,
   desc: 'Salchicha americana con ensalada, ripio de papas, salsas y queso gratinado.',
   image: 'images/p7.png',
@@ -234,7 +234,7 @@ const products = [
 {  
   id: 'p8',
   category: 'perros',
-  title: 'Tradicional',
+  title: 'Perro Tradicional',
   price: 11000,
   desc: 'Salchicha con ensalada, ripio de papas, salsas y queso gratinado.',
   image: 'images/tradicional.png',
@@ -2256,6 +2256,7 @@ document.addEventListener("click", (e) => {
 
 
 // ============Fin de codigo de Descarga QR=================
+
 
 
 
