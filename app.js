@@ -43,7 +43,7 @@ const products = [
   { 
     id: 'b3',
     category: 'hamburguesas',
-    title: 'Triple Carne',
+    title: 'Hamburguesa Triple Carne',
     price: 23000,
     desc: 'Pan brioche, 3 carnes artesanales, pollo desmechado, queso, tocineta, aros de cebolla, ensalada, tomate y salsa de la casa.',
     image: 'images/TripleCarne.png',
@@ -2256,6 +2256,7 @@ document.addEventListener("click", (e) => {
 
 
 // ============Fin de codigo de Descarga QR=================
+
 
 
 
