@@ -1551,3 +1551,60 @@ body {
 .radio-btn:hover {
     border-color: rgb(0, 0, 0);
 }
+
+
+
+/* Estilo de la Burbuja */
+.cart-bubble {
+  position: fixed;
+  bottom: 620px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: #e6d50c; /* Color llamativo */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  z-index: 999;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  cursor: pointer;
+}
+
+.cart-bubble:hover {
+  transform: scale(1.1);
+}
+
+.cart-bubble.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+}
+
+#open-cart-floating {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Contador en la burbuja */
+.bubble-count {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #2f3542;
+  color: white;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border: 2px solid white;
+}
+
