@@ -1706,10 +1706,39 @@ function persistCart() {
 }
 
 // Actualizar contador del ícono del carrito
+// 1. Modifica tu función actual para que actualice AMBOS contadores
 function updateCartBadge() {
   const count = cart.reduce((sum, i) => sum + i.qty, 0);
-  cartCountEl.textContent = count;
+  
+  // Contador del header (el que ya tienes)
+  if(cartCountEl) cartCountEl.textContent = count;
+  
+  // Nuevo contador de la burbuja flotante
+  const floatingCountEl = document.querySelector('.bubble-count');
+  if(floatingCountEl) floatingCountEl.textContent = count;
 }
+
+// 2. Lógica para mostrar/ocultar la burbuja al hacer scroll
+const floatingCart = document.getElementById('floating-cart');
+const headerCart = document.getElementById('open-cart'); // Tu carrito original del header
+
+window.addEventListener('scroll', () => {
+  const headerCartPos = headerCart.getBoundingClientRect().bottom;
+
+  if (headerCartPos < 0) {
+    // Si el carrito del header ya no se ve, muestra la burbuja
+    floatingCart.classList.remove('hidden');
+  } else {
+    // Si el header es visible, oculta la burbuja
+    floatingCart.classList.add('hidden');
+  }
+});
+
+// 3. Hacer que el botón flotante también abra el carrito
+document.getElementById('open-cart-floating').addEventListener('click', () => {
+  cartDrawer.classList.remove('hidden');
+  cartDrawer.setAttribute('aria-hidden', 'false');
+});
 
 // Renderizar los ítems del carrito
 // ---------- Carrito ----------
@@ -2256,6 +2285,7 @@ document.addEventListener("click", (e) => {
 
 
 // ============Fin de codigo de Descarga QR=================
+
 
 
 
