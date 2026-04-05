@@ -268,7 +268,7 @@ const products = [
   category: 'perros',
   title: 'Perro Salchiranchero',
   price: 29000,
-  desc: 'Pan con ranchero, carne, pollo, madurito, maicitos, tocineta y queso.',
+  desc: 'Pan con salchicha ranchera, carne, pollo, madurito, maicitos, tocineta y queso.',
   image: 'images/Salchiperros.png',
   ingredients: ['Pan', 'Ranchero', 'Carne', 'Pollo', 'Madurito', 'Maicitos', 'Tocineta', 'Queso'],
   extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
@@ -279,7 +279,7 @@ const products = [
   category: 'perros',
   title: 'Perro SalchiAmericano',
   price: 26000,
-  desc: 'Pan con americana, carne, pollo, madurito, maicitos, tocineta y queso.',
+  desc: 'Pan con salchicha americana, carne, pollo, madurito, maicitos, tocineta y queso.',
   image: 'images/Salchiperros.png',
   ingredients: ['Pan', 'Americana', 'Carne', 'Pollo', 'Madurito', 'Maicitos', 'Tocineta', 'Queso'],
   extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
@@ -290,7 +290,7 @@ const products = [
   category: 'perros',
   title: 'Perro SalchiSuizo',
   price: 30000,
-  desc: 'Pan con suiza, carne, pollo, madurito, maicitos, tocineta y queso.',
+  desc: 'Pan con salchicha suiza, carne, pollo, madurito, maicitos, tocineta y queso.',
   image: 'images/Salchiperros.png',
   ingredients: ['Pan', 'Suiza', 'Carne', 'Pollo', 'Madurito', 'Maicitos', 'Tocineta', 'Queso'],
   extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
