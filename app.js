@@ -1448,12 +1448,53 @@ const searchInput = document.getElementById('search');
 
 // ---------- Init ----------
 function init(){
+  resetClientForm(); // 👈 AQUI
   renderCategories();
   setActiveCategory(activeCategory);
   bindEvents();
   refreshCartUI();
 }
+
+function resetClientForm() {
+  const form = document.getElementById('checkout-form');
+  if (!form) return;
+
+  // Reset visual
+  form.reset();
+
+  // Limpiar posibles datos guardados manualmente (por si luego implementas persistencia)
+  form.querySelectorAll('input, textarea, select').forEach(el => {
+    if (el.type === 'radio' || el.type === 'checkbox') {
+      el.checked = false;
+    } else {
+      el.value = '';
+    }
+  });
+
+  // Opcional: dejar valores por defecto (pro UX)
+  const recoger = form.querySelector('input[value="recoger"]');
+  if (recoger) recoger.checked = true;
+
+  // Ocultar campos dinámicos
+  document.getElementById('address-label')?.classList.add('hidden');
+  document.getElementById('envio-row')?.classList.add('hidden');
+}
+
 init();
+
+window.addEventListener('productAvailabilityChanged', e => {
+  const { id } = e.detail;
+  applyAvailabilityToRendered(id);
+});
+
+window.addEventListener('storage', (e) => {
+  if (e.key === 'productStatus' || e.key === 'productStatusUpdate') {
+    applyAvailabilityToRendered();
+    // si hay un modal abierto (product-overlay) actualiza sus extras
+    const modal = document.querySelector('.product-overlay');
+    if (modal) applyExtrasAvailability(modal);
+  }
+});
 
 // ---------- Render categorías ----------
 function renderCategories(){
@@ -2166,6 +2207,21 @@ cart.forEach(item => {
   const waUrl = `https://wa.me/${bp}?text=${msg}`;
 
   window.open(waUrl, '_blank');
+  // 🧹 Vaciar carrito
+cart = [];
+persistCart();
+refreshCartUI();
+localStorage.removeItem('tb_cart');
+
+  resetClientForm();
+
+// ⏳ RECARGA SEGURA (clave)
+setTimeout(() => {
+  window.location.reload();
+}, 1500); // 1.5 segundos es perfecto
+
+// Cerrar modal checkout
+checkoutModal.classList.add('hidden');
 });
 
 
