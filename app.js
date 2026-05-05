@@ -805,7 +805,7 @@ const products = [
 
 // === BURRITOS ===
 {
-  id: 'b1',
+  id: 'bur1',
   category: 'burritos',
   title: 'Burrito Pernil de Cerdo',
   price: 18000,
@@ -815,7 +815,7 @@ const products = [
   extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
 {
-  id: 'b2',
+  id: 'bur2',
   category: 'burritos',
   title: 'Burrito Mixto',
   price: 17500,
@@ -825,7 +825,7 @@ const products = [
   extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
 {
-  id: 'b3',
+  id: 'bur3',
   category: 'burritos',
   title: 'Burrito Pollo y Tocineta',
   price: 16000,
@@ -835,7 +835,7 @@ const products = [
   extras: [{ name:'Maicitos',price:2500 },{ name:'Pollo esmechado',price:5000 },{ name:'Carne esmechada',price:5500 },{ name:'Tocino',price:9000 },{ name:'Costilla',price:8000 },{ name:'Porción de papas a la francesa',price:7000 },{ name:'Unidad de huevo de codorniz',price:1500 },{ name:'Huevos de codorniz 5 unidades',price:4000 },{ name:'Queso',price:3000 },{ name:'Tocineta',price:3000 }]
 },
 {
-  id: 'b4',
+  id: 'bur4',
   category: 'burritos',
   title: 'Burrito Carne Desmechada',
   price: 19000,
