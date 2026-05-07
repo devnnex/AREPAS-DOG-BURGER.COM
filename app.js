@@ -11,7 +11,7 @@ const products = [
     id: 'b1',
     category: 'hamburguesas',
     title: 'Hamburguesa 3 Carnes',
-    price: 31000,
+    price: 30000,
     desc: 'Pan brioche, pernil de cerdo, filete de pollo, carne artesanal, queso, cebolla, ensalada, tomate y salsa de la casa.',
     image: 'images/3Carnes.png',
     ingredients: ['Pan Brioche','Pernil de cerdo','Filete de pollo','Carne artesanal','Queso','Cebolla','Ensalada','Tomate','Salsa de la casa'],
@@ -22,7 +22,7 @@ const products = [
     id: 'b13',
     category: 'hamburguesas',
     title: 'Hamburguesa Ranchera',
-    price: 26000,
+    price: 25000,
     desc: 'Pan brioche, lechuga, tomate, carne, queso asado, ranchera asada, picadillo de piña y salsa de la casa.',
     image: 'images/Ranchera.png',
     ingredients: ['Pan brioche','Lechuga','Tomate','Carne','Queso asado','Ranchera asada','Picadillo de piña','Salsa de la casa'],
@@ -33,7 +33,7 @@ const products = [
     id: 'b2',
     category: 'hamburguesas',
     title: 'Hamburguesa TociBurger',
-    price: 27500,
+    price: 26500,
     desc: 'Pan brioche, lechuga, guacamole, tomate, carne artesanal, queso mozzarella, maduritos, trozos de tocino, salsa de la casa y cebolla caramelizada.',
     image: 'images/TociBurger.png',
     ingredients: ['Pan Brioche','Lechuga','Guacamole','Tomate','Carne Artesanal','Queso Mozzarella','Maduritos','Trozos de tocino','Salsa de la casa','Cebolla caramelizada'],
@@ -44,7 +44,7 @@ const products = [
     id: 'b3',
     category: 'hamburguesas',
     title: 'Hamburguesa Triple Carne',
-    price: 27000,
+    price: 26000,
     desc: 'Pan brioche, 3 carnes artesanales, pollo desmechado, queso, tocineta, aros de cebolla, ensalada, tomate y salsa de la casa.',
     image: 'images/TripleCarne.png',
     ingredients: ['Pan Brioche','Carne Artesanal x3','Queso','Cebolla','Tomate','Salsa de la casa'],
@@ -55,7 +55,7 @@ const products = [
     id: 'b4',
     category: 'hamburguesas',
     title: 'Hamburguesa Super',
-    price: 24000,
+    price: 23000,
     desc: 'Pan brioche, 2 carnes artesanales, pollo desmechado, queso, tocineta, aros de cebolla, ensalada, tomate, salsa de la casa + papas a la francesa.',
     image: 'images/Super.png',
     ingredients: ['Pan Brioche','Carne Artesanal','Pollo Desmechado','Queso','Tocineta','Cebolla','Ensalada','Tomate','Salsa de la casa'],
@@ -66,7 +66,7 @@ const products = [
     id: 'b5',
     category: 'hamburguesas',
     title: 'Hamburguesa Royal',
-    price: 25000,
+    price: 24000,
      desc: 'Pan brioche, lechuga, guacamole, tomate, pollo en salsa, carne artesanal, salsa de la casa, queso a la plancha, cebolla con tocineta caramelizada, trozos de pollo y ranchera',
     image: 'images/Royal.png',
     ingredients: ['Pan Brioche','Lechuga','Guacamole','Tomate','Carne Artesanal','Tocineta','Queso salado','Salsa tártara','Cebolla grille'],
@@ -77,7 +77,7 @@ const products = [
     id: 'b6',
     category: 'hamburguesas',
     title: 'Hamburguesa Combinada',
-    price: 24000,
+    price: 23000,
     desc: 'Pan brioche, carne artesanal, filete de pollo, queso, tocineta, ensalada, tomate, salsa de la casa y aros de cebolla.',
     image: 'images/combinada.png',
     ingredients: ['Pan Brioche','Carne Artesanal','Filete de Pollo','Tocineta','Queso','Ensalada','Tomate','Salsa de la casa'],
@@ -88,7 +88,7 @@ const products = [
     id: 'b7',
     category: 'hamburguesas',
     title: 'Hamburguesa Doble Carne',
-    price: 23000,
+    price: 22000,
     desc: 'Pan brioche, doble carne artesanal, queso, pollo desmechado, tocineta, cebolla, ensalada, tomate y salsa de la casa.',
     image: 'images/DobleCarne.png',
     ingredients: ['Pan Brioche','Carne Artesanal x2','Queso','Cebolla','Salsa de la casa'],
@@ -99,7 +99,7 @@ const products = [
     id: 'b8',
     category: 'hamburguesas',
     title: 'Hamburguesa Paisa',
-    price: 22000,
+    price: 21000,
     desc: 'Pan brioche, carne artesanal, pollo desmechado, queso, tocineta, maicitos, salchicha ranchera, ensalada, tomate, salsa de la casa y aros de cebolla.',
     image: 'images/paisa.png',
     ingredients: ['Pan Brioche','Carne Artesanal','Pollo desmechado','Queso','Tocineta','Salsa tártara','Cebolla grille'],
@@ -110,7 +110,7 @@ const products = [
     id: 'b14',
     category: 'hamburguesas',
     title: 'Hamburguesa Pernil de Cerdo',
-    price: 20500,
+    price: 19500,
     desc: 'Pan brioche, pernil de cerdo, queso, tocineta, aros de cebolla, ensalada, tomate y salsa de la casa.',
     image: 'images/hamburgesa14.png',
     ingredients: ['Pan Brioche','Pernil de cerdo','Queso','Tocineta','Cebolla','Tomate','Salsa de la casa'],
@@ -121,7 +121,7 @@ const products = [
     id: 'b9',
     category: 'hamburguesas',
     title: 'Hamburguesa Quesuda',
-    price: 20000,
+    price: 19000,
     desc: 'Pan brioche, carne artesanal, queso, tocineta, aros de cebolla, ensalada, tomate y salsa de la casa cubierta de queso.',
     image: 'images/hamburgesa9.png',
     ingredients: ['Pan Brioche','Carne Artesanal','Doble queso','Cebolla','Ensalada','Tomate','Salsa de la casa'],
@@ -132,7 +132,7 @@ const products = [
     id: 'b10',
     category: 'hamburguesas',
     title: 'Hamburguesa Mixta',
-    price: 20000,
+    price: 19000,
     desc: 'Pan brioche, carne artesanal, pollo desmechado, queso, tocineta, ensalada, tomate y salsa de la casa.',
     image: 'images/mixta.png',
     ingredients: ['Pan Brioche','Filete de Pollo','Carne Artesanal','Queso','Tomate','Ensalada','Salsa de la casa'],
@@ -143,7 +143,7 @@ const products = [
     id: 'b11',
     category: 'hamburguesas',
     title: 'Hamburguesa Filete de Pollo',
-    price: 19000,
+    price: 18000,
     desc: 'Pan brioche, filete de pollo, queso, tocineta, ensalada, tomate y salsa de la casa.',
     image: 'images/hamburgesa11.png',
     ingredients: ['Pan Brioche','Filete de Pollo','Queso','Cebolla','Ensalada','Tomate','Salsa de la casa'],
@@ -154,7 +154,7 @@ const products = [
     id: 'b12',
     category: 'hamburguesas',
     title: 'Hamburguesa Tradicional',
-    price: 18000,
+    price: 17000,
     desc: 'Pan brioche, carne artesanal, queso, tocineta, ensalada, tomate y salsa de la casa.',
     image: 'images/hamburgesa12.png',
     ingredients: ['Pan Brioche','Carne Artesanal','Queso','Cebolla','Ensalada','Tomate','Salsa de la casa'],
@@ -165,7 +165,7 @@ const products = [
   id: 'p1',
   category: 'perros',
   title: 'Perra Dog',
-  price: 19000,
+  price: 18000,
   desc: 'Salchicha suiza con ensalada, ripio de papas, salsas, tocineta y queso gratinado.',
   image: 'images/perraDog.png',
   ingredients: ['Salchicha suiza', 'Ensalada', 'Ripio de papas', 'Salsas', 'Tocineta', 'Queso gratinado'],
@@ -175,7 +175,7 @@ const products = [
   id: 'p2',
   category: 'perros',
   title: 'Perro Paisa',
-  price: 21000,
+  price: 20000,
   desc: 'Salchicha americana con pollo desmechado, maicitos, ensalada, salsas y ripio de papas.',
   image: 'images/perroPaisa.png',
   ingredients: ['Salchicha americana', 'Pollo desmechado', 'Maicitos', 'Ensalada', 'Ripio de papas', 'Salsas'],
@@ -185,7 +185,7 @@ const products = [
   id: 'p3',
   category: 'perros',
   title: 'Perro Quesudo',
-  price: 19500,
+  price: 18500,
   desc: 'Salchicha americana con ensalada, ripio de papas, salsas, tocineta y cubierta de queso.',
   image: 'images/Quesudo.png',
   ingredients: ['Salchicha americana', 'Ensalada', 'Ripio de papas', 'Salsas', 'Tocineta', 'Queso gratinado'],
@@ -195,7 +195,7 @@ const products = [
   id: 'p4',
   category: 'perros',
   title: 'Perro Doble Americano',
-  price: 19500,
+  price: 18500,
   desc: 'Dos salchichas americanas con ensalada, ripio de papas, tocineta, salsas y queso gratinado.',
   image: 'images/p4.png',
   ingredients: ['2 Salchichas americanas', 'Ensalada', 'Ripio de papas', 'Tocineta', 'Salsas', 'Queso gratinado'],
@@ -205,7 +205,7 @@ const products = [
   id: 'p5',
   category: 'perros',
   title: 'Perro Ranchero',
-  price: 18500,
+  price: 17500,
   desc: 'Salchicha ranchera con ensalada, ripio de papas, salsas y queso gratinado.',
   image: 'images/ranchero.png',
   ingredients: ['Salchicha ranchera', 'Ensalada', 'Ripio de papas', 'Salsas', 'Queso gratinado'],
@@ -215,7 +215,7 @@ const products = [
   id: 'p6',
   category: 'perros',
   title: 'Perro Doble Salchicha',
-  price: 17000,
+  price: 16000,
   desc: 'Dos salchichas con ensalada, ripio de papas, salsas y queso gratinado.',
   image: 'images/p6.png',
   ingredients: ['2 Salchichas', 'Ensalada', 'Ripio de papas', 'Salsas', 'Queso gratinado'],
@@ -225,7 +225,7 @@ const products = [
   id: 'p7',
   category: 'perros',
   title: 'Perro Americano',
-  price: 17000,
+  price: 16000,
   desc: 'Salchicha americana con ensalada, ripio de papas, salsas y queso gratinado.',
   image: 'images/p7.png',
   ingredients: ['Salchicha americana', 'Ensalada', 'Ripio de papas', 'Salsas', 'Queso gratinado'],
@@ -235,7 +235,7 @@ const products = [
   id: 'p8',
   category: 'perros',
   title: 'Perro Tradicional',
-  price: 15000,
+  price: 14000,
   desc: 'Salchicha con ensalada, ripio de papas, salsas y queso gratinado.',
   image: 'images/tradicional.png',
   ingredients: ['Salchicha', 'Ensalada', 'Ripio de papas', 'Salsas', 'Queso gratinado'],
@@ -245,7 +245,7 @@ const products = [
   id: 'p9',
   category: 'perros',
   title: 'Perro Suizo',
-  price: 22000,
+  price: 21000,
   desc: 'Salchicha Suiza con ensalada, ripio de papas, salsas y queso gratinado.',
   image: 'images/suizo.png',
   ingredients: ['Salchicha', 'Ensalada', 'Ripio de papas', 'Salsas', 'Queso gratinado'],
@@ -256,7 +256,7 @@ const products = [
   id: 'p10',
   category: 'perros',
   title: 'Salchi Perro',
-  price: 25000,
+  price: 24000,
   desc: 'Pan con salchicha, carne, pollo, madurito, maicitos, tocineta y queso.',
   image: 'images/Salchiperros.png',
   ingredients: ['Pan', 'Salchicha', 'Carne', 'Pollo', 'Madurito', 'Maicitos', 'Tocineta', 'Queso'],
@@ -267,7 +267,7 @@ const products = [
   id: 'p11',
   category: 'perros',
   title: 'Perro Salchiranchero',
-  price: 30000,
+  price: 29000,
   desc: 'Pan con salchicha ranchera, carne, pollo, madurito, maicitos, tocineta y queso.',
   image: 'images/Salchiperros.png',
   ingredients: ['Pan', 'Ranchero', 'Carne', 'Pollo', 'Madurito', 'Maicitos', 'Tocineta', 'Queso'],
@@ -278,7 +278,7 @@ const products = [
   id: 'p12',
   category: 'perros',
   title: 'Perro SalchiAmericano',
-  price: 27000,
+  price: 26000,
   desc: 'Pan con salchicha americana, carne, pollo, madurito, maicitos, tocineta y queso.',
   image: 'images/Salchiperros.png',
   ingredients: ['Pan', 'Americana', 'Carne', 'Pollo', 'Madurito', 'Maicitos', 'Tocineta', 'Queso'],
@@ -289,7 +289,7 @@ const products = [
   id: 'p13',
   category: 'perros',
   title: 'Perro SalchiSuizo',
-  price: 31000,
+  price: 30000,
   desc: 'Pan con salchicha suiza, carne, pollo, madurito, maicitos, tocineta y queso.',
   image: 'images/Salchiperros.png',
   ingredients: ['Pan', 'Suiza', 'Carne', 'Pollo', 'Madurito', 'Maicitos', 'Tocineta', 'Queso'],
@@ -300,7 +300,7 @@ const products = [
   id: 's1',
   category: 'sandwiches',
   title: 'Sandwich Pernil',
-  price: 22000,
+  price: 21000,
   desc: 'Pernil de cerdo, lechuga, tomate, guacamole, tocineta y queso.',
   image: 'images/SandwichPernil.png',
   ingredients: ['Pernil de cerdo', 'Lechuga', 'Tomate', 'Guacamole', 'Tocineta', 'Queso'],
@@ -310,7 +310,7 @@ const products = [
   id: 's2',
   category: 'sandwiches',
   title: 'Sandwich Combinado',
-  price: 23000,
+  price: 22000,
   desc: 'Filete de pollo, carne artesanal, lechuga, tomate, salsa de maíz, tocineta, queso y guacamole.',
   image: 'images/Sandwichcombinado.png',
   ingredients: ['Filete de pollo', 'Carne artesanal', 'Lechuga', 'Tomate', 'Salsa de maíz', 'Tocineta', 'Queso', 'Guacamole'],
@@ -320,7 +320,7 @@ const products = [
   id: 's3',
   category: 'sandwiches',
   title: 'Sandwich Mixto',
-  price: 21000,
+  price: 20000,
   desc: 'Pollo desmechado, carne artesanal, lechuga, tomate, guacamole, salsa de maíz, tocineta y queso.',
   image: 'images/SandwichMixto.png',
   ingredients: ['Pollo desmechado', 'Carne artesanal', 'Lechuga', 'Tomate', 'Guacamole', 'Salsa de maíz', 'Tocineta', 'Queso'],
@@ -330,7 +330,7 @@ const products = [
   id: 's4',
   category: 'sandwiches',
   title: 'Sandwich Filete de Pollo',
-  price: 20500,
+  price: 19500,
   desc: 'Filete de pollo, lechuga, tomate, guacamole, tocineta y queso.',
   image: 'images/SandwichFiletedePollo.png',
   ingredients: ['Filete de pollo', 'Lechuga', 'Tomate', 'Guacamole', 'Tocineta', 'Queso'],
@@ -340,7 +340,7 @@ const products = [
   id: 's5',
   category: 'sandwiches',
   title: 'Sandwich Pollo Desmechado',
-  price: 20000,
+  price: 19000,
   desc: 'Pollo desmechado, lechuga, tomate, guacamole, salsa de maíz, tocineta y queso.',
   image: 'images/SandwichPolloDesmechado.png',
   ingredients: ['Pollo desmechado', 'Lechuga', 'Tomate', 'Guacamole', 'Salsa de maíz', 'Tocineta', 'Queso'],
@@ -350,7 +350,7 @@ const products = [
   id: 's6',
   category: 'sandwiches',
   title: 'Sandwich Carne Desmechado',
-  price: 23000,
+  price: 22000,
   desc: 'Carne desmechada, lechuga, tomate, guacamole, salsa de maíz, tocineta y queso.',
   image: 'images/SandwichCarneDesmechado.png',
   ingredients: ['Carne desmechada', 'Lechuga', 'Tomate', 'Guacamole', 'Salsa de maíz', 'Tocineta', 'Queso'],
@@ -360,7 +360,7 @@ const products = [
   id: 's7',
   category: 'sandwiches',
   title: 'Sandwich Queso Tocineta',
-  price: 19000,
+  price: 18000,
   desc: 'Carne desmechada, lechuga, tomate, guacamole, salsa de maíz, tocineta y queso.',
   image: 'images/Sandwichquesotocineta.png',
   ingredients: ['Lechuga', 'Tomate', 'Guacamole', 'Salsa de maíz', 'Tocineta', 'Queso'],
@@ -372,7 +372,7 @@ const products = [
   id: 'c1',
   category: 'carnes',
   title: 'Churrasco',
-  price: 34000,
+  price: 33000,
   desc: 'Papas a la francesa, arepa con queso y tomate.',
   image: 'images/carne1.png',
   ingredients: ['Churrasco', 'Papas a la francesa', 'Arepa con queso', 'Tomate'],
@@ -382,7 +382,7 @@ const products = [
   id: 'c2',
   category: 'carnes',
   title: 'Asado Mixto',
-  price: 31000,
+  price: 30000,
   desc: 'Carne de res, cerdo y filete de pollo con papas y tomate.',
   image: 'images/carne2.png',
   ingredients: ['Carne de res', 'Cerdo', 'Filete de pollo', 'Papas', 'Tomate'],
@@ -392,7 +392,7 @@ const products = [
   id: 'c3',
   category: 'carnes',
   title: 'Carne de Cerdo Asada',
-  price: 24000,
+  price: 23000,
   desc: 'Papas a la francesa, arepa y tomate.',
   image: 'images/carne3.png',
   ingredients: ['Carne de cerdo', 'Papas a la francesa', 'Arepa', 'Tomate'],
@@ -402,7 +402,7 @@ const products = [
   id: 'c4',
   category: 'carnes',
   title: 'Filete de Pollo a la Plancha',
-  price: 23000,
+  price: 22000,
   desc: 'Filete de pollo con papas a la francesa, arepa y tomate.',
   image: 'images/FileteDePollo.png',
   ingredients: ['Filete de pollo', 'Papas a la francesa', 'Arepa', 'Tomate'],
@@ -412,7 +412,7 @@ const products = [
   id: 'c5',
   category: 'carnes',
   title: 'Chuzo Mixto',
-  price: 18000,
+  price: 17000,
   desc: 'Carne de res y cerdo con arepa y papas.',
   image: 'images/chuzomixto.png',
   ingredients: ['Carne de res', 'Carne de cerdo', 'Arepa', 'Papas a la francesa'],
@@ -422,7 +422,7 @@ const products = [
   id: 'c6',
   category: 'carnes',
   title: 'Chuzo de Cerdo',
-  price: 17500,
+  price: 16500,
   desc: 'Chuzo de cerdo con papas a la francesa, arepa y tomate.',
   image: 'images/chuzodecerdo.png',
   ingredients: ['Cerdo', 'Papas a la francesa', 'Arepa', 'Tomate'],
@@ -432,7 +432,7 @@ const products = [
   id: 'c7',
   category: 'carnes',
   title: 'Carne Suiza',
-  price: 19000,
+  price: 18000,
   desc: 'Papas a la francesa, arepa y tomate.',
   image: 'images/carne7.png',
   ingredients: ['Carne', 'Papas a la francesa', 'Arepa', 'Tomate'],
@@ -442,7 +442,7 @@ const products = [
   id: 'c8',
   category: 'carnes',
   title: 'Chuzo de Pollo',
-  price: 17000,
+  price: 16000,
   desc: 'Chuzo de pollo con papas a la francesa, arepa y tomate.',
   image: 'images/carne8.png',
   ingredients: ['Pollo', 'Papas a la francesa', 'Arepa', 'Tomate'],
@@ -453,7 +453,7 @@ const products = [
   id: 'pt1',
   category: 'patacones',
   title: 'Patacón Quesudo Mixto',
-  price: 25000,
+  price: 24000,
   desc: 'Tocineta, pollo desmechado, carne desmechada, ensalada, ripio de papas, salsas y cubierta de queso.',
   image: 'images/PataconQuesudo.png',
   ingredients: ['Tocineta', 'Pollo desmechado', 'Carne desmechada', 'Ensalada', 'Ripio de papas', 'Salsas', 'Queso gratinado'],
@@ -463,7 +463,7 @@ const products = [
   id: 'pt2',
   category: 'patacones',
   title: 'Patacón Mixto Desmechado',
-  price: 24000,
+  price: 23000,
   desc: 'Tocineta, pollo desmechado, carne desmechada, ensalada, ripio de papas, salsas y queso gratinado.',
   image: 'images/patacon2.png',
   ingredients: ['Tocineta', 'Pollo desmechado', 'Carne desmechada', 'Ensalada', 'Ripio de papas', 'Salsas', 'Queso gratinado'],
@@ -473,7 +473,7 @@ const products = [
   id: 'pt3',
   category: 'patacones',
   title: 'Patacón Mixto Dog',
-  price: 22000,
+  price: 21000,
   desc: 'Tocineta, pollo desmechado, carne, ensalada, ripio de papas, salsas y queso gratinado.',
   image: 'images/patacon3.png',
   ingredients: ['Tocineta', 'Pollo desmechado', 'Carne', 'Ensalada', 'Ripio de papas', 'Salsas', 'Queso gratinado'],
@@ -483,7 +483,7 @@ const products = [
   id: 'pt4',
   category: 'patacones',
   title: 'Patacón Pollo Desmechado',
-  price: 21000,
+  price: 20000,
   desc: 'Pollo desmechado, tocineta, ensalada, ripio de papas, salsas y queso gratinado.',
   image: 'images/PataconPolloDesmechado.png',
   ingredients: ['Pollo desmechado', 'Ensalada', 'Ripio de papas', 'Salsas', 'Queso gratinado'],
@@ -493,7 +493,7 @@ const products = [
   id: 'pt5',
   category: 'patacones',
   title: 'Patacón Carne Desmechada',
-  price: 22000,
+  price: 21000,
   desc: 'Carne desmechada, tocineta, ensalada, ripio de papas, salsas y queso gratinado.',
   image: 'images/PataconCarneDesmechada.png',
   ingredients: ['Carne desmechada', 'Ensalada', 'Ripio de papas', 'Salsas', 'Queso gratinado'],
@@ -503,7 +503,7 @@ const products = [
   id: 'pt6',
   category: 'patacones',
   title: 'Pataburger',
-  price: 20000,
+  price: 19000,
   desc: 'Plátano maduro, tocineta, pollo desmechado, carne artesanal, ensalada, cebolla caramelizada, salsa de la casa y queso.',
   image: 'images/Pataburger.png',
   ingredients: ['Plátano maduro', 'Tocineta', 'Pollo desmechado', 'Carne artesanal', 'Ensalada', 'Cebolla caramelizada', 'Salsa de la casa', 'Queso'],
@@ -513,7 +513,7 @@ const products = [
   id: 'pt7',
   category: 'patacones',
   title: 'Pataburger de carne desmechada',
-  price: 20000,
+  price: 19000,
   desc: 'Plátano maduro, tocineta, carne desmechada, ensalada, cebolla caramelizada, salsa de la casa y queso.',
   image: 'images/Pataburgerdesmechada.png',
   ingredients: ['Plátano maduro', 'Tocineta', 'Carne desmechada', 'Ensalada', 'Cebolla caramelizada', 'Salsa de la casa', 'Queso'],
@@ -524,7 +524,7 @@ const products = [
   id: 'm1',
   category: 'maicitos',
   title: 'Maicitos Mixto',
-  price: 19500,
+  price: 18500,
   desc: 'Maicitos con pollo desmechado, carne desmechada, tocineta y queso gratinado.',
   image: 'images/maicito1.png',
   ingredients: ['Maicitos', 'Pollo desmechado', 'Carne desmechada', 'Tocineta', 'Queso gratinado'],
@@ -534,7 +534,7 @@ const products = [
   id: 'm2',
   category: 'maicitos',
   title: 'Maicitos Rancheros',
-  price: 19500,
+  price: 18500,
   desc: 'Maicitos con pollo, salchicha ranchera, tocineta y queso.',
   image: 'images/maicitosrancheros.png',
   ingredients: ['Maicitos', 'Pollo', 'Salchicha ranchera', 'Tocineta', 'Queso'],
@@ -544,7 +544,7 @@ const products = [
   id: 'm3',
   category: 'maicitos',
   title: 'Maicitos Hawaiano',
-  price: 19000,
+  price: 18000,
   desc: 'Maicitos con pollo, tocineta, queso y piña.',
   image: 'images/maicito3.png',
   ingredients: ['Maicitos', 'Pollo', 'Tocineta', 'Queso', 'Piña'],
@@ -554,7 +554,7 @@ const products = [
   id: 'm4',
   category: 'maicitos',
   title: 'Maicitos Dog',
-  price: 18000,
+  price: 17000,
   desc: 'Maicitos con pollo, tocineta y queso.',
   image: 'images/maicito4.png',
   ingredients: ['Maicitos', 'Pollo', 'Tocineta', 'Queso'],
@@ -565,12 +565,12 @@ const products = [
   id: 'sa1',
   category: 'salchipapa',
   title: 'Salchicostilla',
-  price: 32000,
+  price: 31000,
   desc: 'PERSONAL/FAMILIAR: Papas a la francesa, salchicha, carne desmechada, pollo desmechado, costilla, madurito, tocineta, guacamole, queso y maicitos.',
   image: 'images/Salchicostilla.png',
   sizes: [
-    { id: 'sa1-n', label: 'Normal', price: 32000, image: 'images/Salchicostilla.png' },
-    { id: 'sa1-f', label: 'Familiar', price: 61000, image: 'images/Salchicostilla.png' }
+    { id: 'sa1-n', label: 'Normal', price: 31000, image: 'images/Salchicostilla.png' },
+    { id: 'sa1-f', label: 'Familiar', price: 60000, image: 'images/Salchicostilla.png' }
   ],
   ingredients: ['Papas a la francesa', 'Salchicha', 'Carne desmechada', 'Pollo desmechado', 'Costilla', 'Madurito', 'Tocineta', 'Guacamole', 'Queso', 'Maicitos'],
   extras: [
@@ -586,12 +586,12 @@ const products = [
   id: 'sa2',
   category: 'salchipapa',
   title: 'Salchitoci',
-  price: 31000,
+  price: 30000,
   desc: 'PERSONAL/FAMILIAR: Papas a la francesa con salchicha, carne desmechada, pollo desmechado, madurito, tocineta carnuda, guacamole, picadillo, queso y maicitos.',
   image: 'images/salchitoci.png',
   sizes: [
-    { id: 'sa2-n', label: 'Normal', price: 31000, image: 'images/salchitoci.png' },
-    { id: 'sa2-f', label: 'Familiar', price: 63000, image: 'images/salchitoci.png' }
+    { id: 'sa2-n', label: 'Normal', price: 30000, image: 'images/salchitoci.png' },
+    { id: 'sa2-f', label: 'Familiar', price: 62000, image: 'images/salchitoci.png' }
   ],
   ingredients: ['Papas a la francesa', 'Salchicha', 'Carne desmechada', 'Pollo desmechado', 'Madurito', 'Tocineta carnuda', 'Guacamole', 'Picadillo', 'Queso', 'Maicitos'],
   extras: [
@@ -607,12 +607,12 @@ const products = [
   id: 'sa3',
   category: 'salchipapa',
   title: 'Salchiranchera',
-  price: 30000,
+  price: 29000,
   desc: 'PERSONAL/FAMILIAR: Papas con carne, salchicha ranchera, pollo desmechado, suiza, madurito, tocineta, guacamole y maicitos.',
   image: 'images/salchiranchera.png',
   sizes: [
-    { id: 'sa3-n', label: 'Normal', price: 30000, image: 'images/salchiranchera.png' },
-    { id: 'sa3-f', label: 'Familiar', price: 60000, image: 'images/salchiranchera.png' }
+    { id: 'sa3-n', label: 'Normal', price: 29000, image: 'images/salchiranchera.png' },
+    { id: 'sa3-f', label: 'Familiar', price: 59000, image: 'images/salchiranchera.png' }
   ],
   ingredients: ['Papas a la francesa', 'Carne', 'Salchicha ranchera', 'Pollo desmechado', 'Suiza', 'Madurito', 'Tocineta', 'Guacamole', 'Maicitos'],
   extras: [
@@ -628,12 +628,12 @@ const products = [
   id: 'sa4',
   category: 'salchipapa',
   title: 'Salchiquesuda',
-  price: 30000,
+  price: 29000,
   desc: 'PERSONAL/FAMILIAR: Papas a la francesa con carne desmechada, pollo desmechado, madurito, tocineta y cubierta de queso gratinado.',
   image: 'images/salchipapa4.png',
   sizes: [
-    { id: 'sa4-n', label: 'Normal', price: 30000, image: 'images/salchipapa4.png' },
-    { id: 'sa4-f', label: 'Familiar', price: 58000, image: 'images/salchipapa4.png' }
+    { id: 'sa4-n', label: 'Normal', price: 29000, image: 'images/salchipapa4.png' },
+    { id: 'sa4-f', label: 'Familiar', price: 57000, image: 'images/salchipapa4.png' }
   ],
   ingredients: ['Papas a la francesa', 'Carne desmechada', 'Pollo desmechado', 'Madurito', 'Tocineta', 'Queso gratinado'],
   extras: [
@@ -649,12 +649,12 @@ const products = [
   id: 'sa5',
   category: 'salchipapa',
   title: 'Salchipaisa',
-  price: 31000,
+  price: 30000,
   desc: 'PERSONAL/FAMILIAR: Papas con salchicha, carne, salchicha suiza, pollo, huevo de codorniz, madurito, tocineta, guacamole y maicitos.',
   image: 'images/Salchipaisa.png',
   sizes: [
-    { id: 'sa5-n', label: 'Normal', price: 31000, image: 'images/Salchipaisa.png' },
-    { id: 'sa5-f', label: 'Familiar', price: 56000, image: 'images/Salchipaisa.png' }
+    { id: 'sa5-n', label: 'Normal', price: 30000, image: 'images/Salchipaisa.png' },
+    { id: 'sa5-f', label: 'Familiar', price: 55000, image: 'images/Salchipaisa.png' }
   ],
   ingredients: ['Papas a la francesa', 'Salchicha', 'Carne', 'Suiza', 'Pollo', 'Huevo de codorniz', 'Madurito', 'Tocineta', 'Guacamole', 'Maicitos'],
   extras: [
@@ -670,12 +670,12 @@ const products = [
   id: 'sa6',
   category: 'salchipapa',
   title: 'Salchimixta',
-  price: 27000,
+  price: 26000,
   desc: 'PERSONAL/FAMILIAR: Papas a la francesa con salchicha, carne desmechada, pollo desmechado, huevo de codorniz, madurito, tocineta y guacamole.',
   image: 'images/salchipapa6.png',
   sizes: [
-    { id: 'sa6-n', label: 'Normal', price: 27000, image: 'images/salchipapa6.png' },
-    { id: 'sa6-f', label: 'Familiar', price: 54000, image: 'images/salchipapa6.png' }
+    { id: 'sa6-n', label: 'Normal', price: 26000, image: 'images/salchipapa6.png' },
+    { id: 'sa6-f', label: 'Familiar', price: 53000, image: 'images/salchipapa6.png' }
   ],
   ingredients: ['Papas a la francesa', 'Salchicha', 'Carne desmechada', 'Pollo desmechado', 'Huevo de codorniz', 'Madurito', 'Tocineta', 'Guacamole'],
   extras: [
@@ -691,7 +691,7 @@ const products = [
   id: 'sa7',
   category: 'salchipapa',
   title: 'Salchipapa Dog',
-  price: 19000,
+  price: 18000,
   desc: 'PERSONAL/FAMILIAR: Papas a la francesa con salchicha, queso gratinado y huevo de codorniz.',
   image: 'images/salchipapa.png',
   ingredients: ['Papas a la francesa', 'Salchicha', 'Queso gratinado', 'Huevo de codorniz'],
@@ -702,7 +702,7 @@ const products = [
   id: 'd1',
   category: 'dorilocos',
   title: 'Dorilocos',
-  price: 21000,
+  price: 20000,
   desc: 'Pollo desmechado, carne desmechada, queso, tocineta, maicitos, picadillo de cebolla y tomate, guacamole.',
   image: 'images/dorilocos1.png',
   ingredients: ['Pollo desmechado', 'Carne desmechada', 'Queso', 'Tocineta', 'Maicitos', 'Cebolla', 'Tomate', 'Guacamole'],
@@ -808,7 +808,7 @@ const products = [
   id: 'bur1',
   category: 'burritos',
   title: 'Burrito Pernil de Cerdo',
-  price: 19000,
+  price: 18000,
   desc: 'Burrito de pernil de cerdo con queso, maicitos, picadillo de lechuga, tomate y guacamole.',
   image: 'images/burrito1.png',
   ingredients: ['Tortilla', 'Pernil de cerdo', 'Queso', 'Maicitos', 'Lechuga', 'Tomate', 'Guacamole'],
@@ -818,7 +818,7 @@ const products = [
   id: 'bur2',
   category: 'burritos',
   title: 'Burrito Mixto',
-  price: 18500,
+  price: 17500,
   desc: 'Burrito mixto con pollo desmechado, carne desmechada, queso, maicitos, picadillo de lechuga, tomate y guacamole.',
   image: 'images/burrito2.png',
   ingredients: ['Tortilla', 'Pollo desmechado', 'Carne desmechada', 'Queso', 'Maicitos', 'Lechuga', 'Tomate', 'Guacamole'],
@@ -828,7 +828,7 @@ const products = [
   id: 'bur3',
   category: 'burritos',
   title: 'Burrito Pollo y Tocineta',
-  price: 17000,
+  price: 16000,
   desc: 'Burrito con pollo desmechado, tocineta, queso, maicitos, picadillo de lechuga, tomate, y guacamole.',
   image: 'images/burrito3.png',
   ingredients: ['Tortilla', 'Pollo desmechado', 'Tocineta', 'Queso', 'Maicitos', 'Lechuga', 'Tomate', 'Guacamole'],
@@ -838,7 +838,7 @@ const products = [
   id: 'bur4',
   category: 'burritos',
   title: 'Burrito Carne Desmechada',
-  price: 20000,
+  price: 19000,
   desc: 'Burrito con carne desmechada, queso, maicitos, picadillo de lechuga, tomate, y guacamole.',
   image: 'images/burrito4.png',
   ingredients: ['Tortilla', 'Carne desmechada', 'Queso', 'Maicitos', 'Lechuga', 'Tomate', 'Guacamole'],
@@ -849,7 +849,7 @@ const products = [
   id: 'j1',
   category: 'Jugos',
   title: 'Jugo de Maracuyá',
-  price: 7000,
+  price: 6000,
   desc: 'Delicioso jugo natural de maracuyá, refrescante y con un toque ácido.',
   ingredients: ['Maracuyá', 'Azúcar', 'Hielo'],
   image: 'images/jugo1.png',
@@ -857,13 +857,13 @@ const products = [
     {
       id: 'j1-agua',
       label: 'En agua',
-      price: 7000,
+      price: 6000,
       image: 'images/jugo1.png'
     },
     {
       id: 'j1-leche',
       label: 'En leche',
-      price: 8000,
+      price: 7000,
       image: 'images/jugo1.png'
     }
   ]
@@ -872,7 +872,7 @@ const products = [
   id: 'j2',
   category: 'Jugos',
   title: 'Jugo de Guanábana',
-  price: 7000,
+  price: 6000,
   desc: 'Jugo natural de guanábana, cremoso, suave y lleno de sabor tropical.',
   ingredients: ['Guanábana', 'Azúcar', 'Hielo'],
   image: 'images/jugo2.png',
@@ -880,13 +880,13 @@ const products = [
     {
       id: 'j2-agua',
       label: 'En agua',
-      price: 7000,
+      price: 6000,
       image: 'images/jugo2.png'
     },
     {
       id: 'j2-leche',
       label: 'En leche',
-      price: 8000,
+      price: 7000,
       image: 'images/jugo2.png'
     }
   ]
@@ -895,7 +895,7 @@ const products = [
   id: 'j3',
   category: 'Jugos',
   title: 'Jugo de Mora',
-  price: 7000,
+  price: 6000,
   desc: 'Jugo artesanal de mora, intenso, refrescante y de color natural.',
   ingredients: ['Mora fresca', 'Azúcar', 'Hielo'],
   image: 'images/jugo3.png',
@@ -903,13 +903,13 @@ const products = [
     {
       id: 'j3-agua',
       label: 'En agua',
-      price: 7000,
+      price: 6000,
       image: 'images/jugo3.png'
     },
     {
       id: 'j3-leche',
       label: 'En leche',
-      price: 8000,
+      price: 7000,
       image: 'images/jugo3.png'
     }
   ]
@@ -918,7 +918,7 @@ const products = [
   id: 'j4',
   category: 'Jugos',
   title: 'Jugo de Mango',
-  price: 7000,
+  price: 6000,
   desc: 'Refrescante jugo natural de mango, dulce, suave y preparado al momento.',
   ingredients: ['Mango fresco', 'Azúcar', 'Hielo'],
   image: 'images/jugo4.png',
@@ -926,13 +926,13 @@ const products = [
     {
       id: 'j4-agua',
       label: 'En agua',
-      price: 7000,
+      price: 6000,
       image: 'images/jugo4.png'
     },
     {
       id: 'j4-leche',
       label: 'En leche',
-      price: 8000,
+      price: 7000,
       image: 'images/jugo4.png'
     }
   ]
@@ -943,7 +943,7 @@ const products = [
   id: 'l1',
   category: 'limonadas',
   title: 'Limonada de Coco',
-  price: 9500,
+  price: 8500,
   desc: 'Refrescante limonada de coco, cremosa y tropical, disponible en agua o en leche.',
   image: 'images/limonada1.png',
   ingredients: ['Limón', 'Crema de coco', 'Agua o Leche', 'Azúcar', 'Hielo'],
@@ -951,13 +951,13 @@ const products = [
     {
       id: 'l1-agua',
       label: 'En agua',
-      price: 9500,
+      price: 8500,
       image: 'images/limonada1.png'
     },
     {
       id: 'l1-leche',
       label: 'En leche',
-      price: 10500,
+      price: 9500,
       image: 'images/limonada1.png'
     }
   ]
@@ -966,7 +966,7 @@ const products = [
   id: 'l2',
   category: 'limonadas',
   title: 'Limonada de Mango Biche',
-  price: 9500,
+  price: 8500,
   desc: 'Limonada con sabor a mango biche, perfecta para los amantes del toque ácido.',
   image: 'images/mangobiche.png',
   ingredients: ['Limón', 'Pulpa de mango biche', 'Azúcar', 'Agua', 'Hielo'],
@@ -974,13 +974,13 @@ const products = [
     {
       id: 'l2-agua',
       label: 'En agua',
-      price: 9500,
+      price: 8500,
       image: 'images/mangobiche.png'
     },
     {
       id: 'l2-leche',
       label: 'En leche',
-      price: 10500,
+      price: 9500,
       image: 'images/mangobiche.png'
     }
   ]
@@ -989,7 +989,7 @@ const products = [
   id: 'l3',
   category: 'limonadas',
   title: 'Limonada de Cereza',
-  price: 9500,
+  price: 8500,
   desc: 'Limonada con un toque dulce de cereza, ideal para acompañar tus comidas.',
   image: 'images/limonada3.png',
   ingredients: ['Limón', 'Cereza', 'Azúcar', 'Agua', 'Hielo'],
@@ -997,13 +997,13 @@ const products = [
     {
       id: 'l3-agua',
       label: 'En agua',
-      price: 9500,
+      price: 8500,
       image: 'images/limonada3.png'
     },
     {
       id: 'l3-leche',
       label: 'En leche',
-      price: 10500,
+      price: 9500,
       image: 'images/limonada3.png'
     }
   ]
@@ -1012,7 +1012,7 @@ const products = [
   id: 'l4',
   category: 'limonadas',
   title: 'Limonada Piña Colada',
-  price: 9500,
+  price: 8500,
   desc: 'Exquisita mezcla de limón, piña y coco con un toque tropical.',
   image: 'images/piñacolada.png',
   ingredients: ['Limón', 'Piña', 'Crema de coco', 'Azúcar', 'Agua', 'Hielo'],
@@ -1020,13 +1020,13 @@ const products = [
     {
       id: 'l4-agua',
       label: 'En agua',
-      price: 9500,
+      price: 8500,
       image: 'images/piñacolada.png'
     },
     {
       id: 'l4-leche',
       label: 'En leche',
-      price: 10500,
+      price: 9500,
       image: 'images/piñacolada.png'
     }
   ]
@@ -1035,7 +1035,7 @@ const products = [
   id: 'l5',
   category: 'limonadas',
   title: 'Tamarindo Escarchada',
-  price: 9500,
+  price: 8500,
   desc: 'Limonada con tamarindo natural y escarcha dulce, refrescante y diferente.',
   image: 'images/tamarindoescarchada.png',
   ingredients: ['Limón', 'Pulpa de tamarindo', 'Azúcar', 'Agua', 'Hielo'],
@@ -1043,13 +1043,13 @@ const products = [
     {
       id: 'l5-agua',
       label: 'En agua',
-      price: 9500,
+      price: 8500,
       image: 'images/tamarindoescarchada.png'
     },
     {
       id: 'l5-leche',
       label: 'En leche',
-      price: 10500,
+      price: 9500,
       image: 'images/tamarindoescarchada.png'
     }
   ]
@@ -1058,7 +1058,7 @@ const products = [
   id: 'l6',
   category: 'limonadas',
   title: 'Soda Escarchada',
-  price: 9500,
+  price: 8500,
   desc: 'Refrescante soda escarchada con toque cítrico y hielo granizado.',
   image: 'images/limonada6.png',
   ingredients: ['Soda', 'Limón', 'Azúcar', 'Hielo granizado'],
@@ -1066,13 +1066,13 @@ const products = [
     {
       id: 'l6-agua',
       label: 'En agua',
-      price: 9500,
+      price: 8500,
       image: 'images/limonada6.png'
     },
     {
       id: 'l6-leche',
       label: 'En leche',
-      price: 10500,
+      price: 9500,
       image: 'images/limonada6.png'
     }
   ]
@@ -1083,7 +1083,7 @@ const products = [
   id: 'g1',
   category: 'gaseosas',
   title: 'Postobon',
-  price: 6000,
+  price: 5000,
   desc: 'Refrescante Postobón sabor tradicional, disponible en presentacion personal y familiar. Pregunta nuestros sabores disponibles',
   image: 'images/postobon.png',
   ingredients: ['Postobón 400ml'],
@@ -1091,13 +1091,13 @@ const products = [
     {
       id: 'gaseperso1',
       label: 'personal',
-      price: 6000,
+      price: 5000,
       image: 'images/postobon.png'
     },
     {
       id: 'gasefami1',
       label: 'familiar',
-      price: 8000,
+      price: 7000,
       image: 'images/postobon.png'
     }
   ]
@@ -1106,7 +1106,7 @@ const products = [
   id: 'g2',
   category: 'gaseosas',
   title: 'Sprite',
-  price: 5000,
+  price: 4000,
   desc: 'Clásica Sprite con su sabor cítrico único, disponible en presentacion personal.',
   image: 'images/sprite.png',
   ingredients: ['Sprite 1.5L']
@@ -1115,7 +1115,7 @@ const products = [
   id: 'g3',
   category: 'gaseosas',
   title: 'Quatro',
-  price: 6000,
+  price: 5000,
   desc: 'Refrescante Quatro con su toque cítrico natural, disponible en presentacion personal y familiar.',
   image: 'images/quatro.png',
   ingredients: ['Quatro 400ml'],
@@ -1123,13 +1123,13 @@ const products = [
     {
       id: 'gaseperso3',
       label: 'personal',
-      price: 6000,
+      price: 5000,
       image: 'images/quatro.png'
     },
     {
       id: 'gasefami3',
       label: 'familiar',
-      price: 9000,
+      price: 8000,
       image: 'images/quatro.png'
     }
   ]
@@ -1138,7 +1138,7 @@ const products = [
   id: 'g4',
   category: 'gaseosas',
   title: 'Coca-Cola',
-  price: 6000,
+  price: 5000,
   desc: 'Tradicional Coca-Cola para acompañar cualquier comida, disponible en presentacion personal y familiar.',
   image: 'images/cocaCola.png',
   ingredients: ['Coca-Cola 1.5L'],
@@ -1146,13 +1146,13 @@ const products = [
     {
       id: 'gaseperso4',
       label: 'personal',
-      price: 6000,
+      price: 5000,
       image: 'images/cocaCola.png'
     },
     {
       id: 'gasefami4',
       label: 'familiar',
-      price: 8000,
+      price: 7000,
       image: 'images/cocaCola.png'
     }
   ]
@@ -1161,7 +1161,7 @@ const products = [
   id: 'g5',
   category: 'gaseosas',
   title: 'Bretaña',
-  price: 6000,
+  price: 5000,
   desc: 'Clásica Bretaña, refrescante y equilibrada, disponible en presentacion personal.',
   image: 'images/bretana.png',
   ingredients: ['Bretaña 400ml']
@@ -1170,7 +1170,7 @@ const products = [
   id: 'g6',
   category: 'gaseosas',
   title: 'H2O',
-  price: 4000,
+  price: 3000,
   desc: 'Deliciosa H2O saborizada, perfecta para refrescarte, disponible en presentaciones personal',
   image: 'images/H2O.png',
   ingredients: ['H2O 1.5L']
@@ -1179,7 +1179,7 @@ const products = [
   id: 'g7',
   category: 'gaseosas',
   title: 'Hit',
-  price: 5000,
+  price: 4000,
   desc: 'Dulce y refrescante jugo Hit, disponible en presentacion personal y familiar. Pregunta nuestros sabores disponibles',
   image: 'images/hit.png',
   ingredients: ['Hit 400ml'],
@@ -1187,13 +1187,13 @@ const products = [
     {
       id: 'hitperso7',
       label: 'personal',
-      price: 5000,
+      price: 4000,
       image: 'images/hit.png'
     },
     {
       id: 'hitfami7',
       label: 'familiar',
-      price: 6500,
+      price: 5500,
       image: 'images/hit.png'
     }
   ]
@@ -1202,7 +1202,7 @@ const products = [
   id: 'g8',
   category: 'gaseosas',
   title: 'Premio',
-  price: 6000,
+  price: 5000,
   desc: 'Refrescante gaseosa Premio, disponible en presentacion personal.',
   image: 'images/premio.png',
   ingredients: ['Premio 400ml']
@@ -1213,7 +1213,7 @@ const products = [
   id: 'malte1',
   category: 'malteadas',
   title: 'Malteadas',
-  price: 14000,
+  price: 13000,
   desc: 'Cremosas malteadas! Pregunta por nuestros Sabores disponibles.',
   image: 'images/malteada1.png',
   ingredients: ['Leche', 'Helado de vainilla', 'Crema batida']
