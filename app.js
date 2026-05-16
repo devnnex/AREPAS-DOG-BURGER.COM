@@ -22,7 +22,7 @@ const products = [
     id: 'b13',
     category: 'hamburguesas',
     title: 'Hamburguesa Ranchera',
-    price: 25000,
+    price: 27000,
     desc: 'Pan brioche, lechuga, tomate, carne, queso asado, ranchera asada, picadillo de piña y salsa de la casa.',
     image: 'images/Ranchera.png',
     ingredients: ['Pan brioche','Lechuga','Tomate','Carne','Queso asado','Ranchera asada','Picadillo de piña','Salsa de la casa'],
@@ -1129,7 +1129,7 @@ const products = [
     {
       id: 'gasefami3',
       label: 'familiar',
-      price: 8000,
+      price: 6000,
       image: 'images/quatro.png'
     }
   ]
