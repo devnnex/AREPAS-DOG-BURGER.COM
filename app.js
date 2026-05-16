@@ -1115,7 +1115,7 @@ const products = [
   id: 'g3',
   category: 'gaseosas',
   title: 'Quatro',
-  price: 5000,
+  price: 4000,
   desc: 'Refrescante Quatro con su toque cítrico natural, disponible en presentacion personal y familiar.',
   image: 'images/quatro.png',
   ingredients: ['Quatro 400ml'],
@@ -1123,7 +1123,7 @@ const products = [
     {
       id: 'gaseperso3',
       label: 'personal',
-      price: 5000,
+      price: 4000,
       image: 'images/quatro.png'
     },
     {
