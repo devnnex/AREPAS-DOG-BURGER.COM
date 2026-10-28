@@ -359,7 +359,7 @@ test('common photo formats and files without a MIME type are converted and uploa
       { name: 'photo.jfif', mimeType: '', buffer: png },
       { name: 'photo.gif', mimeType: 'image/gif', buffer: Buffer.from('R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7', 'base64') },
       { name: 'photo.svg', mimeType: 'image/svg+xml', buffer: Buffer.from('<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80"><rect width="80" height="80" fill="orange"/></svg>') },
-      { name: 'photo.png', mimeType: 'image/png', buffer: Buffer.concat([png, Buffer.alloc(13 * 1024 * 1024)]) }
+      { name: 'photo.png', mimeType: 'image/png', buffer: Buffer.concat([png, Buffer.alloc(40 * 1024 * 1024)]) }
     ];
     // Use the real TIFF encoder to produce a tiny camera-format fixture.
     await page.addScriptTag({ url: `${base}/vendor/utif-3.1.0.js` });
@@ -396,6 +396,39 @@ test('mobile admin fits long names, wrapped categories and product options witho
       if (process.env.QA_SCREENSHOT_DIR) await page.screenshot({ path: path.join(process.env.QA_SCREENSHOT_DIR, `admin-responsive-${width}.png`) });
     } finally { await context.close(); }
   }
+});
+
+test('large photos are adapted automatically when the browser falls back to PNG encoding', async () => {
+  const { page, context, log, admin } = await open();
+  try {
+    await admin();
+    const originalSize = await page.evaluate(async () => {
+      const nativeToBlob = HTMLCanvasElement.prototype.toBlob;
+      HTMLCanvasElement.prototype.toBlob = function (callback) { nativeToBlob.call(this, callback, 'image/png'); };
+      const canvas = document.createElement('canvas');
+      canvas.width = canvas.height = 1600;
+      const ctx = canvas.getContext('2d'), image = ctx.createImageData(1600, 1600);
+      let seed = 123;
+      for (let i = 0; i < image.data.length; i++) {
+        seed = (Math.imul(1664525, seed) + 1013904223) >>> 0;
+        image.data[i] = seed >>> 24;
+      }
+      ctx.putImageData(image, 0, 0);
+      const blob = await new Promise(resolve => canvas.toBlob(resolve));
+      const transfer = new DataTransfer();
+      transfer.items.add(new File([blob], 'camera-photo.png', { type: 'image/png' }));
+      const field = document.querySelector('#product-image-file');
+      field.files = transfer.files;
+      field.dispatchEvent(new Event('change'));
+      return blob.size;
+    });
+    assert.ok(originalSize > 2 * 1024 * 1024);
+    await page.waitForFunction(() => document.querySelector('#product-image-status').textContent.includes('Lista para guardar'));
+    await save(page);
+    await page.waitForFunction(() => document.querySelector('#product-form input[name=producto_id]').value === '');
+    assert.equal(log.uploads, 1);
+    assert.match(log.writes[0].product.imagen, /\.png$/);
+  } finally { await context.close(); }
 });
 
 test('the app manifest has real logo icons and the service worker can reopen the app offline', async () => {

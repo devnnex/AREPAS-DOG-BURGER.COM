@@ -26,7 +26,7 @@ test('storage migration is repeatable and blocks all direct browser writes', asy
     const bucket = (await db.query('select * from storage.buckets')).rows[0];
     assert.equal(bucket.id, 'product-images');
     assert.equal(bucket.public, true);
-    assert.equal(bucket.file_size_limit, 2097152);
+    assert.equal(bucket.file_size_limit, null);
 
     await db.exec('set role anon');
     await assert.rejects(db.exec("insert into storage.objects values ('product-images', 'products/anonymous.webp')"), /row-level security/);

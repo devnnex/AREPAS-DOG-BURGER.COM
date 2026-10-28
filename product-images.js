@@ -4,8 +4,8 @@ window.ProductImages = (() => {
   const ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBudWJuaW11aXpwZ3BydGtiY3drIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTMxNDg4ODgsImV4cCI6MjEwODcyNDg4OH0.eCYceUUXDqKMGfdToeC541cc8-8UBYH9xrtYhRRfqbg";
   // Empty values retain legacy default photos; this value explicitly opts out.
   const NO_IMAGE = "__no_image__";
-  const MAX_INPUT = 32 * 1024 * 1024;
-  const MAX_OUTPUT = 2 * 1024 * 1024;
+  // The original file has no weight cap. Adapt the copy sent to the upload API.
+  const UPLOAD_TARGET_BYTES = 2 * 1024 * 1024;
   let ui, pending, previewUrl, original = "", generation = 0;
   let processing = false, uploading = false;
   let selectionError = "";
@@ -136,12 +136,6 @@ window.ProductImages = (() => {
 
   async function selectFile(file) {
     if (!file || uploading || ui.form.inert) return;
-    if (file.size > MAX_INPUT) {
-      selectionError = "La imagen supera los 32 MB. Elige una más pequeña.";
-      status(selectionError, true);
-      ui.file.value = "";
-      return;
-    }
     const version = ++generation;
     processing = true;
     pending = null;
@@ -163,11 +157,20 @@ window.ProductImages = (() => {
       const canvas = document.createElement("canvas");
       canvas.width = Math.max(1, Math.round(width * scale));
       canvas.height = Math.max(1, Math.round(height * scale));
-      canvas.getContext("2d").drawImage(image, 0, 0, canvas.width, canvas.height);
-      let blob = await new Promise(resolve => canvas.toBlob(resolve, "image/webp", 0.84));
-      if (!blob) throw new Error("No se pudo procesar esta foto. Prueba con otra imagen.");
-      if (blob.size > MAX_OUTPUT) blob = await new Promise(resolve => canvas.toBlob(resolve, "image/webp", 0.65));
-      if (!blob || blob.size > MAX_OUTPUT) throw new Error("La imagen sigue siendo muy pesada. Prueba una foto de menor tamaño.");
+      let blob, quality = 0.84;
+      while (true) {
+        if (version !== generation) return;
+        canvas.getContext("2d").drawImage(image, 0, 0, canvas.width, canvas.height);
+        blob = await new Promise(resolve => canvas.toBlob(resolve, "image/webp", quality));
+        if (!blob) throw new Error("No se pudo procesar esta foto. Prueba con otra imagen.");
+        if (blob.size <= UPLOAD_TARGET_BYTES) break;
+        if (quality > 0.65) quality = 0.65;
+        else {
+          if (canvas.width === 1 && canvas.height === 1) throw new Error("No se pudo procesar esta foto. Prueba con otra imagen.");
+          canvas.width = Math.max(1, Math.floor(canvas.width * 0.8));
+          canvas.height = Math.max(1, Math.floor(canvas.height * 0.8));
+        }
+      }
       if (version !== generation) return;
       pending = { blob, path: `products/${crypto.randomUUID()}.${blob.type === "image/webp" ? "webp" : "png"}` };
       if (previewUrl) window.URL.revokeObjectURL(previewUrl);
