@@ -390,7 +390,7 @@ function bindEvents() {
     renderProducts();
   });
 
-  el.refreshMenu.addEventListener("click", loadMenu);
+  el.refreshMenu.addEventListener("click", refreshMenu);
   el.openCart.addEventListener("click", openCart);
   el.floatingCart.addEventListener("click", openCart);
   el.closeCart.addEventListener("click", closeCart);
@@ -427,7 +427,7 @@ function bindEvents() {
   });
   el.adminClose.addEventListener("click", closeAdmin);
   el.adminLogout.addEventListener("click", () => logoutAdmin(true));
-  el.adminReload.addEventListener("click", loadMenu);
+  el.adminReload.addEventListener("click", refreshMenu);
   el.adminUnlock.addEventListener("click", unlockAdmin);
   el.adminToken.addEventListener("keydown", event => {
     if (event.key === "Enter") unlockAdmin();
@@ -467,6 +467,25 @@ function bindEvents() {
 function loadMenu() {
   if (!menuRequest) menuRequest = fetchMenu().finally(() => { menuRequest = null; });
   return menuRequest;
+}
+
+async function refreshMenu() {
+  if (refreshMenu.pending || productSaving) return;
+  refreshMenu.pending = true;
+  el.refreshMenu.disabled = true;
+  el.adminReload.disabled = true;
+  showLoader("Actualizando carta", "Consultando los productos disponibles.");
+  try {
+    // A manual refresh always starts a new request, even during initial loading.
+    await menuRequest;
+    resetCatalogSearch(false);
+    await loadMenu();
+  } finally {
+    refreshMenu.pending = false;
+    el.refreshMenu.disabled = false;
+    el.adminReload.disabled = false;
+    hideLoader();
+  }
 }
 
 async function fetchMenu() {

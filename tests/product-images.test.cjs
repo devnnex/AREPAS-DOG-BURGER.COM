@@ -25,7 +25,7 @@ before(async () => {
     if (!file.startsWith(root + path.sep)) { res.writeHead(403).end(); return; }
     try {
       const body = await fs.readFile(file);
-      res.setHeader('Content-Type', { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.png': 'image/png' }[path.extname(file)] || 'application/octet-stream');
+      res.setHeader('Content-Type', { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.png': 'image/png', '.json': 'application/manifest+json' }[path.extname(file)] || 'application/octet-stream');
       res.end(body);
     } catch { res.writeHead(404).end(); }
   });
@@ -40,7 +40,7 @@ async function open(width = 1440) {
   const page = await context.newPage();
   const errors = [];
   page.on('pageerror', error => errors.push(error.message));
-  const log = { gets: 0, writes: [], uploads: 0, failSave: false, failUpload: false, failRead: false };
+  const log = { gets: 0, writes: [], uploads: 0, failSave: false, failUpload: false, failRead: false, readDelay: 0 };
   const menu = structuredClone(fixture);
   const uploadHandler = createUploadHandler({
     getEnv: name => ({ PRODUCT_IMAGE_ADMIN_PASSWORD: 'existing-admin-password', SUPABASE_SERVICE_ROLE_KEY: 'server-only-test-key',
@@ -60,6 +60,7 @@ async function open(width = 1440) {
       if (request.method() === 'GET') {
         log.gets++;
         if (log.failRead) return route.abort();
+        if (log.readDelay) await new Promise(resolve => setTimeout(resolve, log.readDelay));
         return json({ ok: true, data: menu });
       }
       log.writes.push(request.postDataJSON());
@@ -95,7 +96,7 @@ async function open(width = 1440) {
     await page.click('#admin-unlock');
     await page.click('[data-edit-product="test-0"]');
   }
-  return { context, page, log, errors, admin };
+  return { context, page, log, errors, admin, menu };
 }
 
 async function chooseImage(page) {
@@ -172,7 +173,8 @@ test('invalid images and cancelled selection leave products untouched', async ()
   try {
     await admin();
     await page.setInputFiles('#product-image-file', { name: 'bad.svg', mimeType: 'image/svg+xml', buffer: Buffer.from('<svg/>') });
-    assert.match(await page.locator('#product-image-status').textContent(), /JPG, PNG o WebP/);
+    await page.waitForFunction(() => document.querySelector('#product-image-status').classList.contains('is-error'));
+    assert.match(await page.locator('#product-image-status').textContent(), /No se pudo abrir/);
     await chooseImage(page);
     assert.equal(log.uploads, 0); assert.equal(log.writes.length, 0);
     await page.click('#product-cancel');
@@ -327,4 +329,96 @@ test('the bottom bar only has the cart action and remains usable when empty or f
       assert.deepEqual(errors, []);
     } finally { await context.close(); }
   }
+});
+
+test('manual refresh fetches fresh products, clears search and shows loading feedback', async () => {
+  const { page, context, menu, log } = await open();
+  try {
+    menu.products[0].nombre = 'Nuevo nombre desde el servidor';
+    menu.products[0].precio = 31500;
+    await page.fill('#search', 'sin-coincidencias');
+    assert.equal(await page.locator('.product-card').count(), 0);
+    log.readDelay = 250;
+    const before = log.gets;
+    await page.click('#refresh-menu');
+    await page.waitForSelector('#app-loader:not(.hidden)');
+    await page.waitForFunction(() => document.querySelector('#app-loader').classList.contains('hidden'));
+    assert.equal(log.gets, before + 1);
+    assert.equal(await page.inputValue('#search'), '');
+    assert.match(await page.locator('#catalog').textContent(), /Nuevo nombre desde el servidor/);
+    assert.match(await page.locator('#catalog').textContent(), /31\.500/);
+  } finally { await context.close(); }
+});
+
+test('common photo formats and files without a MIME type are converted and uploaded', async () => {
+  const { page, context, log, admin } = await open();
+  try {
+    await admin();
+    const png = await fs.readFile(path.join(root, 'images/Arepaburger.png'));
+    const files = [
+      { name: 'photo.jfif', mimeType: '', buffer: png },
+      { name: 'photo.gif', mimeType: 'image/gif', buffer: Buffer.from('R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7', 'base64') },
+      { name: 'photo.svg', mimeType: 'image/svg+xml', buffer: Buffer.from('<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80"><rect width="80" height="80" fill="orange"/></svg>') },
+      { name: 'photo.png', mimeType: 'image/png', buffer: Buffer.concat([png, Buffer.alloc(13 * 1024 * 1024)]) }
+    ];
+    // Use the real TIFF encoder to produce a tiny camera-format fixture.
+    await page.addScriptTag({ url: `${base}/vendor/utif-3.1.0.js` });
+    const tiff = await page.evaluate(() => Array.from(new Uint8Array(UTIF.encodeImage(new Uint8Array([255, 128, 0, 255]), 1, 1))));
+    files.push({ name: 'photo.tiff', mimeType: 'image/tiff', buffer: Buffer.from(tiff) });
+    if (process.env.HEIC_FIXTURE) files.push({ name: 'photo.heic', mimeType: 'image/heic', buffer: await fs.readFile(process.env.HEIC_FIXTURE) });
+    for (const file of files) {
+      await page.click('[data-edit-product="test-0"]');
+      await page.setInputFiles('#product-image-file', file);
+      await page.waitForFunction(() => document.querySelector('#product-image-status').textContent.includes('Lista para guardar'), { timeout: 60000 });
+      await save(page);
+      await page.waitForFunction(() => document.querySelector('#product-form input[name=producto_id]').value === '');
+      assert.match(log.writes.at(-1).product.imagen, /\.webp$/);
+    }
+    assert.equal(log.uploads, files.length);
+  } finally { await context.close(); }
+});
+
+test('mobile admin fits long names, wrapped categories and product options without horizontal scrolling', async () => {
+  for (const width of [320, 360, 390, 620, 621, 768]) {
+    const { page, context, menu, admin } = await open(width);
+    try {
+      menu.products[0].nombre = 'ProductoConNombreMuyLargoSinEspacios'.repeat(5);
+      for (let i = 1; i < menu.products.length; i++) menu.products[i].categoria_id = `categoria-de-productos-${i}`;
+      await page.click('#refresh-menu');
+      await page.waitForFunction(() => document.querySelector('#app-loader').classList.contains('hidden'));
+      await admin();
+      await page.locator('.option-toggle').click();
+      for (const selector of ['#admin-panel', '.admin-shell', '#product-form', '#product-options-editor', '#admin-product-list']) {
+        const fits = await page.locator(selector).evaluate(node => ({ scroll: node.scrollWidth, client: node.clientWidth }));
+        assert.ok(fits.scroll <= fits.client + 1, `${selector} overflows at ${width}: ${JSON.stringify(fits)}`);
+      }
+      if (width <= 620) assert.ok(await page.locator('#admin-product-categories').evaluate(node => node.scrollWidth <= node.clientWidth + 1));
+      if (process.env.QA_SCREENSHOT_DIR) await page.screenshot({ path: path.join(process.env.QA_SCREENSHOT_DIR, `admin-responsive-${width}.png`) });
+    } finally { await context.close(); }
+  }
+});
+
+test('the app manifest has real logo icons and the service worker can reopen the app offline', async () => {
+  const { page, context } = await open(390);
+  try {
+    await page.waitForFunction(() => navigator.serviceWorker.controller !== null);
+    const manifest = await page.evaluate(async () => (await fetch(document.querySelector('link[rel=manifest]').href)).json());
+    assert.equal(manifest.name, 'Arepas Dog Burger');
+    assert.equal(manifest.display, 'standalone');
+    for (const icon of manifest.icons) {
+      const dimensions = await page.evaluate(async source => {
+        const image = new Image(); image.src = source; await image.decode();
+        return `${image.naturalWidth}x${image.naturalHeight}`;
+      }, icon.src);
+      assert.equal(dimensions, icon.sizes);
+    }
+    const cdp = await context.newCDPSession(page);
+    const parsed = await cdp.send('Page.getAppManifest');
+    assert.deepEqual(parsed.errors, []);
+    await context.setOffline(true);
+    await page.reload({ waitUntil: 'domcontentloaded' });
+    await page.waitForFunction(() => document.querySelectorAll('.product-card').length === 20);
+    assert.equal(await page.locator('.bottom-dock button').count(), 1);
+    assert.equal(await page.locator('#image-auth-dialog').count(), 0);
+  } finally { await context.close(); }
 });

@@ -18,3 +18,5 @@ Las pruebas abren un servidor local temporal y usan respuestas simuladas para Ap
 La migración SQL se ejecuta dos veces en PostgreSQL local (PGlite) para comprobar que bloquea escrituras directas desde el navegador y permite las del servidor. Las pruebas de la función verifican la contraseña, el tamaño, el formato, las rutas y los errores sin divulgar claves privadas.
 
 La verificación de una subida real requiere activar primero el almacenamiento siguiendo `supabase/README.md`.
+
+También se comprueban la recarga manual, el admin sin desplazamiento horizontal con categorías y nombres largos, los iconos de instalación y la reapertura de la PWA sin conexión. Para incluir una foto HEIC real en la prueba de formatos, define `HEIC_FIXTURE` con la ruta a una imagen HEIC local; se puede usar el [ejemplo público de libheif](https://github.com/strukturag/libheif/blob/master/examples/example.heic) descargado fuera del repositorio. La conversión TIFF y los formatos nativos se prueban sin archivos adicionales.

@@ -1307,7 +1307,8 @@ form label {
 }
 
 .admin-panel {
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   overscroll-behavior: contain;
   padding: 16px;
   background: rgba(0, 0, 0, 0.72);
@@ -1370,6 +1371,10 @@ html.overlay-open {
   box-shadow: var(--shadow);
   overflow: hidden;
 }
+
+.admin-shell, .admin-shell * { min-width: 0; }
+.admin-header > div, .admin-workspace, .admin-tab, .admin-list, .admin-row > div { max-width: 100%; }
+.admin-shell h2, .admin-shell h3, .admin-shell p { overflow-wrap: anywhere; }
 
 .admin-actions {
   display: flex;
@@ -1529,7 +1534,7 @@ html.overlay-open {
   grid-column: 1 / -1;
   min-width: 0;
   display: grid;
-  grid-template-columns: minmax(220px, 1fr) minmax(160px, 220px) auto;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 220px) auto;
   gap: 12px;
   align-items: end;
   padding: 12px;
@@ -1824,6 +1829,7 @@ html.overlay-open {
 
   .admin-shell {
     min-height: calc(100vh - 16px);
+    min-height: calc(100dvh - 16px);
     border-radius: var(--radius);
   }
 
@@ -1832,14 +1838,32 @@ html.overlay-open {
     flex-wrap: wrap;
   }
 
+  .admin-header { padding: 16px 12px; gap: 14px; }
+  .admin-header h2 { font-size: 1.25rem; }
+  .admin-actions { width: 100%; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 40px; gap: 6px; }
+  .admin-actions .ghost-btn { padding-inline: 8px; font-size: 0.75rem; }
+  .admin-actions #admin-close { grid-column: 3; }
+
   .admin-workspace {
     padding: 12px;
   }
 
   .admin-tabs {
-    overflow-x: auto;
+    flex-wrap: wrap;
+    overflow-x: hidden;
     padding-bottom: 4px;
   }
+
+  .admin-category-filter { flex-wrap: wrap; overflow-x: hidden; padding: 2px 0 8px; gap: 6px; }
+  .admin-filter-btn { max-width: 100%; white-space: normal; overflow-wrap: anywhere; padding: 8px 10px; font-size: 0.72rem; }
+  .admin-filter-btn span { white-space: nowrap; }
+  .admin-login { padding: 16px 12px; }
+  .admin-form { padding: 10px; }
+  .admin-form input, .admin-form textarea, .admin-login input { font-size: 16px; }
+  .image-picker-actions { flex-direction: column; align-items: stretch; }
+  .image-picker-actions button { width: 100%; }
+  .admin-option-row { padding: 10px; }
+  .admin-row-actions button { flex: 1 1 90px; padding-inline: 8px; }
 
   .side-panel {
     width: min(360px, 92vw);

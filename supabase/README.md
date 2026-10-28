@@ -16,7 +16,7 @@ Si la subida falla, los datos del producto y la imagen anterior se conservan. Si
 ## Rendimiento y permisos
 
 - Vista previa local inmediata; no se sube nada al seleccionar o cancelar.
-- Archivos JPG, PNG o WebP de hasta 12 MB; se reducen a un máximo de 1600 píxeles y 2 MB antes de enviarse, preferentemente WebP.
+- Fotos de hasta 32 MB. Se admiten los formatos nativos del navegador (JPG/JPEG/JFIF, PNG, WebP, GIF, AVIF, BMP, SVG y otros compatibles), fotos HEIC/HEIF mediante conversión local y TIFF mediante UTIF. También se intentan abrir los RAW compatibles con ese decodificador. El navegador convierte la selección a una imagen fija de hasta 1600 píxeles y 2 MB antes de enviarla, preferentemente WebP. Los archivos sin tipo MIME se detectan por su contenido; los dañados o no reconocidos muestran un error. Los decodificadores adicionales se cargan solo al necesitarlos.
 - Cada archivo usa una URL única y caché de un año; las imágenes del catálogo se cargan bajo demanda.
 - La subida reutiliza la contraseña de administrador desde la sesión en memoria. No se persiste en el navegador ni se solicita de nuevo. La función la valida en el servidor y comprueba el tamaño, el formato y la ruta del archivo.
 - La clave pública `anon` no da permisos de escritura directa. La función escribe con su clave de servicio, que permanece solo en Supabase. No publiques nunca una clave `service_role`.
