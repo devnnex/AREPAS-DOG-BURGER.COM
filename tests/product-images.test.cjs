@@ -41,18 +41,26 @@ async function open(width = 1440) {
   const errors = [];
   page.on('pageerror', error => errors.push(error.message));
   const log = { gets: 0, writes: [], uploads: 0, failSave: false, failUpload: false, failRead: false, readDelay: 0,
-    adminPassword: 'existing-admin-password', authDelay: 0, failAuth: false };
+    adminPassword: 'existing-admin-password', authDelay: 0, failAuth: false, removedPhotos: [], failCleanup: false };
   const menu = structuredClone(fixture);
   const uploadHandler = createUploadHandler({
     getEnv: name => ({ SUPABASE_SERVICE_ROLE_KEY: 'server-only-test-key',
       SUPABASE_URL: 'https://pnubnimuizpgprtkbcwk.supabase.co' })[name],
     fetchImpl: async (_url, options) => {
       if (_url.includes('script.google.com')) {
+        if (options.method === 'GET') return Response.json({ ok: true, data: menu });
         if (log.authDelay) await new Promise(resolve => setTimeout(resolve, log.authDelay));
         if (log.failAuth) return Response.json({}, { status: 503 });
         const credentials = JSON.parse(options.body);
         return Response.json({ ok: false, error: credentials.password === log.adminPassword
           ? 'Accion POST no soportada: validateAdmin' : 'Contrasena de administrador invalida.' });
+      }
+      if (options.method === 'DELETE') {
+        if (log.failCleanup) return Response.json({}, { status: 503 });
+        const { prefixes } = JSON.parse(options.body);
+        assert.ok(!JSON.stringify(menu).includes(prefixes[0]), 'photo must be unused in the saved catalog');
+        log.removedPhotos.push(...prefixes);
+        return Response.json([]);
       }
       log.uploads++;
       assert.equal(options.headers.Authorization, 'Bearer server-only-test-key');
@@ -502,5 +510,48 @@ test('closing the panel during validation cannot reopen an authenticated workspa
     await page.click('#admin-open');
     assert.ok(await page.locator('#admin-login').isVisible());
     assert.ok(await page.locator('#admin-workspace').evaluate(node => node.classList.contains('hidden')));
+  } finally { await context.close(); }
+});
+
+test('replacing a photo deletes its old file only after the product is successfully saved', async () => {
+  const { page, context, menu, log, admin } = await open();
+  const path = 'products/00000000-0000-4000-8000-000000000001.webp';
+  const url = `https://pnubnimuizpgprtkbcwk.supabase.co/storage/v1/object/public/product-images/${path}`;
+  try {
+    menu.products[0].imagen = url;
+    await page.click('#refresh-menu');
+    await page.waitForFunction(() => document.querySelector('#app-loader').classList.contains('hidden'));
+    await admin(); await chooseImage(page);
+    log.failSave = true;
+    await save(page);
+    await page.waitForFunction(() => !document.querySelector('#product-form').inert);
+    assert.deepEqual(log.removedPhotos, []);
+    assert.equal(menu.products[0].imagen, url);
+    log.failSave = false;
+    await save(page);
+    await page.waitForFunction(() => document.querySelector('#product-form input[name=producto_id]').value === '');
+    assert.deepEqual(log.removedPhotos, [path]);
+    assert.equal(log.uploads, 1, 'retry reuses the photo already uploaded');
+  } finally { await context.close(); }
+});
+
+test('failed photo cleanup is retried on the next save without losing the new photo', async () => {
+  const { page, context, menu, log, admin } = await open();
+  const path = 'products/00000000-0000-4000-8000-000000000002.png';
+  try {
+    menu.products[0].imagen = `https://pnubnimuizpgprtkbcwk.supabase.co/storage/v1/object/public/product-images/${path}`;
+    await page.click('#refresh-menu');
+    await page.waitForFunction(() => document.querySelector('#app-loader').classList.contains('hidden'));
+    await admin(); await chooseImage(page);
+    log.failCleanup = true;
+    await save(page);
+    await page.waitForFunction(() => document.querySelector('#product-form input[name=producto_id]').value === '');
+    assert.deepEqual(log.removedPhotos, []);
+    assert.ok(await page.evaluate(() => JSON.parse(localStorage.getItem('adb_photo_cleanup_v1')).length === 1));
+    log.failCleanup = false;
+    await page.click('[data-edit-product="test-0"]'); await save(page);
+    await page.waitForFunction(() => document.querySelector('#product-form input[name=producto_id]').value === '');
+    assert.deepEqual(log.removedPhotos, [path]);
+    assert.equal(log.uploads, 1);
   } finally { await context.close(); }
 });

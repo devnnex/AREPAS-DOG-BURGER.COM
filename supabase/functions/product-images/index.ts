@@ -58,8 +58,31 @@ export function createUploadHandler({ getEnv = name => Deno.env.get(name), fetch
       if (contentType.toLowerCase().startsWith("application/json")) {
         const bytes = await readBody(request, 8192);
         const body = JSON.parse(new TextDecoder().decode(bytes));
-        if (body.action !== "validateAdmin") return reply({ ok: false, error: "Invalid action" }, 400);
+        if (!["validateAdmin", "removeUnusedPhoto"].includes(body.action)) return reply({ ok: false, error: "Invalid action" }, 400);
         if (!await validateAdmin(body.password)) return reply({ ok: false, error: "Contraseña de administrador incorrecta." }, 401);
+        if (body.action === "removeUnusedPhoto") {
+          const prefix = `${base}/storage/v1/object/public/product-images/`;
+          if (typeof body.url !== "string" || !body.url.startsWith(prefix)) return reply({ ok: false, error: "Invalid image URL" }, 400);
+          const path = body.url.slice(prefix.length);
+          if (!/^products\/[0-9a-f-]{36}\.(webp|png|jpg)$/.test(path)) return reply({ ok: false, error: "Invalid image path" }, 400);
+          // Check the persisted catalog, including inactive products and options,
+          // after the replacement was saved. Shared photos must stay available.
+          const menuUrl = new URL(ADMIN_API_URL);
+          menuUrl.searchParams.set("action", "menu");
+          menuUrl.searchParams.set("_", Date.now().toString());
+          const catalogResponse = await fetchImpl(menuUrl.toString(), { method: "GET", cache: "no-store", signal: AbortSignal.timeout(20000) });
+          if (!catalogResponse.ok) throw new Error("catalog-unavailable");
+          const payload = await catalogResponse.json();
+          const menu = payload.data || payload;
+          if (payload.ok !== true || !Array.isArray(menu.products || menu.productos)) throw new Error("catalog-unavailable");
+          if (JSON.stringify(menu).replace(/\\\//g, "/").includes(path)) return reply({ ok: true, deleted: false, reason: "in-use" });
+          const removed = await fetchImpl(`${base}/storage/v1/object/product-images`, {
+            method: "DELETE", headers: { Authorization: `Bearer ${serviceKey}`, apikey: serviceKey, "Content-Type": "application/json" },
+            body: JSON.stringify({ prefixes: [path] }), signal: AbortSignal.timeout(20000)
+          });
+          if (!removed.ok) return reply({ ok: false, error: "Could not remove previous image" }, 502);
+          return reply({ ok: true, deleted: true });
+        }
         return reply({ ok: true });
       }
       const bytesBody = await readBody(request, maxFile + 65536);

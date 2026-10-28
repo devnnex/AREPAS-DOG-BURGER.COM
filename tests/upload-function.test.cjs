@@ -10,6 +10,7 @@ let currentPassword = 'current-admin-password';
 function createHandler(options) {
   return createUploadHandler({ ...options, fetchImpl: async (url, request) => {
     if (url.includes('script.google.com')) {
+      if (request.method === 'GET') return options.fetchImpl(url, request);
       const body = JSON.parse(request.body);
       assert.equal(body.action, 'validateAdmin');
       assert.equal(body.token, body.password);
@@ -96,4 +97,36 @@ test('JSON login validation never writes files and only permits verified adminis
   const valid = await handler(login(currentPassword));
   assert.equal(valid.status, 200);
   assert.deepEqual(await valid.json(), { ok: true });
+});
+
+test('cleanup removes only unused files in this project after checking the saved catalog', async () => {
+  const objectPath = 'products/00000000-0000-4000-8000-000000000001.webp';
+  const url = `${config.SUPABASE_URL}/storage/v1/object/public/product-images/${objectPath}`;
+  const menu = { products: [{ imagen: url, activo: false }] };
+  const removed = [];
+  let available = true;
+  const handler = createHandler({ getEnv: name => config[name], fetchImpl: async (endpoint, options) => {
+    if (options.method === 'GET') return available ? Response.json({ ok: true, data: menu }) : Response.json({}, { status: 503 });
+    assert.equal(options.method, 'DELETE');
+    assert.equal(endpoint, `${config.SUPABASE_URL}/storage/v1/object/product-images`);
+    removed.push(...JSON.parse(options.body).prefixes);
+    return Response.json([]);
+  } });
+  const cleanup = (photo = url, password = currentPassword) => handler(new Request('https://example.test', {
+    method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ action: 'removeUnusedPhoto', url: photo, password })
+  }));
+  assert.equal((await cleanup(url, 'wrong')).status, 401);
+  assert.equal((await cleanup('https://other.example/photo.png')).status, 400);
+  assert.equal((await cleanup(url + '/../other.png')).status, 400);
+  assert.equal((await (await cleanup()).json()).reason, 'in-use');
+  menu.products = [{ opciones: JSON.stringify([{ image: url }]) }];
+  assert.equal((await (await cleanup()).json()).reason, 'in-use');
+  assert.deepEqual(removed, []);
+  menu.products = [];
+  available = false;
+  assert.notEqual((await cleanup()).status, 200);
+  assert.deepEqual(removed, []);
+  available = true;
+  assert.deepEqual(await (await cleanup()).json(), { ok: true, deleted: true });
+  assert.deepEqual(removed, [objectPath]);
 });

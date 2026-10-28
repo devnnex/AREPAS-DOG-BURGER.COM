@@ -10,6 +10,8 @@ window.ProductImages = (() => {
   let processing = false, uploading = false;
   let selectionError = "";
   const decoderLoads = new Map();
+  const CLEANUP_KEY = "adb_photo_cleanup_v1";
+  const pendingCleanup = new Set();
 
   function loadDecoder(path, ready) {
     if (ready()) return Promise.resolve();
@@ -71,6 +73,10 @@ window.ProductImages = (() => {
   }
 
   function init() {
+    try {
+      const urls = JSON.parse(localStorage.getItem(CLEANUP_KEY) || "[]");
+      if (Array.isArray(urls)) urls.filter(isUploadedPhoto).forEach(url => pendingCleanup.add(url));
+    } catch { /* Cleanup metadata must not block editing. */ }
     const byId = id => document.getElementById(id);
     ui = {
       form: byId("product-form"), picker: byId("product-image-picker"),
@@ -245,5 +251,31 @@ window.ProductImages = (() => {
     if (!response.ok || result.ok !== true) throw new Error(result.error || "No se pudo verificar el acceso. Inténtalo de nuevo.");
   }
 
-  return { init, reset, uploadPending, validateAdmin, NO_IMAGE };
+  function isUploadedPhoto(url) {
+    const prefix = `${URL_BASE}/storage/v1/object/public/product-images/`;
+    return typeof url === "string" && url.startsWith(prefix) && /^products\/[0-9a-f-]{36}\.(webp|png|jpg)$/.test(url.slice(prefix.length));
+  }
+
+  async function cleanupReplacedPhoto(previousUrl, currentUrl, password) {
+    if (previousUrl !== currentUrl && isUploadedPhoto(previousUrl)) pendingCleanup.add(previousUrl);
+    const persist = () => {
+      try { localStorage.setItem(CLEANUP_KEY, JSON.stringify([...pendingCleanup])); } catch { /* Optional browser storage. */ }
+    };
+    persist();
+    for (const url of [...pendingCleanup].slice(0, 3)) {
+      try {
+        const response = await fetch(`${URL_BASE}/functions/v1/product-images`, {
+          method: "POST", headers: { apikey: ANON_KEY, Authorization: `Bearer ${ANON_KEY}`, "Content-Type": "application/json" },
+          body: JSON.stringify({ action: "removeUnusedPhoto", password, url }), signal: AbortSignal.timeout(45000)
+        });
+        const result = await response.json();
+        if (!response.ok || result.ok !== true) break;
+        pendingCleanup.delete(url);
+        persist();
+      } catch { break; }
+    }
+    return pendingCleanup.size === 0;
+  }
+
+  return { init, reset, uploadPending, validateAdmin, cleanupReplacedPhoto, NO_IMAGE };
 })();

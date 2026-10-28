@@ -1,7 +1,7 @@
-const CACHE = "adb-shell-20261028-1";
-const ASSETS = ["./", "./index.html", "./style.css?v=20261028.1", "./storefront.css?v=20261028.1",
-  "./product-images.js?v=20261028.1", "./app.js?v=20261028.1", "./pwa.js?v=20261028.1",
-  "./manifest.json?v=20261028.1", "./images/logo.png", "./images/favicon.png",
+const CACHE = "adb-shell-20261028-2";
+const ASSETS = ["./", "./index.html", "./style.css?v=20261028.2", "./storefront.css?v=20261028.2",
+  "./product-images.js?v=20261028.2", "./app.js?v=20261028.2", "./pwa.js?v=20261028.2",
+  "./manifest.json?v=20261028.2", "./images/logo.png", "./images/favicon.png",
   "./images/app-icon-192.png", "./images/app-icon-512.png", "./images/app-icon-maskable-512.png",
   "./images/apple-touch-icon.png"];
 

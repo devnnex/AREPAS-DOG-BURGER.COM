@@ -1380,6 +1380,7 @@ async function saveProduct(event) {
     producto_id: data.producto_id || state.editingProductId || makeId("prod"),
     activo: el.productForm.elements.activo.checked
   });
+  const previousImage = state.products.find(item => item.producto_id === product.producto_id)?.imagen || "";
 
   if (!state.adminToken) { toast("Inicia sesion en el panel administrativo."); return; }
   // Reuse the same ID on retries, including a timeout after the server saved it.
@@ -1402,6 +1403,9 @@ async function saveProduct(event) {
       resetCatalogSearch(false);
       applyMenu({ products: state.products, extras: state.extras });
       cacheCurrentMenu();
+      el.productSubmitLabel.textContent = "Finalizando…";
+      const cleaned = await ProductImages.cleanupReplacedPhoto(previousImage, product.imagen, state.adminToken);
+      if (!cleaned) toast("Producto guardado. La foto anterior se retirará al volver a guardar con conexión.");
     }
   } catch (error) {
     toast(error.message || "No se pudo guardar la imagen. Tus cambios siguen en el formulario.");
