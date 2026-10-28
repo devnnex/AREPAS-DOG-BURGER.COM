@@ -783,7 +783,7 @@ function renderCart() {
 
   el.cartCount.textContent = totalQty;
   el.floatingCount.textContent = totalQty;
-  el.floatingCart.classList.toggle("hidden", totalQty === 0);
+  el.floatingCart.classList.toggle("has-items", totalQty > 0);
   el.cartSubtotal.textContent = formatMoney(totals.subtotal);
   el.cartTotal.textContent = formatMoney(totals.subtotal);
 
@@ -1000,7 +1000,6 @@ function unlockAdmin(showToast = true) {
 
 function logoutAdmin(showToast = true) {
   if (productSaving) return;
-  ProductImages.clearSession();
   state.adminToken = "";
   el.adminToken.value = "";
   resetProductForm();
@@ -1121,7 +1120,7 @@ function fillProductForm(productId) {
   if (!product) return;
   state.editingProductId = product.producto_id;
   setFormValues(el.productForm, product);
-  ProductImages.reset(resolveProductImage(product), resolveProductImage({ ...product, imagen: "" }));
+  ProductImages.reset(resolveProductImage(product));
   renderProductOptionsEditor(product.opciones, product.opciones.length > 0);
   el.productForm.elements.activo.checked = product.activo;
   updateSwitchLabels();
@@ -1355,7 +1354,7 @@ async function saveProduct(event) {
   let saved = false;
   try {
     // Keep a successful upload in the form if the product API needs a retry.
-    product.imagen = await ProductImages.uploadPending();
+    product.imagen = await ProductImages.uploadPending(state.adminToken);
     saved = await postAdmin("upsertProduct", { product }, "Guardando producto", "Sincronizando los cambios con tu carta.");
     if (saved) {
       menuRevision++;
@@ -1542,6 +1541,7 @@ function productAllowsExtras(product) {
 }
 
 function resolveProductImage(product) {
+  if (String(product.imagen || "").trim() === ProductImages.NO_IMAGE) return "";
   const explicit = resolveImagePath(product.imagen);
   if (explicit) return explicit;
 

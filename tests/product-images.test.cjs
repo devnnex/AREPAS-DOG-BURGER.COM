@@ -7,14 +7,19 @@ const { chromium } = require(process.env.PLAYWRIGHT_MODULE || 'playwright-core')
 
 const root = path.resolve(__dirname, '..');
 let browser, server, base;
+let createUploadHandler;
 const fixture = {
   products: Array.from({ length: 20 }, (_, i) => ({
     producto_id: `test-${i}`, categoria_id: 'hamburguesas', nombre: `Producto ${i}`,
     precio: 20000, descripcion: 'Producto de prueba', imagen: '', opciones: [], activo: true, orden: i
   })), extras: [{ extra_id: 'queso', nombre: 'Queso', precio: 2000, activo: true }]
 };
+fixture.products[1].imagen = 'Arepaburger.png';
+fixture.products[2] = { ...fixture.products[2], producto_id: 'b1', nombre: 'Hamburguesa 3 Carnes' };
 
 before(async () => {
+  const edgeCode = await fs.readFile(path.join(root, 'supabase/functions/product-images/index.ts'), 'utf8');
+  ({ createUploadHandler } = await import(`data:text/javascript;base64,${Buffer.from(edgeCode).toString('base64')}`));
   server = http.createServer(async (req, res) => {
     const file = path.resolve(root, '.' + decodeURIComponent(new URL(req.url, 'http://local').pathname === '/' ? '/index.html' : new URL(req.url, 'http://local').pathname));
     if (!file.startsWith(root + path.sep)) { res.writeHead(403).end(); return; }
@@ -35,8 +40,18 @@ async function open(width = 1440) {
   const page = await context.newPage();
   const errors = [];
   page.on('pageerror', error => errors.push(error.message));
-  const log = { gets: 0, writes: [], uploads: 0, failSave: false, failUpload: false, failRead: false, failAuth: false };
+  const log = { gets: 0, writes: [], uploads: 0, failSave: false, failUpload: false, failRead: false };
   const menu = structuredClone(fixture);
+  const uploadHandler = createUploadHandler({
+    getEnv: name => ({ PRODUCT_IMAGE_ADMIN_PASSWORD: 'existing-admin-password', SUPABASE_SERVICE_ROLE_KEY: 'server-only-test-key',
+      SUPABASE_URL: 'https://pnubnimuizpgprtkbcwk.supabase.co' })[name],
+    fetchImpl: async (_url, options) => {
+      log.uploads++;
+      assert.equal(options.headers.Authorization, 'Bearer server-only-test-key');
+      assert.ok(options.body.byteLength < 2 * 1024 * 1024);
+      return Response.json({}, { status: log.failUpload ? 403 : 200 });
+    }
+  });
   await page.route('**/*', async route => {
     const request = route.request(), url = request.url();
     if (url.startsWith(base)) return route.continue();
@@ -64,15 +79,10 @@ async function open(width = 1440) {
       }
       return json(log.failSave ? { ok: false, error: 'Error de prueba' } : { ok: true });
     }
-    if (url.includes('/auth/v1/token')) {
-      if (log.failAuth) return route.fulfill({ status: 400, contentType: 'application/json', body: '{}' });
-      return json({ access_token: 'test-access', refresh_token: 'test-refresh', expires_in: 3600 });
-    }
-    if (url.includes('/storage/v1/object/') && request.method() === 'POST') {
-      log.uploads++;
-      assert.ok(request.headers().authorization === 'Bearer test-access');
-      assert.ok(request.postDataBuffer().length < 2 * 1024 * 1024);
-      return route.fulfill({ status: log.failUpload ? 403 : 200, contentType: 'application/json', body: '{}' });
+    if (url.includes('/functions/v1/product-images')) {
+      const response = await uploadHandler(new Request(url, { method: request.method(), headers: request.headers(),
+        ...(request.method() === 'POST' ? { body: request.postDataBuffer() } : {}) }));
+      return route.fulfill({ status: response.status, headers: Object.fromEntries(response.headers), body: await response.text() });
     }
     return route.abort();
   });
@@ -91,11 +101,6 @@ async function open(width = 1440) {
 async function chooseImage(page) {
   await page.setInputFiles('#product-image-file', path.join(root, 'images/Arepaburger.png'));
   await page.waitForFunction(() => document.querySelector('#product-image-status').textContent.includes('Lista para guardar'));
-}
-async function connect(page) {
-  await page.fill('#image-auth-form input[name=email]', 'images@example.test');
-  await page.fill('#image-auth-form input[name=password]', 'fixture-password');
-  await page.click('#image-auth-form button[type=submit]');
 }
 async function save(page) { await page.click('#product-form button[type=submit]'); }
 
@@ -129,9 +134,9 @@ test('selection previews locally, uploads once, and retries failed product save 
     assert.match(await page.locator('#product-image-preview').getAttribute('src'), /^blob:/);
     log.failSave = true;
     await save(page);
-    await connect(page);
     await page.waitForFunction(() => !document.querySelector('#product-form').inert);
     assert.equal(log.uploads, 1);
+    assert.equal(await page.locator('#image-auth-dialog').count(), 0);
     assert.equal(log.writes.length, 1);
     const url = log.writes[0].product.imagen;
     assert.match(url, /\/storage\/v1\/object\/public\/product-images\/products\/.+\.webp$/);
@@ -150,7 +155,7 @@ test('upload permission errors do not save a product or discard the selected pho
   try {
     await admin(); await chooseImage(page);
     log.failUpload = true;
-    await save(page); await connect(page);
+    await save(page);
     await page.waitForFunction(() => !document.querySelector('#product-form').inert);
     assert.equal(log.writes.length, 0);
     assert.equal(await page.inputValue('#product-form input[name=producto_id]'), 'test-0');
@@ -162,16 +167,13 @@ test('upload permission errors do not save a product or discard the selected pho
   } finally { await context.close(); }
 });
 
-test('invalid images, cancelled selection and cancelled connection leave products untouched', async () => {
+test('invalid images and cancelled selection leave products untouched', async () => {
   const { page, context, log, admin } = await open();
   try {
     await admin();
     await page.setInputFiles('#product-image-file', { name: 'bad.svg', mimeType: 'image/svg+xml', buffer: Buffer.from('<svg/>') });
     assert.match(await page.locator('#product-image-status').textContent(), /JPG, PNG o WebP/);
     await chooseImage(page);
-    await save(page);
-    await page.click('#image-auth-close');
-    await page.waitForFunction(() => !document.querySelector('#product-form').inert);
     assert.equal(log.uploads, 0); assert.equal(log.writes.length, 0);
     await page.click('#product-cancel');
     assert.equal(await page.inputValue('#product-form input[name=imagen]'), '');
@@ -180,9 +182,10 @@ test('invalid images, cancelled selection and cancelled connection leave product
 });
 
 test('desktop and mobile have a single scroll surface and restore the page position', async () => {
-  for (const width of [1440, 390]) {
+  for (const width of [1440, 768, 390, 320]) {
     const { page, context, errors, admin } = await open(width);
     try {
+      if (process.env.QA_SCREENSHOT_DIR) await page.screenshot({ path: path.join(process.env.QA_SCREENSHOT_DIR, `storefront-${width}.png`) });
       await page.evaluate(() => { document.documentElement.style.scrollBehavior = 'auto'; window.scrollTo(0, 400); });
       const before = await page.evaluate(() => window.scrollY);
       await admin();
@@ -244,10 +247,10 @@ test('new products, permanent deletion and extra editing still work', async () =
   } finally { await context.close(); }
 });
 
-test('existing uploaded images survive ordinary edits and can be restored to the default', async () => {
+test('existing uploaded images survive ordinary edits and can be deleted and replaced', async () => {
   const { page, context, log, admin } = await open();
   try {
-    await admin(); await chooseImage(page); await save(page); await connect(page);
+    await admin(); await chooseImage(page); await save(page);
     await page.waitForFunction(() => document.querySelector('#product-form input[name=producto_id]').value === '');
     const url = log.writes[0].product.imagen;
     await page.click('[data-edit-product="test-0"]');
@@ -258,10 +261,70 @@ test('existing uploaded images survive ordinary edits and can be restored to the
     assert.equal(log.writes[1].product.imagen, url);
     assert.equal(log.uploads, 1);
     await page.click('[data-edit-product="test-0"]');
-    await page.click('#product-image-restore');
+    assert.equal(await page.locator('#product-image-browse').textContent(), 'Reemplazar foto');
+    await page.click('#product-image-remove');
     await save(page);
     await page.waitForFunction(() => document.querySelector('#product-form input[name=producto_id]').value === '');
-    assert.equal(log.writes[2].product.imagen, '');
+    assert.equal(log.writes[2].product.imagen, '__no_image__');
     assert.equal(log.uploads, 1);
+    await page.click('[data-edit-product="test-0"]');
+    assert.equal(await page.locator('#product-image-preview').getAttribute('src'), null);
+    await chooseImage(page); await save(page);
+    await page.waitForFunction(() => document.querySelector('#product-form input[name=producto_id]').value === '');
+    assert.match(log.writes[3].product.imagen, /\/storage\/v1\/object\/public\//);
+    assert.equal(log.uploads, 2);
   } finally { await context.close(); }
+});
+
+test('local and implicit default photos can be removed without returning on reload', async () => {
+  const { page, context, log, errors, admin } = await open();
+  try {
+    await admin();
+    assert.equal(await page.locator('#image-storage-connect').count(), 0);
+    for (const id of ['test-1', 'b1']) {
+      await page.click(`[data-edit-product="${id}"]`);
+      assert.match(await page.locator('#product-image-preview').getAttribute('src'), /images\/.+\.png/);
+      await page.click('#product-image-remove');
+      assert.equal(await page.locator('#product-image-preview').getAttribute('src'), null);
+      // Cancelling leaves the saved product photo in place.
+      await page.click('#product-cancel');
+      await page.click(`[data-edit-product="${id}"]`);
+      assert.match(await page.locator('#product-image-preview').getAttribute('src'), /images\/.+\.png/);
+      await page.click('#product-image-remove'); await save(page);
+      await page.waitForFunction(() => document.querySelector('#product-form input[name=producto_id]').value === '');
+      assert.equal(log.writes.at(-1).product.imagen, '__no_image__');
+      const gets = log.gets;
+      await page.click('#admin-reload');
+      await page.waitForFunction(() => document.querySelector('#sync-status').textContent === 'Carta actualizada');
+      assert.ok(log.gets > gets);
+      await page.click(`[data-edit-product="${id}"]`);
+      assert.equal(await page.locator('#product-image-preview').getAttribute('src'), null);
+      assert.equal(await page.locator('#product-image-browse').textContent(), 'Elegir foto');
+      assert.equal(await page.evaluate(productId => document.querySelector(`[data-add-product="${productId}"]`).closest('article').querySelector('img') === null, id), true);
+    }
+    assert.equal(log.uploads, 0);
+    assert.deepEqual(errors, []);
+  } finally { await context.close(); }
+});
+
+test('the bottom bar only has the cart action and remains usable when empty or filled', async () => {
+  for (const width of [1440, 390]) {
+    const { page, context, errors } = await open(width);
+    try {
+      assert.equal(await page.locator('.bottom-dock button').count(), 1);
+      assert.equal(await page.locator('.bottom-dock a').count(), 0);
+      assert.equal(await page.locator('#floating-count').textContent(), '0');
+      await page.click('#floating-cart');
+      await page.waitForSelector('#cart-drawer:not(.hidden)');
+      await page.click('#close-cart');
+      await page.click('[data-add-product="test-0"]');
+      await page.click('#add-configured-product');
+      assert.equal(await page.locator('#floating-count').textContent(), '1');
+      assert.equal(await page.locator('#cart-count').textContent(), '1');
+      await page.click('#close-cart');
+      await page.click('#floating-cart');
+      assert.match(await page.locator('#cart-items').textContent(), /Producto 0/);
+      assert.deepEqual(errors, []);
+    } finally { await context.close(); }
+  }
 });

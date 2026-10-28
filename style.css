@@ -1335,7 +1335,7 @@ html.overlay-open {
 .image-picker-body { display: grid; grid-template-columns: minmax(180px, 0.85fr) minmax(0, 1.15fr); gap: 22px; align-items: center; }
 .image-dropzone { position: relative; display: grid; place-items: center; width: 100%; min-height: 210px; padding: 18px; overflow: hidden; border: 1px dashed rgba(255, 174, 88, 0.4); border-radius: 12px; background: linear-gradient(145deg, #26231f, #141413); color: #ffb96d; cursor: pointer; transition: border-color 150ms, background 150ms; }
 .image-dropzone:hover, .image-dropzone.is-dragging { border-color: var(--gold); background: #30251b; }
-.image-dropzone:focus-visible, .image-storage-connect:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+.image-dropzone:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
 .image-dropzone-empty { display: grid; justify-items: center; gap: 12px; text-align: center; }
 .image-dropzone-empty strong { color: var(--text); font-size: 0.9rem; }
 .image-dropzone-empty > span { max-width: 240px; color: var(--muted); font-size: 0.76rem; line-height: 1.5; }
@@ -1346,17 +1346,10 @@ html.overlay-open {
 .image-picker-details > strong { display: block; overflow-wrap: anywhere; }
 .image-picker-details p { color: var(--muted); font-size: 0.8rem; line-height: 1.6; margin: 10px 0; }
 .image-picker-details .image-picker-status { color: #ffbd78; }
-.image-picker-details .is-error, #image-auth-error { color: #ff9d96; }
+.image-picker-details .is-error { color: #ff9d96; }
 .image-picker-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
 .image-picker-actions button { min-height: 40px; font-size: 0.8rem; }
-.image-storage-connect { margin-top: 14px; padding: 0; border: 0; background: transparent; color: var(--muted); font-size: 0.74rem; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
 #product-image-progress { width: 100%; height: 6px; accent-color: var(--gold); }
-.image-auth-modal { z-index: 110; }
-.image-auth-card { max-width: 460px; }
-.image-auth-card h2 { padding-right: 24px; }
-.image-auth-card p { color: var(--muted); line-height: 1.6; font-size: 0.88rem; }
-#image-auth-form { display: grid; gap: 14px; }
-#image-auth-form label { display: grid; gap: 8px; }
 #product-form[aria-busy="true"] { opacity: 0.8; }
 
 @media (max-width: 620px) {
