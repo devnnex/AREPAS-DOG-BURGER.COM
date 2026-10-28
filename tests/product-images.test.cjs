@@ -40,12 +40,20 @@ async function open(width = 1440) {
   const page = await context.newPage();
   const errors = [];
   page.on('pageerror', error => errors.push(error.message));
-  const log = { gets: 0, writes: [], uploads: 0, failSave: false, failUpload: false, failRead: false, readDelay: 0 };
+  const log = { gets: 0, writes: [], uploads: 0, failSave: false, failUpload: false, failRead: false, readDelay: 0,
+    adminPassword: 'existing-admin-password', authDelay: 0, failAuth: false };
   const menu = structuredClone(fixture);
   const uploadHandler = createUploadHandler({
-    getEnv: name => ({ PRODUCT_IMAGE_ADMIN_PASSWORD: 'existing-admin-password', SUPABASE_SERVICE_ROLE_KEY: 'server-only-test-key',
+    getEnv: name => ({ SUPABASE_SERVICE_ROLE_KEY: 'server-only-test-key',
       SUPABASE_URL: 'https://pnubnimuizpgprtkbcwk.supabase.co' })[name],
     fetchImpl: async (_url, options) => {
+      if (_url.includes('script.google.com')) {
+        if (log.authDelay) await new Promise(resolve => setTimeout(resolve, log.authDelay));
+        if (log.failAuth) return Response.json({}, { status: 503 });
+        const credentials = JSON.parse(options.body);
+        return Response.json({ ok: false, error: credentials.password === log.adminPassword
+          ? 'Accion POST no soportada: validateAdmin' : 'Contrasena de administrador invalida.' });
+      }
       log.uploads++;
       assert.equal(options.headers.Authorization, 'Bearer server-only-test-key');
       assert.ok(options.body.byteLength < 2 * 1024 * 1024);
@@ -453,5 +461,46 @@ test('the app manifest has real logo icons and the service worker can reopen the
     await page.waitForFunction(() => document.querySelectorAll('.product-card').length === 20);
     assert.equal(await page.locator('.bottom-dock button').count(), 1);
     assert.equal(await page.locator('#image-auth-dialog').count(), 0);
+  } finally { await context.close(); }
+});
+
+test('admin login rejects wrong passwords and follows the password checked by Apps Script', async () => {
+  const { page, context, log, errors } = await open();
+  try {
+    await page.click('#admin-open');
+    for (const password of ['wrong-password', 'old-password']) {
+      await page.fill('#admin-token', password);
+      await page.click('#admin-unlock');
+      await page.waitForFunction(() => !document.querySelector('#admin-unlock').disabled);
+      assert.ok(await page.locator('#admin-workspace').evaluate(node => node.classList.contains('hidden')));
+      assert.ok(await page.locator('#admin-login').isVisible());
+    }
+    log.failAuth = true;
+    await page.fill('#admin-token', log.adminPassword); await page.click('#admin-unlock');
+    await page.waitForFunction(() => !document.querySelector('#admin-unlock').disabled);
+    assert.ok(await page.locator('#admin-login').isVisible());
+    log.failAuth = false;
+    log.adminPassword = 'changed-on-apps-script';
+    await page.fill('#admin-token', log.adminPassword); await page.click('#admin-unlock');
+    await page.waitForSelector('#admin-workspace:not(.hidden)');
+    await page.click('[data-edit-product="test-0"]'); await chooseImage(page); await save(page);
+    await page.waitForFunction(() => document.querySelector('#product-form input[name=producto_id]').value === '');
+    assert.equal(log.uploads, 1);
+    assert.equal(log.writes[0].password, log.adminPassword);
+    assert.deepEqual(errors, []);
+  } finally { await context.close(); }
+});
+
+test('closing the panel during validation cannot reopen an authenticated workspace', async () => {
+  const { page, context, log } = await open();
+  try {
+    await page.click('#admin-open');
+    log.authDelay = 300;
+    await page.fill('#admin-token', log.adminPassword); await page.click('#admin-unlock');
+    await page.click('#admin-close');
+    await page.waitForFunction(() => !document.querySelector('#admin-unlock').disabled);
+    await page.click('#admin-open');
+    assert.ok(await page.locator('#admin-login').isVisible());
+    assert.ok(await page.locator('#admin-workspace').evaluate(node => node.classList.contains('hidden')));
   } finally { await context.close(); }
 });

@@ -1,5 +1,5 @@
-// Set PRODUCT_IMAGE_ADMIN_PASSWORD to the SAME password as the current admin panel.
-// No second sign-in or Supabase Auth account is needed.
+// Apps Script remains the password source for both panel access and photo uploads.
+const ADMIN_API_URL = "https://script.google.com/macros/s/AKfycbyOADjmcKbyrDtEVfJdbGTGc2hO93WqEzDSGdjDEDEc_7bmL6hSucEGgI-4-m2a2FQ0/exec";
 export function createUploadHandler({ getEnv = name => Deno.env.get(name), fetchImpl = fetch } = {}) {
   const cors = {
     "Access-Control-Allow-Origin": "*",
@@ -10,8 +10,7 @@ export function createUploadHandler({ getEnv = name => Deno.env.get(name), fetch
   const reply = (body, status = 200) => Response.json(body, { status, headers: cors });
   const maxFile = 2 * 1024 * 1024;
 
-  async function readForm(request) {
-    const limit = maxFile + 65536;
+  async function readBody(request, limit) {
     if (Number(request.headers.get("content-length")) > limit) throw new Error("too-large");
     const reader = request.body?.getReader();
     if (!reader) throw new Error("empty");
@@ -27,29 +26,45 @@ export function createUploadHandler({ getEnv = name => Deno.env.get(name), fetch
     const bytes = new Uint8Array(total);
     let offset = 0;
     for (const chunk of chunks) { bytes.set(chunk, offset); offset += chunk.byteLength; }
-    return new Response(bytes, { headers: { "Content-Type": request.headers.get("content-type") || "" } }).formData();
+    return bytes;
   }
 
-  async function samePassword(candidate, expected) {
-    if (typeof candidate !== "string" || candidate.length > 4096) return false;
-    const encoder = new TextEncoder();
-    const hashes = await Promise.all([candidate, expected].map(text => crypto.subtle.digest("SHA-256", encoder.encode(text))));
-    const a = new Uint8Array(hashes[0]), b = new Uint8Array(hashes[1]);
-    let difference = 0;
-    for (let i = 0; i < a.length; i++) difference |= a[i] ^ b[i];
-    return difference === 0;
+  async function validateAdmin(password) {
+    if (typeof password !== "string" || !password.trim() || password.length > 4096) return false;
+    const response = await fetchImpl(ADMIN_API_URL, {
+      method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body: JSON.stringify({ action: "validateAdmin", token: password, password }),
+      redirect: "follow", signal: AbortSignal.timeout(20000)
+    });
+    if (!response.ok) throw new Error("auth-unavailable");
+    const result = await response.json();
+    if (result.ok === true) return true;
+    // The supplied legacy doPost validates the password BEFORE dispatching actions.
+    // This exact unsupported-action reply is therefore proof of successful auth;
+    // other errors, HTML responses, and unavailable services never grant access.
+    if (result.ok === false && result.error === "Accion POST no soportada: validateAdmin") return true;
+    if (result.ok === false && result.error === "Contrasena de administrador invalida.") return false;
+    throw new Error("auth-unavailable");
   }
 
   return async request => {
     if (request.method === "OPTIONS") return new Response(null, { status: 204, headers: cors });
     if (request.method !== "POST") return reply({ error: "Method not allowed" }, 405);
-    const password = getEnv("PRODUCT_IMAGE_ADMIN_PASSWORD");
     const serviceKey = getEnv("SUPABASE_SERVICE_ROLE_KEY");
     const base = getEnv("SUPABASE_URL")?.replace(/\/$/, "");
-    if (!password || !serviceKey || !base) return reply({ error: "Image uploads are not configured" }, 503);
+    if (!serviceKey || !base) return reply({ error: "Image uploads are not configured" }, 503);
     try {
-      const form = await readForm(request);
-      if (!await samePassword(form.get("password"), password)) return reply({ error: "Unauthorized" }, 401);
+      const contentType = request.headers.get("content-type") || "";
+      if (contentType.toLowerCase().startsWith("application/json")) {
+        const bytes = await readBody(request, 8192);
+        const body = JSON.parse(new TextDecoder().decode(bytes));
+        if (body.action !== "validateAdmin") return reply({ ok: false, error: "Invalid action" }, 400);
+        if (!await validateAdmin(body.password)) return reply({ ok: false, error: "Contraseña de administrador incorrecta." }, 401);
+        return reply({ ok: true });
+      }
+      const bytesBody = await readBody(request, maxFile + 65536);
+      const form = await new Response(bytesBody, { headers: { "Content-Type": contentType } }).formData();
+      if (!await validateAdmin(form.get("password"))) return reply({ error: "Unauthorized" }, 401);
       const file = form.get("file"), objectPath = form.get("path");
       if (!(file instanceof Blob) || !file.size || file.size > maxFile) return reply({ error: "Invalid image size" }, 400);
       const extension = { "image/webp": "webp", "image/png": "png", "image/jpeg": "jpg" }[file.type];
@@ -77,6 +92,9 @@ export function createUploadHandler({ getEnv = name => Deno.env.get(name), fetch
       }
       return reply({ url: `${base}/storage/v1/object/public/product-images/${objectPath}` });
     } catch (error) {
+      if (error.message === "auth-unavailable" || error.name === "TimeoutError" || error.name === "AbortError") {
+        return reply({ ok: false, error: "No se pudo verificar el acceso. Inténtalo de nuevo." }, 502);
+      }
       return reply({ error: error.message === "too-large" ? "Image too large" : "Could not save image" }, error.message === "too-large" ? 413 : 400);
     }
   };

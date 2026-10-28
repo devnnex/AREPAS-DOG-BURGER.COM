@@ -1003,22 +1003,41 @@ function closeAdmin() {
   closeLayer(el.adminPanel);
 }
 
-function unlockAdmin(showToast = true) {
+async function unlockAdmin(showToast = true) {
+  if (unlockAdmin.pending) return;
   const token = el.adminToken.value.trim();
   if (!token) {
     toast("Ingresa la contrasena de administrador.");
     return;
   }
-  state.adminToken = token;
-  el.adminLogin.classList.add("hidden");
-  el.adminWorkspace.classList.remove("hidden");
-  el.adminLogout.classList.remove("hidden");
-  renderAdmin();
-  if (showToast) toast("Panel listo para editar.");
+  const attempt = unlockAdmin.attempt = (unlockAdmin.attempt || 0) + 1;
+  unlockAdmin.pending = true;
+  el.adminUnlock.disabled = true;
+  el.adminUnlock.textContent = "Verificando…";
+  try {
+    await ProductImages.validateAdmin(token);
+    if (attempt !== unlockAdmin.attempt || el.adminPanel.classList.contains("hidden")) return;
+    state.adminToken = token;
+    el.adminToken.value = "";
+    updateAdminSessionUi();
+    renderAdmin();
+    if (showToast) toast("Panel listo para editar.");
+  } catch (error) {
+    if (attempt === unlockAdmin.attempt) {
+      state.adminToken = "";
+      updateAdminSessionUi();
+      toast(error.message || "No se pudo verificar el acceso. Inténtalo de nuevo.");
+    }
+  } finally {
+    unlockAdmin.pending = false;
+    el.adminUnlock.disabled = false;
+    el.adminUnlock.textContent = "Entrar";
+  }
 }
 
 function logoutAdmin(showToast = true) {
   if (productSaving) return;
+  unlockAdmin.attempt = (unlockAdmin.attempt || 0) + 1;
   state.adminToken = "";
   el.adminToken.value = "";
   resetProductForm();

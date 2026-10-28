@@ -236,5 +236,14 @@ window.ProductImages = (() => {
     } finally { uploading = false; }
   }
 
-  return { init, reset, uploadPending, NO_IMAGE };
+  async function validateAdmin(password) {
+    const response = await fetch(`${URL_BASE}/functions/v1/product-images`, {
+      method: "POST", headers: { apikey: ANON_KEY, Authorization: `Bearer ${ANON_KEY}`, "Content-Type": "application/json" },
+      body: JSON.stringify({ action: "validateAdmin", password }), signal: AbortSignal.timeout(30000)
+    });
+    const result = await response.json();
+    if (!response.ok || result.ok !== true) throw new Error(result.error || "No se pudo verificar el acceso. Inténtalo de nuevo.");
+  }
+
+  return { init, reset, uploadPending, validateAdmin, NO_IMAGE };
 })();
