@@ -3,6 +3,11 @@ let API_URL = "https://script.google.com/macros/s/AKfycbyOADjmcKbyrDtEVfJdbGTGc2
 const BUSINESS_PHONE = "573115990064";
 const DELIVERY_FEE = 0;
 const CART_KEY = "adb_cart_v2";
+const MENU_CACHE_KEY = "adb_menu_v1";
+let menuRequest = null;
+let productSaving = false;
+let menuRevision = 0;
+let scrollLock = null;
 const MAX_QTY = 999999;
 const STATIC_PRODUCT_IMAGES = [
   "3Carnes.png",
@@ -365,8 +370,16 @@ async function init() {
   resetCatalogSearch(false);
   bindEvents();
   bindAdminMoneyInputs();
+  ProductImages.init();
   disableSearchAutofill();
   renderAll();
+  try {
+    const cached = JSON.parse(localStorage.getItem(MENU_CACHE_KEY));
+    if (cached?.menu && Date.now() - cached.savedAt < 24 * 60 * 60 * 1000) {
+      applyMenu(cached.menu);
+      setSync("Actualizando carta");
+    }
+  } catch { /* A disabled or full cache never prevents loading the menu. */ }
   await loadMenu();
   window.setTimeout(() => resetCatalogSearch(true), 0);
 }
@@ -451,7 +464,14 @@ function bindEvents() {
   });
 }
 
-async function loadMenu() {
+function loadMenu() {
+  if (!menuRequest) menuRequest = fetchMenu().finally(() => { menuRequest = null; });
+  return menuRequest;
+}
+
+async function fetchMenu() {
+  if (productSaving) return;
+  const revision = menuRevision;
   setSync("Sincronizando");
   const configuredUrl = API_URL.trim();
 
@@ -461,28 +481,39 @@ async function loadMenu() {
     return;
   }
 
-  showLoader("Actualizando carta", "Consultando la informacion mas reciente.");
+  const blocking = !state.products.length;
+  if (blocking) showLoader("Actualizando carta", "Consultando la informacion mas reciente.");
   try {
     const url = new URL(configuredUrl);
     url.searchParams.set("action", "menu");
     url.searchParams.set("_", Date.now().toString());
 
-    const response = await fetch(url.toString(), { method: "GET", cache: "no-store" });
+    const response = await fetch(url.toString(), { method: "GET", cache: "no-store", signal: AbortSignal.timeout(20000) });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
     const payload = await response.json();
     if (!payload.ok) throw new Error(payload.error || "Respuesta invalida");
 
-    applyMenu(payload.data || payload);
+    const menu = payload.data || payload;
+    if (!Array.isArray(menu.products || menu.productos)) throw new Error("Carta invalida");
+    if (revision !== menuRevision) return;
+    applyMenu(menu);
+    cacheCurrentMenu();
     setSync("Carta actualizada");
   } catch (error) {
     console.error(error);
-    applyMenu(demoMenu);
-    setSync("Modo respaldo");
-    toast("No se pudo sincronizar la carta. Se cargo una version de respaldo.");
+    if (!state.products.length) applyMenu(demoMenu);
+    setSync("Sin conexión");
+    toast("No se pudo sincronizar. Conservamos la carta disponible; puedes volver a recargar.");
   } finally {
-    hideLoader();
+    if (blocking) hideLoader();
   }
+}
+
+function cacheCurrentMenu() {
+  try {
+    localStorage.setItem(MENU_CACHE_KEY, JSON.stringify({ savedAt: Date.now(), menu: { products: state.products, extras: state.extras } }));
+  } catch { /* Storage is optional. */ }
 }
 
 function applyMenu(menu) {
@@ -948,6 +979,7 @@ function openAdmin() {
 }
 
 function closeAdmin() {
+  if (productSaving) { toast("Espera a que termine de guardarse el producto."); return; }
   logoutAdmin(false);
   closeLayer(el.adminPanel);
 }
@@ -967,6 +999,8 @@ function unlockAdmin(showToast = true) {
 }
 
 function logoutAdmin(showToast = true) {
+  if (productSaving) return;
+  ProductImages.clearSession();
   state.adminToken = "";
   el.adminToken.value = "";
   resetProductForm();
@@ -1082,16 +1116,18 @@ function renderAdminExtras() {
 }
 
 function fillProductForm(productId) {
+  if (productSaving) return;
   const product = state.products.find(item => item.producto_id === productId);
   if (!product) return;
   state.editingProductId = product.producto_id;
   setFormValues(el.productForm, product);
+  ProductImages.reset(resolveProductImage(product), resolveProductImage({ ...product, imagen: "" }));
   renderProductOptionsEditor(product.opciones, product.opciones.length > 0);
   el.productForm.elements.activo.checked = product.activo;
   updateSwitchLabels();
   updateProductFormMode();
   markFormEditing(el.productForm, true);
-  el.productForm.scrollIntoView({ behavior: "smooth", block: "center" });
+  el.adminPanel.scrollTo({ top: 0, behavior: "instant" });
 }
 
 function fillExtraForm(extraId) {
@@ -1106,8 +1142,10 @@ function fillExtraForm(extraId) {
 }
 
 function resetProductForm() {
+  if (productSaving) return;
   state.editingProductId = "";
   el.productForm.reset();
+  ProductImages.reset();
   el.productForm.elements.activo.checked = true;
   el.productForm.elements.producto_id.value = "";
   el.productForm.elements.orden.value = "0";
@@ -1292,6 +1330,7 @@ function makeOptionId(label, index) {
 
 async function saveProduct(event) {
   event.preventDefault();
+  if (productSaving) return;
   syncProductOptionsFromEditor();
   const data = getFormObject(el.productForm);
   const productOptions = normalizeProductOptions(data.opciones);
@@ -1305,11 +1344,38 @@ async function saveProduct(event) {
     activo: el.productForm.elements.activo.checked
   });
 
-  const saved = await postAdmin("upsertProduct", { product }, "Guardando producto", "Sincronizando los cambios con tu carta.");
-  if (!saved) return;
-  resetProductForm();
-  resetCatalogSearch(false);
-  await loadMenu();
+  if (!state.adminToken) { toast("Inicia sesion en el panel administrativo."); return; }
+  // Reuse the same ID on retries, including a timeout after the server saved it.
+  el.productForm.elements.producto_id.value = product.producto_id;
+  productSaving = true;
+  el.productForm.inert = true;
+  el.adminWorkspace.inert = true;
+  el.productForm.setAttribute("aria-busy", "true");
+  el.productSubmitLabel.textContent = "Guardando…";
+  let saved = false;
+  try {
+    // Keep a successful upload in the form if the product API needs a retry.
+    product.imagen = await ProductImages.uploadPending();
+    saved = await postAdmin("upsertProduct", { product }, "Guardando producto", "Sincronizando los cambios con tu carta.");
+    if (saved) {
+      menuRevision++;
+      const index = state.products.findIndex(item => item.producto_id === product.producto_id);
+      if (index < 0) state.products.push(product);
+      else state.products[index] = product;
+      resetCatalogSearch(false);
+      applyMenu({ products: state.products, extras: state.extras });
+      cacheCurrentMenu();
+    }
+  } catch (error) {
+    toast(error.message || "No se pudo guardar la imagen. Tus cambios siguen en el formulario.");
+  } finally {
+    productSaving = false;
+    el.productForm.inert = false;
+    el.adminWorkspace.inert = false;
+    el.productForm.removeAttribute("aria-busy");
+    updateProductFormMode();
+  }
+  if (saved) resetProductForm();
 }
 
 async function saveExtra(event) {
@@ -1364,6 +1430,7 @@ async function postAdmin(action, data, loaderTitle = "Sincronizando cambios", lo
   try {
     const response = await fetch(API_URL.trim(), {
       method: "POST",
+      signal: AbortSignal.timeout(30000),
       body: JSON.stringify({
         action,
         token: state.adminToken,
@@ -1620,12 +1687,14 @@ function closeCheckout() {
 function openSideMenu() {
   el.sideMenu.classList.remove("hidden");
   el.sideMenu.setAttribute("aria-hidden", "false");
+  syncScrollLock();
   window.requestAnimationFrame(() => el.sideMenu.classList.add("is-open"));
 }
 
 function closeSideMenu() {
   el.sideMenu.classList.remove("is-open");
   el.sideMenu.setAttribute("aria-hidden", "true");
+  syncScrollLock();
   window.setTimeout(() => {
     if (!el.sideMenu.classList.contains("is-open")) {
       el.sideMenu.classList.add("hidden");
@@ -1636,11 +1705,30 @@ function closeSideMenu() {
 function openLayer(node) {
   node.classList.remove("hidden");
   node.setAttribute("aria-hidden", "false");
+  syncScrollLock();
 }
 
 function closeLayer(node) {
   node.classList.add("hidden");
   node.setAttribute("aria-hidden", "true");
+  syncScrollLock();
+}
+
+function syncScrollLock() {
+  const open = [el.adminPanel, el.productModal, el.checkoutModal, el.cartDrawer, el.sideMenu]
+    .some(node => node.getAttribute("aria-hidden") === "false");
+  if (open && !scrollLock) {
+    const y = window.scrollY;
+    scrollLock = { y, position: document.body.style.position, top: document.body.style.top, width: document.body.style.width };
+    document.documentElement.classList.add("overlay-open");
+    Object.assign(document.body.style, { position: "fixed", top: `-${y}px`, width: "100%" });
+  } else if (!open && scrollLock) {
+    const { y, position, top, width } = scrollLock;
+    Object.assign(document.body.style, { position, top, width });
+    document.documentElement.classList.remove("overlay-open");
+    scrollLock = null;
+    window.scrollTo({ top: y, behavior: "instant" });
+  }
 }
 
 function setSync(text) {
